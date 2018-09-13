@@ -1,12 +1,15 @@
 
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Oswald:400,500');
 
 // Variables
 @import 'variables';
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+// Partials
+@import 'main';
 
 .navbar-laravel {
   background-color: #fff;
