@@ -11,7 +11,7 @@
 </head>
 <body>
 
-    <main class="container py-5">
+    <main class="container-fluid p-0">
 
         @yield('content')
 

@@ -1,28 +1,72 @@
 @extends('layouts.master')
 @section('content')
 
-<div class="row nospacing">
+<div class="row m-0 p-0">
 
-    <div class="col-12 mb-5 text-center">
-        <img src="/images/linkedin.jpg" class="profile-img img-thumbnail">
-        <h1 class="display-1 text-center">Clint Winter</h1>
-        <div class="sm-links d-flex justify-content-center">
-            <a class="px-2" target="_blank" href="https://github.com/cwinterweb"><i class="fab fa-github-square"></i></a>
-            <a class="px-2" target="_blank" href="https://linkedin.com/in/clint-winter"><i class="fab fa-linkedin"></i></a>
-            {{-- <a href="https://github.com/cwinterweb"><i class="fab fa-github"></i></a>
-            <a href="https://github.com/cwinterweb"><i class="fab fa-github"></i></a> --}}
+    <div class="col-12 col-lg-6 m-0 pl-3 pt-3 pb-3 left-col">
+        <div class="d-flex justify-content-between mb-5">
+            <img src="/images/linkedin.jpg" class="profile-img img-thumbnail mr-3">
+            <div class="d-flex flex-column">
+                <h1 class="display-1 text-right">Clint Winter</h1>
+                <div class="sm-links d-flex justify-content-end">
+                    <a class="px-2" target="_blank" href="https://github.com/clintwinter"><i class="fab fa-github-square"></i></a>
+                    <a class="px-2" target="_blank" href="https://linkedin.com/in/clint-winter"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
         </div>
-        <hr class="bg-dark">
-    </div>
+        {{-- <hr class="bg-dark"> --}}
+        <div class="p-3">
+            <p>Greetings!</p>
 
-    <div class="col-12 d-flex justify-content-between flex-nowrap">
-        <div class="flex-fill w-50 content-box mx-3 p-3">
-            <p>Greetings,</p>
-            <p>My name is Clint Winter, and I'm currently a full-stack web developer for <a target="_blank" href="https://cwrdistribution.com">CWR Wholesale Distribution</a>. I'm motivated to master the technologies and languages I know and continue adding new ones to my toolbelt. I've begun to add my projects and notes to my <a target="_blank" href="https://github.com/cwinterweb">GitHub</a> account.</p>
+            <p>My name is Clint Winter, and I'm currently a full-stack web developer for <a target="_blank" href="https://cwrdistribution.com">CWR Wholesale Distribution</a>. I'm motivated to master the technologies and languages I know and continue adding new ones to my toolbelt. I've begun to add my projects and notes to my <a target="_blank" href="https://github.com/clintwinter">GitHub</a> account.</p>
+
+            <p>I'm currently improving my Laravel skills (this portfolio is using it), and I'm planning on learning Vue next!</p>
+
             <p>Thanks for checking out my work, feel free to email me at <a href="mailto:cwinter.web@gmail.com">cwinter.web@gmail.com</a>!</p>
         </div>
-        <div class="flex-fill w-50 content-box mx-3 p-3">
-            <p>Here is a list of my projects:</p>
+    </div>
+
+    <div class="col-12 col-lg-6 nospacing right-col">
+        <div class="w-100 p-5">
+            <h1 class="mb-4">Some of what is on my GitHub:</h1>
+
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Colt Steele Advanced Bootcamp</h5>
+                    <p class="card-text text-muted">Notes, exercises and small projects from this udemy course covering ES2017, modern CSS, ajax, testing, OOP and more.</p>
+                    <a class="mr-3" target="_blank" href="https://github.com/ClintWinter/colt-steele-advanced">
+                        <i class="fas fa-external-link-alt"></i>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Todo App</h5>
+                    <p class="card-text text-muted">SPA todo app using Node.js, MySQL, Express and vanilla JavaScript for the front end.</p>
+                    <a class="mr-3" target="_blank" href="https://github.com/ClintWinter/todo-app">
+                        <i class="fas fa-external-link-alt"></i>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+
+            <div class="card mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Blog</h5>
+                    <p class="card-text text-muted">Blog site using RESTful routing and a login system with authentication. Built with Node.js, Express and MongoDB. </p>
+                    <a class="mr-3" target="_blank" href="https://github.com/ClintWinter/Blog">
+                        <i class="fas fa-external-link-alt"></i>
+                        GitHub
+                    </a>
+                    <a class="mr-3" target="_blank" href="https://serene-savannah-17802.herokuapp.com/">
+                        <i class="fas fa-external-link-alt"></i>
+                        Launch
+                    </a>
+                </div>
+            </div>
+
         </div>
     </div>
 

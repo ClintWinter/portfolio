@@ -1,5 +1,5 @@
 body {
-    height: 100vh;
+    // height: 100vh;
     // background-color: #150844;
     // background: radial-gradient(ellipse, #210e63 40%, #150844 100%) no-repeat fixed top center;
     background-color: #FBFEF9;
@@ -21,6 +21,7 @@ p {
 
 a {
     color: #A63446;
+    text-decoration: underline;
 
     &:hover {
         color: #882534;
@@ -37,20 +38,54 @@ a {
     }
 }
 
+.left-col {
+
+    .display-1 {
+        line-height: 1;
+    }
+}
+
+.right-col {
+    background-color: #28536B;
+    height: 100vh;
+
+    h1 {
+        color: #FBFEF9;
+    }
+
+    .card {
+        background-color: #011627;
+    }
+
+    .card .card-title {
+        font-size: 22px;
+        color: #FBFEF9;
+    }
+
+    .card .card-subtitle {
+        font-size: 20px;
+        color: #FBFEF9;
+    }
+
+    .card .card-text {
+        color: #FBFEF9;
+        font-size: 14px;
+    }
+}
+
 .profile-img {
-    max-height: 200px;
+    max-height: 175px;
 }
 
 .sm-links {
     font-size: 40px;
+
+    a {
+        line-height: 25px;
+    }
 }
 
 .nospacing {
     padding: 0 !important;
     margin: 0 !important;
-}
-
-.content-box {
-    background-color: #99BCDE;
-    box-shadow: 0px 25px 60px rgba(37, 48, 58, 0.3); 
 }

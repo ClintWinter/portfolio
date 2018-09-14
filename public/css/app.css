@@ -10472,7 +10472,6 @@ a.text-dark:focus {
 }
 
 body {
-  height: 100vh;
   background-color: #FBFEF9;
 }
 
@@ -10498,6 +10497,7 @@ p {
 
 a {
   color: #A63446;
+  text-decoration: underline;
 }
 
 a:hover {
@@ -10514,23 +10514,53 @@ a i:hover {
   text-decoration: none;
 }
 
+.left-col .display-1 {
+  line-height: 1;
+}
+
+.right-col {
+  background-color: #28536B;
+  height: 100vh;
+}
+
+.right-col h1 {
+  color: #FBFEF9;
+}
+
+.right-col .card {
+  background-color: #011627;
+}
+
+.right-col .card .card-title {
+  font-size: 22px;
+  color: #FBFEF9;
+}
+
+.right-col .card .card-subtitle {
+  font-size: 20px;
+  color: #FBFEF9;
+}
+
+.right-col .card .card-text {
+  color: #FBFEF9;
+  font-size: 14px;
+}
+
 .profile-img {
-  max-height: 200px;
+  max-height: 175px;
 }
 
 .sm-links {
   font-size: 40px;
 }
 
+.sm-links a {
+  line-height: 25px;
+}
+
 .nospacing {
   padding: 0 !important;
   margin: 0 !important;
-}
-
-.content-box {
-  background-color: #99BCDE;
-  -webkit-box-shadow: 0px 25px 60px rgba(37, 48, 58, 0.3);
-          box-shadow: 0px 25px 60px rgba(37, 48, 58, 0.3);
 }
 
 .navbar-laravel {
