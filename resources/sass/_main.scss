@@ -40,14 +40,22 @@ a {
 
 .left-col {
 
-    .display-1 {
+    .display-3 {
         line-height: 1;
+    }
+
+    .summary {
+        max-width: 700px;
     }
 }
 
 .right-col {
     background-color: #28536B;
-    height: 100vh;
+    // height: 100vh;
+
+    @media (min-width: 992px) {
+        height: 100vh;
+    }
 
     h1 {
         color: #FBFEF9;

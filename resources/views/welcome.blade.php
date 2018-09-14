@@ -3,19 +3,19 @@
 
 <div class="row m-0 p-0">
 
-    <div class="col-12 col-lg-6 m-0 pl-3 pt-3 pb-3 left-col">
-        <div class="d-flex justify-content-between mb-5">
+    <div class="col-12 col-lg-6 m-0 p-3 p-md-4 p-xl-5 left-col d-flex flex-column">
+        <div class="d-flex flex-wrap mb-5 w-100">
             <img src="/images/linkedin.jpg" class="profile-img img-thumbnail mr-3">
             <div class="d-flex flex-column">
-                <h1 class="display-1 text-right">Clint Winter</h1>
-                <div class="sm-links d-flex justify-content-end">
+                <h1 class="display-3 text-center text-lg-right">Clint Winter</h1>
+                <div class="sm-links d-flex">
                     <a class="px-2" target="_blank" href="https://github.com/clintwinter"><i class="fab fa-github-square"></i></a>
                     <a class="px-2" target="_blank" href="https://linkedin.com/in/clint-winter"><i class="fab fa-linkedin"></i></a>
                 </div>
             </div>
         </div>
         {{-- <hr class="bg-dark"> --}}
-        <div class="p-3">
+        <div class="p-3 summary">
             <p>Greetings!</p>
 
             <p>My name is Clint Winter, and I'm currently a full-stack web developer for <a target="_blank" href="https://cwrdistribution.com">CWR Wholesale Distribution</a>. I'm motivated to master the technologies and languages I know and continue adding new ones to my toolbelt. I've begun to add my projects and notes to my <a target="_blank" href="https://github.com/clintwinter">GitHub</a> account.</p>
@@ -27,7 +27,7 @@
     </div>
 
     <div class="col-12 col-lg-6 nospacing right-col">
-        <div class="w-100 p-5">
+        <div class="w-100 p-3 p-md-4 p-xl-5">
             <h1 class="mb-4">Some of what is on my GitHub:</h1>
 
             <div class="card mb-3">

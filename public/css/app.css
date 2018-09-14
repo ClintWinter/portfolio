@@ -10514,13 +10514,22 @@ a i:hover {
   text-decoration: none;
 }
 
-.left-col .display-1 {
+.left-col .display-3 {
   line-height: 1;
+}
+
+.left-col .summary {
+  max-width: 700px;
 }
 
 .right-col {
   background-color: #28536B;
-  height: 100vh;
+}
+
+@media (min-width: 992px) {
+  .right-col {
+    height: 100vh;
+  }
 }
 
 .right-col h1 {
