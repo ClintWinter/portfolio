@@ -18,7 +18,7 @@
         <div class="p-3 summary">
             <p>Greetings!</p>
 
-            <p>My name is Clint Winter, and I'm currently a full-stack web developer for <a target="_blank" href="https://cwrdistribution.com">CWR Wholesale Distribution</a>. I'm motivate to continue learning new technologies and languages to add to my tool belt, and striving to master the ones I already know. I've recently added my projects and notes to my <a target="_blank" href="https://github.com/clintwinter">GitHub</a> account.</p>
+            <p>My name is Clint Winter, and I'm currently a full-stack web developer in New Jersey working for <a target="_blank" href="https://cwrdistribution.com">CWR Wholesale Distribution</a>. I'm motivated to continue learning new technologies and languages to add to my tool belt, and striving to master the ones I already know. I've recently added my projects and notes to my <a target="_blank" href="https://github.com/clintwinter">GitHub</a> account.</p>
 
             <p>I'm currently improving my Laravel skills (this portfolio is using it), and I'm planning on learning Vue next!</p>
 
@@ -28,7 +28,7 @@
 
     <div class="col-12 col-lg-6 nospacing right-col">
         <div class="w-100 p-3 p-md-4 p-xl-5">
-            <h1 class="mb-4">Some of what is on my GitHub:</h1>
+            <h1 class="mb-4">GitHub Highlights:</h1>
 
             <div class="card mb-3">
                 <div class="card-body">
