@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
 
-<div class="row m-0 p-0">
+<div class="welcome-page row m-0 p-0">
 
     <div class="col-12 col-lg-6 m-0 p-3 p-md-4 p-xl-5 left-col d-flex flex-column">
         <div class="d-flex flex-wrap mb-5 w-100">
@@ -18,7 +18,7 @@
         <div class="p-3 summary">
             <p>Greetings!</p>
 
-            <p>My name is Clint Winter, and I'm currently a full-stack web developer for <a target="_blank" href="https://cwrdistribution.com">CWR Wholesale Distribution</a>. I'm motivated to master the technologies and languages I know and continue adding new ones to my toolbelt. I've begun to add my projects and notes to my <a target="_blank" href="https://github.com/clintwinter">GitHub</a> account.</p>
+            <p>My name is Clint Winter, and I'm currently a full-stack web developer for <a target="_blank" href="https://cwrdistribution.com">CWR Wholesale Distribution</a>. I'm motivate to continue learning new technologies and languages to add to my tool belt, and striving to master the ones I already know. I've recently added my projects and notes to my <a target="_blank" href="https://github.com/clintwinter">GitHub</a> account.</p>
 
             <p>I'm currently improving my Laravel skills (this portfolio is using it), and I'm planning on learning Vue next!</p>
 

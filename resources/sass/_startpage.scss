@@ -1,0 +1,102 @@
+.start-page {
+    background-image: url('../images/utah-1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+
+    // .bg-image {
+    //     background-image: ;
+    //     background-repeat: no-repeat;
+    //     background-position: center 25%;
+    //     background-size: cover;
+    //     filter: grayscale(0%);
+    
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     right: 0;
+    //     bottom: 0;
+    // }
+
+    div.banner {
+        min-height: 30vh;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    div.banner .background {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        z-index: -10;
+    }
+
+    div.banner .skin {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        z-index: -9;
+    }
+
+    div.banner h1 {
+        color: $powder;
+        text-shadow: 2px 2px 5px black;
+        padding: 25px;
+    }
+
+    section.links {
+        width: 100%;
+        // padding: 80px;
+    
+        // display: flex;
+        // justify-content: center;
+        // align-items: flex-start;
+    
+        position: relative;
+    }
+    
+    section.card {
+        align-self: stretch;
+    
+        /* background-color: #FDFFFC;
+        border: 5px solid #ED1C24;
+        box-shadow: 10px 14px 0 4px rgba(2, 1, 0, 0.6); */
+        background-color: rgba(255, 255, 255, 0.7);
+        box-shadow: 0 30px 90px rgba(0, 0, 0, 0.5);
+    }
+    
+    section.card h2 {
+        margin: 0;
+        padding: 0;
+        margin-bottom: 30px;
+    
+        color: $slateblue;
+        font-size: 1.6rem;
+    }
+    
+    section.card ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+    
+    section.card li {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+    
+    section.card li a i {
+        width: 35px;
+        color: $slateblue;
+        font-size: 1.5rem;
+    }
+}

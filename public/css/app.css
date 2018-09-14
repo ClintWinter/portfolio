@@ -10505,6 +10505,15 @@ a:hover {
   text-decoration: underline;
 }
 
+a span {
+  color: #A63446;
+}
+
+a span:hover {
+  color: #882534;
+  text-decoration: underline;
+}
+
 a i {
   color: #A63446;
 }
@@ -10514,62 +10523,149 @@ a i:hover {
   text-decoration: none;
 }
 
-.left-col .display-3 {
+.nospacing {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.welcome-page .left-col .display-3 {
   line-height: 1;
 }
 
-.left-col .summary {
+.welcome-page .left-col .summary {
   max-width: 700px;
 }
 
-.right-col {
+.welcome-page .right-col {
   background-color: #28536B;
 }
 
 @media (min-width: 992px) {
-  .right-col {
+  .welcome-page .right-col {
     height: 100vh;
   }
 }
 
-.right-col h1 {
+.welcome-page .right-col h1 {
   color: #FBFEF9;
 }
 
-.right-col .card {
+.welcome-page .right-col .card {
   background-color: #011627;
 }
 
-.right-col .card .card-title {
+.welcome-page .right-col .card .card-title {
   font-size: 22px;
   color: #FBFEF9;
 }
 
-.right-col .card .card-subtitle {
+.welcome-page .right-col .card .card-subtitle {
   font-size: 20px;
   color: #FBFEF9;
 }
 
-.right-col .card .card-text {
+.welcome-page .right-col .card .card-text {
   color: #FBFEF9;
   font-size: 14px;
 }
 
-.profile-img {
+.welcome-page .profile-img {
   max-height: 175px;
 }
 
-.sm-links {
+.welcome-page .sm-links {
   font-size: 40px;
 }
 
-.sm-links a {
+.welcome-page .sm-links a {
   line-height: 25px;
 }
 
-.nospacing {
-  padding: 0 !important;
-  margin: 0 !important;
+.start-page {
+  background-image: url(/images/utah-1.jpg?0927229100ef9f4f015b734b78880ed7);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+.start-page div.banner {
+  min-height: 30vh;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.start-page div.banner .background {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -10;
+}
+
+.start-page div.banner .skin {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -9;
+}
+
+.start-page div.banner h1 {
+  color: #FBFEF9;
+  text-shadow: 2px 2px 5px black;
+  padding: 25px;
+}
+
+.start-page section.links {
+  width: 100%;
+  position: relative;
+}
+
+.start-page section.card {
+  -ms-flex-item-align: stretch;
+      align-self: stretch;
+  /* background-color: #FDFFFC;
+        border: 5px solid #ED1C24;
+        box-shadow: 10px 14px 0 4px rgba(2, 1, 0, 0.6); */
+  background-color: rgba(255, 255, 255, 0.7);
+  -webkit-box-shadow: 0 30px 90px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 30px 90px rgba(0, 0, 0, 0.5);
+}
+
+.start-page section.card h2 {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 30px;
+  color: #28536B;
+  font-size: 1.6rem;
+}
+
+.start-page section.card ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.start-page section.card li {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.start-page section.card li a i {
+  width: 35px;
+  color: #28536B;
+  font-size: 1.5rem;
 }
 
 .navbar-laravel {
