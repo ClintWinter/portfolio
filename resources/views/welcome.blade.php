@@ -28,7 +28,11 @@
 
     <div class="col-12 col-lg-6 nospacing right-col">
         <div class="w-100 p-3 p-md-4 p-xl-5">
+<<<<<<< HEAD
             <h1 class="mb-4">Github Samples:</h1>
+=======
+            <h1 class="mb-4">GitHub Highlights:</h1>
+>>>>>>> b4346bdce2b60189e7eeabe527924a5b82fb7d92
 
             <div class="card mb-3">
                 <div class="card-body">
