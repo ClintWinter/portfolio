@@ -1,18 +1,15 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
- */
+use App\Services\Github;
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function (Github $github) {
+    $repos = json_decode($github->get('repos'));
+
+    usort($repos, function ($a, $b) {
+        return $b->watchers > $a->watchers;
+    });
+
+    return view('welcome', compact('repos'));
 });
 
 Route::get('/startpage', function () {

@@ -10487,7 +10487,13 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+h1 > a,
+h2 > a,
+h3 > a,
+h4 > a,
+h5 > a,
+h6 > a {
   font-family: 'Oswald', 'Helvetica', sans-serif;
 }
 
@@ -10523,6 +10529,10 @@ a i:hover {
   text-decoration: none;
 }
 
+.overflow-y-scroll {
+  overflow-y: scroll;
+}
+
 .nospacing {
   padding: 0 !important;
   margin: 0 !important;
@@ -10547,16 +10557,22 @@ a i:hover {
 }
 
 .welcome-page .right-col h1 {
-  color: #FBFEF9;
+  color: rgba(252, 254, 251, 0.4);
+  font-size: 22px;
+  letter-spacing: 2px;
 }
 
 .welcome-page .right-col .card {
   background-color: #011627;
 }
 
-.welcome-page .right-col .card .card-title {
+.welcome-page .right-col .card .card-title a {
   font-size: 22px;
   color: #FBFEF9;
+}
+
+.welcome-page .right-col .card .card-title a:hover {
+  color: #c3c9be;
 }
 
 .welcome-page .right-col .card .card-subtitle {
@@ -10567,6 +10583,14 @@ a i:hover {
 .welcome-page .right-col .card .card-text {
   color: #FBFEF9;
   font-size: 14px;
+}
+
+.welcome-page .right-col .card .github-stats {
+  color: #A63446;
+}
+
+.welcome-page .right-col .card .github-stats i {
+  color: #A63446;
 }
 
 .welcome-page .profile-img {
@@ -10622,7 +10646,7 @@ a i:hover {
 }
 
 .start-page div.banner h1 {
-  color: #FBFEF9;
+  color: #fcfefa;
   text-shadow: 2px 2px 5px black;
   padding: 25px;
 }

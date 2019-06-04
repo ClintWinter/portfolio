@@ -19,16 +19,24 @@
         }
 
         h1 {
-            color: #FBFEF9;
+            color: $powder-transparent;
+            font-size: 22px;
+            // text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         .card {
             background-color: $darkblue;
         }
 
-        .card .card-title {
+        .card .card-title a {
             font-size: 22px;
             color: #FBFEF9;
+            // text-decoration: none;
+
+            &:hover {
+               color: #c3c9be;
+            }
         }
 
         .card .card-subtitle {
@@ -40,6 +48,14 @@
             color: #FBFEF9;
             font-size: 14px;
         }
+
+         .card .github-stats {
+            color: $sweet-red;
+
+            i {
+               color: $sweet-red;
+            }
+         }
     }
 
     .profile-img {
