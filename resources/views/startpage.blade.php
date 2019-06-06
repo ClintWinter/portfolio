@@ -1,15 +1,17 @@
 @extends('layouts.master')
 @section('content')
 
-<div class="start-page row nospacing align-items-start">
+<div class="start-page row nospacing d-flex flex-column align-items-center">
 
-    <div class="bg-image"></div>
+    <form method="GET" action="https://google.com/search">
+        @csrf
+        <div class="banner px-5">
+            <input id="searchbox" name="q" type="text" placeholder="Search">
+            <button id="searchbox-button" type="submit"><i class="fas fa-search"></i></button>
+        </div>
+    </form>
 
-    <div class="banner flex-grow-1">
-        <h1 class="display-1">Quick Links</h1>        
-    </div>
-
-    <section class="links d-flex justify-content-center align-items-start flex-wrap p-2 p-lg-5">
+    <section class="links flex-grow-1 d-flex justify-content-center align-items-start flex-wrap px-3">
     </section>
 </div>
 
