@@ -2,14 +2,18 @@
 
 use App\Services\Github;
 
-Route::get('/', function (Github $github) {
-    $repos = json_decode($github->get('repos'));
+Route::get('/', function() {
+    return redirect('/portfolio');
+});
 
-    usort($repos, function ($a, $b) {
-        return $b->watchers > $a->watchers;
-    });
+Route::get('/portfolio', function () {
+    // $repos = json_decode($github->get('repos'));
 
-    return view('welcome', compact('repos'));
+    // usort($repos, function ($a, $b) {
+    //     return $b->watchers > $a->watchers;
+    // });
+
+    return view('welcome');
 });
 
 Route::get('/startpage', function () {

@@ -1,72 +1,58 @@
 .welcome-page {
-    .left-col {
 
-        .display-3 {
-            line-height: 1;
-        }
-
-        .summary {
-            max-width: 700px;
-        }
+    .hero {
+        background: linear-gradient(to right, hsl(170, 50%, 50%), hsl(190, 50%, 60%));
     }
 
-    .right-col {
-        background-color: $slateblue;
-        // height: 100vh;
-
-        @media (min-width: 992px) {
-            height: 100vh;
-        }
-
-        h1 {
-            color: $powder-transparent;
-            font-size: 22px;
-            // text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .card {
-            background-color: $darkblue;
-        }
-
-        .card .card-title a {
-            font-size: 22px;
-            color: #FBFEF9;
-            // text-decoration: none;
-
-            &:hover {
-               color: #c3c9be;
-            }
-        }
-
-        .card .card-subtitle {
-            font-size: 20px;
-            color: #FBFEF9;
-        }
-
-        .card .card-text {
-            color: #FBFEF9;
-            font-size: 14px;
-        }
-
-         .card .github-stats {
-            color: $sweet-red;
-
-            i {
-               color: $sweet-red;
-            }
-         }
+    .display-3 {
+        line-height: 1;
+        color: white;
+        text-shadow: 2px 0 4px rgba(0,0,0,0.15);
+    }
+    
+    .display-6 small {
+        line-height: 1;
+        color: hsla(0, 100%, 100%, 0.7);
+        text-shadow: 2px 0 4px rgba(0,0,0,0.15);
     }
 
-    .profile-img {
-        max-height: 175px;
+    .sm-links i {
+        color: white;
+        font-size: 200%;
     }
 
-    .sm-links {
-        font-size: 40px;
+    .quote {
+        background-color: #ffffff;
+    }
 
-        a {
-            line-height: 25px;
+    .quote p {
+        max-width: 600px;
+        line-height: 1.75;
+    }
+
+    .quote em {
+        color: #666;
+    }
+
+    .off-color {
+        background-color: #f1f2f6;
+        min-height: 20vh;
+    }
+
+    .media {
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+
+        i {
+            color: #2ed573;
+            text-shadow: 1px 0 1px rgba(0,0,0,0.15);
         }
     }
 }

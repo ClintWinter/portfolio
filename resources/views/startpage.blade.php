@@ -3,7 +3,7 @@
 
 <div class="start-page row nospacing d-flex flex-column align-items-center">
 
-    <form method="GET" action="https://google.com/search">
+    <form method="GET" action="https://google.com/search" class="d-flex justify-content-center">
         @csrf
         <div class="banner px-5">
             <input id="searchbox" name="q" type="text" placeholder="Search">

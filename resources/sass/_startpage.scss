@@ -2,11 +2,13 @@
     min-height: 100vh;
 
     form {
-        width: 75%;
+        width: 100%;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.15);
     }
 
     div.banner {
         padding: 50px 0;
+        width: 75%;
         position: relative;
         display: flex;
         justify-content: center;
