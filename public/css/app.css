@@ -11644,6 +11644,22 @@ a.text-dark:focus {
   }
 }
 
+html {
+  font-size: 16px;
+}
+
+@media (max-width: 900px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  html {
+    font-size: 8px;
+  }
+}
+
 body {
   background-color: #ffffff;
 }
@@ -11668,10 +11684,6 @@ h4 > a,
 h5 > a,
 h6 > a {
   font-family: 'Oswald', 'Helvetica', sans-serif;
-}
-
-p {
-  font-size: 16px;
 }
 
 a {
@@ -11711,7 +11723,7 @@ a i:hover {
   margin: 0 !important;
 }
 
-.welcome-page .hero {
+.welcome-page header {
   background: -webkit-gradient(linear, left top, right top, from(#40bfaa), to(#66bbcc));
   background: linear-gradient(to right, #40bfaa, #66bbcc);
 }
@@ -11730,7 +11742,8 @@ a i:hover {
 
 .welcome-page .sm-links i {
   color: white;
-  font-size: 200%;
+  font-size: 2rem;
+  text-shadow: 2px 0 4px rgba(0, 0, 0, 0.15);
 }
 
 .welcome-page .quote {
@@ -11752,11 +11765,19 @@ a i:hover {
 }
 
 .welcome-page .media {
-  border: 1px solid #ddd;
   border-radius: 4px;
   background-color: #fff;
-  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 1px 7px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 7px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-page .media .img {
+  border-radius: 2px;
+  height: 200px;
+  width: 300px;
+  background-color: #888;
+  -webkit-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
 }
 
 .welcome-page ul {
@@ -11766,7 +11787,7 @@ a i:hover {
 
 .welcome-page ul i {
   color: #2ed573;
-  text-shadow: 1px 0 1px rgba(0, 0, 0, 0.15);
+  text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
 }
 
 .start-page {

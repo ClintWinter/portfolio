@@ -1,6 +1,6 @@
 .welcome-page {
 
-    .hero {
+    header {
         background: linear-gradient(to right, hsl(170, 50%, 50%), hsl(190, 50%, 60%));
     }
 
@@ -18,7 +18,8 @@
 
     .sm-links i {
         color: white;
-        font-size: 200%;
+        font-size: 2rem;
+        text-shadow: 2px 0 4px rgba(0,0,0,0.15);
     }
 
     .quote {
@@ -27,6 +28,7 @@
 
     .quote p {
         max-width: 600px;
+        // font-size: 1rem;
         line-height: 1.75;
     }
 
@@ -40,10 +42,17 @@
     }
 
     .media {
-        border: 1px solid #ddd;
         border-radius: 4px;
         background-color: #fff;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+        box-shadow: 0 1px 7px rgba(0,0,0,0.1);
+
+        .img {
+            border-radius: 2px; 
+            height: 200px; 
+            width: 300px; 
+            background-color: #888; 
+            box-shadow: 0px 1px 4px rgba(0,0,0,0.1);
+        }
     }
 
     ul {
@@ -52,7 +61,7 @@
 
         i {
             color: #2ed573;
-            text-shadow: 1px 0 1px rgba(0,0,0,0.15);
+            text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
         }
     }
 }
