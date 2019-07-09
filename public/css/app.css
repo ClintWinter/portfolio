@@ -11687,30 +11687,34 @@ h6 > a {
 }
 
 a {
-  color: #A63446;
-  text-decoration: underline;
+  color: #3490dc;
+  text-decoration: none;
 }
 
 a:hover {
-  color: #882534;
+  color: #1d68a7;
   text-decoration: underline;
 }
 
+a:visited {
+  color: #3490dc;
+}
+
 a span {
-  color: #A63446;
+  color: #3490dc;
 }
 
 a span:hover {
-  color: #882534;
+  color: #1d68a7;
   text-decoration: underline;
 }
 
 a i {
-  color: #A63446;
+  color: #3490dc;
 }
 
 a i:hover {
-  color: #882534;
+  color: #1d68a7;
   text-decoration: none;
 }
 
@@ -11788,6 +11792,49 @@ a i:hover {
 .welcome-page ul i {
   color: #2ed573;
   text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none !important;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.modal:target {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  pointer-events: auto;
+}
+
+.modal .mask {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.modal .modal-window {
+  background-color: white;
+  -webkit-box-shadow: 0 1px 7px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 7px rgba(0, 0, 0, 0.1);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  min-height: 250px;
+  min-width: 80%;
+  border-radius: 4px;
+  z-index: 101;
+}
+
+.modal .modal-header {
+  border-bottom: 1px solid #bbb;
 }
 
 .start-page {

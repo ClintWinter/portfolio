@@ -20,34 +20,49 @@
     <div class="col-12 off-color py-5 px-2 px-md-5">
         <h2 class="mb-5">Projects</h2>
         <div class="projects col-12 d-flex flex-column align-items-center">
-            <div class="media mb-5 p-3 col col-md-10">
+            <div class="media mb-5 p-3 col col-md-10 d-flex">
                 <div class="img mr-3 align-self-start"></div>
-                <div class="media-body">
-                    <h5 class="mt-0">Title</h5>
-                    <p class="mb-3">This is the description</p>
-                    <div class="buttons d-flex">
+                <div class="media-body d-flex flex-column justify-content-between align-self-stretch">
+                    <div class="media-top">
+                        <h5 class="mt-0">Title</h5>
+                        <p class="mb-3">
+                            This is the description
+                            <br><a href="#modal" style="padding: 0;"><small style="color: inherit;">View Details</small></a>
+                        </p>
+                    </div>
+                    <div class="media-bottom buttons d-flex">
                         <button class="btn btn-sm btn-primary mr-1">View</button>
                         <button class="btn btn-sm btn-link">Source</button>
                     </div>
                 </div>
             </div>
-            <div class="media mb-5 p-3 col col-md-10">
+            <div class="media mb-5 p-3 col col-md-10 d-flex">
                 <div class="img mr-3 align-self-start"></div>
-                <div class="media-body">
-                    <h5 class="mt-0">Title</h5>
-                    <p class="mb-3">This is the description</p>
-                    <div class="buttons d-flex">
+                <div class="media-body d-flex flex-column justify-content-between align-self-stretch">
+                    <div class="media-top">
+                        <h5 class="mt-0">Title</h5>
+                        <p class="mb-3">
+                            This is the description
+                            <br><a href="#modal" style="padding: 0;"><small style="color: inherit;">View Details</small></a>
+                        </p>
+                    </div>
+                    <div class="media-bottom buttons d-flex">
                         <button class="btn btn-sm btn-primary mr-1">View</button>
                         <button class="btn btn-sm btn-link">Source</button>
                     </div>
                 </div>
             </div>
-            <div class="media mb-5 p-3 col col-md-10">
+            <div class="media mb-5 p-3 col col-md-10 d-flex">
                 <div class="img mr-3 align-self-start"></div>
-                <div class="media-body">
-                    <h5 class="mt-0">Title</h5>
-                    <p class="mb-3">This is the description</p>
-                    <div class="buttons d-flex">
+                <div class="media-body d-flex flex-column justify-content-between align-self-stretch">
+                    <div class="media-top">
+                        <h5 class="mt-0">Title</h5>
+                        <p class="mb-3">
+                            This is the description
+                            <br><a href="#modal" style="padding: 0;"><small style="color: inherit;">View Details</small></a>
+                        </p>
+                    </div>
+                    <div class="media-bottom buttons d-flex">
                         <button class="btn btn-sm btn-primary mr-1">View</button>
                         <button class="btn btn-sm btn-link">Source</button>
                     </div>
@@ -87,6 +102,20 @@
         </div>
     </div>
 
+</div>
+
+<div id="modal" class="modal d-flex justify-content-center align-items-center">
+    <div class="mask"></div>
+    <div class="modal-window d-flex flex-column">
+        <div class="modal-header d-flex justify-content-between p-3">
+            <h3>Title</h3>
+            <a class="btn btn-xs btn-link" href="#">Close</a>
+        </div>
+        <div class="modal-body p-3">
+            <p>These are the details</p>
+        </div>
+        <div class="modal-footer p-3"></div>
+    </div>
 </div>
 
 @endsection
