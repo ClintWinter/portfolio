@@ -1,3 +1,15 @@
+html {
+    font-size: 16px;
+    
+    @media (max-width: 900px) {
+        font-size: 12px;
+    }
+
+    @media (max-width: 400px) {
+        font-size: 8px;
+    }
+}
+
 body {
     background-color: $white;
 }
@@ -13,33 +25,33 @@ h1>a, h2>a, h3>a, h4>a, h5>a, h6>a {
     font-family: 'Oswald', 'Helvetica', sans-serif;
 }
 
-p {
-    font-size: 16px;
-}
-
 a {
-    color: $sweet-red;
-    text-decoration: underline;
+    color: #3490dc;
+    text-decoration: none;
 
     &:hover {
-        color: #882534;
+        color: #1d68a7;
         text-decoration: underline;
     }
 
+    &:visited {
+        color: #3490dc;
+    }
+
     span {
-        color: $sweet-red;
+        color: #3490dc;
 
         &:hover {
-            color: #882534;
+            color: #1d68a7;
             text-decoration: underline;
         }
     }
 
     i {
-        color: $sweet-red;
+        color: #3490dc;
 
         &:hover {
-            color: #882534;
+            color: #1d68a7;
             text-decoration: none;
         }
     }

@@ -11646,6 +11646,22 @@ a.text-dark:focus {
   }
 }
 
+html {
+  font-size: 16px;
+}
+
+@media (max-width: 900px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 400px) {
+  html {
+    font-size: 8px;
+  }
+}
+
 body {
   background-color: #ffffff;
 }
@@ -11672,35 +11688,35 @@ h6 > a {
   font-family: 'Oswald', 'Helvetica', sans-serif;
 }
 
-p {
-  font-size: 16px;
-}
-
 a {
-  color: #A63446;
-  text-decoration: underline;
+  color: #3490dc;
+  text-decoration: none;
 }
 
 a:hover {
-  color: #882534;
+  color: #1d68a7;
   text-decoration: underline;
 }
 
+a:visited {
+  color: #3490dc;
+}
+
 a span {
-  color: #A63446;
+  color: #3490dc;
 }
 
 a span:hover {
-  color: #882534;
+  color: #1d68a7;
   text-decoration: underline;
 }
 
 a i {
-  color: #A63446;
+  color: #3490dc;
 }
 
 a i:hover {
-  color: #882534;
+  color: #1d68a7;
   text-decoration: none;
 }
 
@@ -11713,7 +11729,7 @@ a i:hover {
   margin: 0 !important;
 }
 
-.welcome-page .hero {
+.welcome-page header {
   background: -webkit-gradient(linear, left top, right top, from(#40bfaa), to(#66bbcc));
   background: linear-gradient(to right, #40bfaa, #66bbcc);
 }
@@ -11732,7 +11748,8 @@ a i:hover {
 
 .welcome-page .sm-links i {
   color: white;
-  font-size: 200%;
+  font-size: 2rem;
+  text-shadow: 2px 0 4px rgba(0, 0, 0, 0.15);
 }
 
 .welcome-page .quote {
@@ -11754,11 +11771,19 @@ a i:hover {
 }
 
 .welcome-page .media {
-  border: 1px solid #ddd;
   border-radius: 4px;
   background-color: #fff;
-  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  -webkit-box-shadow: 0 1px 7px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 7px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-page .media .img {
+  border-radius: 2px;
+  height: 200px;
+  width: 300px;
+  background-color: #888;
+  -webkit-box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
 }
 
 .welcome-page ul {
@@ -11768,7 +11793,50 @@ a i:hover {
 
 .welcome-page ul i {
   color: #2ed573;
-  text-shadow: 1px 0 1px rgba(0, 0, 0, 0.15);
+  text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none !important;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.modal:target {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  pointer-events: auto;
+}
+
+.modal .mask {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.modal .modal-window {
+  background-color: white;
+  -webkit-box-shadow: 0 1px 7px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 1px 7px rgba(0, 0, 0, 0.1);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  min-height: 250px;
+  min-width: 80%;
+  border-radius: 4px;
+  z-index: 101;
+}
+
+.modal .modal-header {
+  border-bottom: 1px solid #bbb;
 }
 
 .start-page {
