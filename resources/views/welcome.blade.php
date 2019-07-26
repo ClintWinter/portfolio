@@ -7,9 +7,9 @@
         <h1 class="display-3 text-center text-6xl font-semibold">Clint Winter</h1>
         <h2 class="display-6 text-center text-3xl mb-4 opacity-50 leading-none"><small>( cwinter.web@gmail.com )</small></h2>
         <p class="flex items-center text-4xl leading-loose">
-            <a href="https://github.com/clintwinter" class="mx-3" target="_blank" rel="noopener noreferrer"><i class="fab fa-github-square"></i></a>
-            <a href="https://linkedin.com/in/clint-winter" class="mx-3" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-            <a href="{{ Storage::url('ClintWinterResume.pdf') }}" class="mx-3" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i></a>
+            <a aria-label="Github in new tab" href="https://github.com/clintwinter" class="mx-3" target="_blank" rel="noopener noreferrer"><i class="fab fa-github-square"></i></a>
+            <a aria-label="LinkedIn in new tab" href="https://linkedin.com/in/clint-winter" class="mx-3" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
+            <a aria-label="View PDF resume in new tab" href="{{ Storage::url('ClintWinterResume.pdf') }}" class="mx-3" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i></a>
             {{-- <a href="{{ Storage::url('ClintWinterResume.pdf') }}" class="mx-3" download><i class="fas fa-file-download"></i></a> --}}
         </p>
     </header>
