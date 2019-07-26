@@ -1,4 +1,4 @@
 require('./bootstrap');
 
 // modules
-require('./modules/startpage')();
+// require('./modules/startpage')();
