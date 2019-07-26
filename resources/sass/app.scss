@@ -1,19 +1,19 @@
+@tailwind base;
 
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Montserrat|Oswald:400,500');
+@tailwind components;
 
-// Variables
-@import 'variables';
+@import 'modal';
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
-
-// Partials
-@import 'main';
-@import 'index';
-@import 'startpage';
-
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+html {
+  font-family: 'Roboto';
 }
+
+.bg-gradient {
+  background: linear-gradient(to right, hsl(170, 50%, 50%), hsl(190, 50%, 60%));
+}
+
+.text-shadow {
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
+}
+
+@tailwind utilities;
