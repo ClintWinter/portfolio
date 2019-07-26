@@ -1,18 +1,10 @@
 <?php
 
-use App\Services\Github;
-
 Route::get('/', function() {
     return redirect('/portfolio');
 });
 
 Route::get('/portfolio', function () {
-    // $repos = json_decode($github->get('repos'));
-
-    // usort($repos, function ($a, $b) {
-    //     return $b->watchers > $a->watchers;
-    // });
-
     return view('welcome');
 });
 

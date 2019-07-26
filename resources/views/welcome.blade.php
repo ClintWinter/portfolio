@@ -81,7 +81,7 @@
                 <ul class="text-gray-700">
                     <li class="mb-2"><i class="fas fa-check mr-3 text-teal-400 text-shadow"></i>Vue.js</li>
                     <li class="mb-2"><i class="fas fa-check mr-3 text-teal-400 text-shadow"></i>JavaScript</li>
-                    <li class="mb-2"><i class="fas fa-check mr-3 text-teal-400 text-shadow"></i>SASS</li>
+                    <li class="mb-2"><i class="fas fa-check mr-3 text-teal-400 text-shadow"></i>Sass/SCSS</li>
                     <li class="mb-2"><i class="fas fa-check mr-3 text-teal-400 text-shadow"></i>jQuery</li>
                     <li class="mb-2"><i class="fas fa-check mr-3 text-teal-400 text-shadow"></i>Bootstrap</li>
                     <li class="mb-2"><i class="fas fa-check mr-3 text-teal-400 text-shadow"></i>CSS3</li>
