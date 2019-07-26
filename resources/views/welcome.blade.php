@@ -9,7 +9,8 @@
         <p class="flex items-center text-4xl leading-loose">
             <a href="https://github.com/clintwinter" class="mx-3" target="_blank" rel="noopener noreferrer"><i class="fab fa-github-square"></i></a>
             <a href="https://linkedin.com/in/clint-winter" class="mx-3" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-            <a href="javascript:console.log('resume');" class="mx-3" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-alt"></i></a>
+            <a href="{{ Storage::url('ClintWinterResume.pdf') }}" class="mx-3" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i></a>
+            {{-- <a href="{{ Storage::url('ClintWinterResume.pdf') }}" class="mx-3" download><i class="fas fa-file-download"></i></a> --}}
         </p>
     </header>
 
@@ -24,12 +25,12 @@
                 <div class="flex p-3 bg-white shadow-lg w-full mb-8">
                     <div class="h-40 w-64 bg-gray-600 shadow flex-auto md:flex-none"></div>
                     <div class="flex flex-col justify-between self-stretch px-3">
-                        <div>
+                        <div class="mb-8">
                             <h5 class="leading-none mb-2 text-lg text-gray-800 font-semibold">Title</h5>
-                            <p class="mb-3 text-md text-gray-700">
+                            <p class="mb-2 text-md text-gray-700">
                                 This is a very basic project description for a future project...
                             </p>
-                            <p><a href="#modal-container"><small class="text-teal-500 hover:underline">Details</small></a></p>
+                            <p class="leading-none"><a href="#modal-container"><small class="text-teal-500 hover:underline">Details</small></a></p>
                         </div>
                         <div class="flex">
                             <button class="px-4 py-2 leading-none text-sm bg-teal-500 hover:bg-teal-600 text-white text-shadow rounded shadow">View</button>
@@ -40,12 +41,12 @@
                 <div class="flex p-3 bg-white shadow-lg w-full mb-8">
                     <div class="h-40 w-64 bg-gray-600 shadow flex-auto md:flex-none"></div>
                     <div class="flex flex-col justify-between self-stretch px-3">
-                        <div>
+                        <div class="mb-8">
                             <h5 class="leading-none mb-2 text-lg text-gray-800 font-semibold">Title</h5>
-                            <p class="mb-3 text-md text-gray-700">
+                            <p class="mb-2 text-md text-gray-700">
                                 This is a very basic project description for a future project...
                             </p>
-                            <p><a href="#modal-container"><small class="text-teal-500 hover:underline">Details</small></a></p>
+                            <p class="leading-none"><a href="#modal-container"><small class="text-teal-500 hover:underline">Details</small></a></p>
                         </div>
                         <div class="flex">
                             <button class="px-4 py-2 leading-none text-sm bg-teal-500 hover:bg-teal-600 text-white text-shadow rounded shadow">View</button>
@@ -56,12 +57,12 @@
                 <div class="flex p-3 bg-white shadow-lg w-full mb-8">
                     <div class="h-40 w-64 bg-gray-600 shadow flex-auto md:flex-none"></div>
                     <div class="flex flex-col justify-between self-stretch px-3">
-                        <div>
+                        <div class="mb-8">
                             <h5 class="leading-none mb-2 text-lg text-gray-800 font-semibold">Title</h5>
-                            <p class="mb-3 text-md text-gray-700">
+                            <p class="mb-2 text-md text-gray-700">
                                 This is a very basic project description for a future project...
                             </p>
-                            <p><a href="#modal-container"><small class="text-teal-500 hover:underline">Details</small></a></p>
+                            <p class="leading-none"><a href="#modal-container"><small class="text-teal-500 hover:underline">Details</small></a></p>
                         </div>
                         <div class="flex">
                             <button class="px-4 py-2 leading-none text-sm bg-teal-500 hover:bg-teal-600 text-white text-shadow rounded shadow">View</button>
@@ -78,20 +79,21 @@
             <div>
                 <h4 class="mb-3 text-xl font-semibold text-gray-800">Front-end</h4>
                 <ul class="text-gray-700">
-                    <li class="mb-2"><i class="fas fa-check mr-3 text-teal-400 text-shadow"></i>HTML5</li>
-                    <li class="mb-2"><i class="fas fa-check mr-3 text-teal-400 text-shadow"></i>CSS3</li>
-                    <li class="mb-2"><i class="fas fa-check mr-3 text-teal-400 text-shadow"></i>SASS</li>
+                    <li class="mb-2"><i class="fas fa-check mr-3 text-teal-400 text-shadow"></i>Vue.js</li>
                     <li class="mb-2"><i class="fas fa-check mr-3 text-teal-400 text-shadow"></i>JavaScript</li>
+                    <li class="mb-2"><i class="fas fa-check mr-3 text-teal-400 text-shadow"></i>SASS</li>
                     <li class="mb-2"><i class="fas fa-check mr-3 text-teal-400 text-shadow"></i>jQuery</li>
                     <li class="mb-2"><i class="fas fa-check mr-3 text-teal-400 text-shadow"></i>Bootstrap</li>
+                    <li class="mb-2"><i class="fas fa-check mr-3 text-teal-400 text-shadow"></i>CSS3</li>
+                    <li class="mb-2"><i class="fas fa-check mr-3 text-teal-400 text-shadow"></i>HTML5</li>
                 </ul>
             </div>
             <div>
                 <h4 class="mb-3 text-xl font-semibold text-gray-800">Back-end</h4>
                 <ul class="text-gray-700">
+                    <li class="mb-2"><i class="fas fa-check mr-3 text-teal-400 text-shadow"></i>Laravel</li>
                     <li class="mb-2"><i class="fas fa-check mr-3 text-teal-400 text-shadow"></i>PHP</li>
                     <li class="mb-2"><i class="fas fa-check mr-3 text-teal-400 text-shadow"></i>MySQL</li>
-                    <li class="mb-2"><i class="fas fa-check mr-3 text-teal-400 text-shadow"></i>Laravel</li>
                     <li class="mb-2"><i class="fas fa-check mr-3 text-teal-400 text-shadow"></i>Node.js</li>
                     <li class="mb-2"><i class="fas fa-check mr-3 text-teal-400 text-shadow"></i>Express</li>
                 </ul>
