@@ -23,50 +23,57 @@
             <h2 class="mb-8 text-xl font-semibold text-gray-800">Projects</h2>
             <div class="projects flex flex-col items-stretch w-full">
                 <div class="flex p-3 bg-white shadow-lg w-full mb-8">
-                    <div class="h-40 w-64 bg-gray-600 shadow flex-auto md:flex-none"></div>
+                    <div class="w-1/4 flex md:hidden flex-auto md:flex-none justify-center items-center mr-2 md:mr-5">
+                        <i class="fab fa-reddit leading-none fa-5x bg-white rounded-full shadow-lg" style="color: #FF4500;border: 2px solid #FF4500;"></i>
+                    </div>
+                    <div class="w-1/3 hidden md:flex flex-auto md:flex-none justify-center items-center mr-2 md:mr-5">
+                        <i class="fab fa-reddit leading-none fa-9x bg-white rounded-full shadow-lg" style="color: #FF4500;border: 2px solid #FF4500;"></i>
+                    </div>
                     <div class="flex flex-col justify-between self-stretch px-3">
                         <div class="mb-8">
-                            <h5 class="leading-none mb-2 text-lg text-gray-800 font-semibold">Title</h5>
+                            <h5 class="leading-none mb-2 text-lg text-gray-800 font-semibold">Reddit Save Manager</h5>
                             <p class="mb-2 text-md text-gray-700">
-                                This is a very basic project description for a future project...
+                                A project utilizing <strong>Vue.js, Laravel, and MySQL</strong> to create an application that allows a user to login with their Reddit account to track, search and filter their saved posts/comments.
                             </p>
-                            <p class="leading-none"><a href="#modal-container"><small class="text-teal-500 hover:underline">Details</small></a></p>
+                            <p class="leading-none">
+                                <button type="button" class="btn-details outline-none" data-project="redditsm"><small class="text-teal-500 hover:underline">Details</small></button>
+                            </p>
                         </div>
                         <div class="flex">
-                            <button class="px-4 py-2 leading-none text-sm bg-teal-500 hover:bg-teal-600 text-white text-shadow rounded shadow">View</button>
-                            <button class="px-4 py-2 leading-none text-sm hover:underline text-teal-500">Source</button>
+                            <button disabled class="opacity-50 cursor-default px-4 py-2 leading-none text-sm bg-teal-500 hover:bg-teal-600 text-white text-shadow rounded shadow">View (Coming Soon!)</button>
+                            <a href="https://github.com/ClintWinter/reddit-save-manager" target="_blank" class="px-4 py-2 leading-none text-sm hover:underline text-teal-500">Source</a>
                         </div>
                     </div>
                 </div>
                 <div class="flex p-3 bg-white shadow-lg w-full mb-8">
-                    <div class="h-40 w-64 bg-gray-600 shadow flex-auto md:flex-none"></div>
+                    <div class="w-1/4 md:w-1/3 mr-2 md:mr-5 h-40 bg-gray-600 shadow flex-auto md:flex-none"></div>
                     <div class="flex flex-col justify-between self-stretch px-3">
                         <div class="mb-8">
-                            <h5 class="leading-none mb-2 text-lg text-gray-800 font-semibold">Title</h5>
+                            <h5 class="leading-none mb-2 text-lg text-gray-800 font-semibold">To be determined</h5>
                             <p class="mb-2 text-md text-gray-700">
-                                This is a very basic project description for a future project...
+                                This is a placeholder for my next project!
                             </p>
-                            <p class="leading-none"><a href="#modal-container"><small class="text-teal-500 hover:underline">Details</small></a></p>
+                            <p class="leading-none"><a href="javascript:;" class="opacity-50 cursor-default"><small class="text-teal-500 hover:underline">Details</small></a></p>
                         </div>
                         <div class="flex">
-                            <button class="px-4 py-2 leading-none text-sm bg-teal-500 hover:bg-teal-600 text-white text-shadow rounded shadow">View</button>
-                            <button class="px-4 py-2 leading-none text-sm hover:underline text-teal-500">Source</button>
+                            <button disabled class="opacity-50 cursor-default px-4 py-2 leading-none text-sm bg-teal-500 hover:bg-teal-600 text-white text-shadow rounded shadow">View</button>
+                            <button disabled class="opacity-50 cursor-default px-4 py-2 leading-none text-sm hover:underline text-teal-500">Source</button>
                         </div>
                     </div>
                 </div>
                 <div class="flex p-3 bg-white shadow-lg w-full mb-8">
-                    <div class="h-40 w-64 bg-gray-600 shadow flex-auto md:flex-none"></div>
+                    <div class="w-1/4 md:w-1/3 mr-2 md:mr-5 h-40 bg-gray-600 shadow flex-auto md:flex-none"></div>
                     <div class="flex flex-col justify-between self-stretch px-3">
                         <div class="mb-8">
-                            <h5 class="leading-none mb-2 text-lg text-gray-800 font-semibold">Title</h5>
+                            <h5 class="leading-none mb-2 text-lg text-gray-800 font-semibold">To be determined</h5>
                             <p class="mb-2 text-md text-gray-700">
-                                This is a very basic project description for a future project...
+                                This is a placeholder for my next project!
                             </p>
-                            <p class="leading-none"><a href="#modal-container"><small class="text-teal-500 hover:underline">Details</small></a></p>
+                            <p class="leading-none"><a href="javascript:;" class="opacity-50 cursor-default"><small class="text-teal-500 hover:underline">Details</small></a></p>
                         </div>
                         <div class="flex">
-                            <button class="px-4 py-2 leading-none text-sm bg-teal-500 hover:bg-teal-600 text-white text-shadow rounded shadow">View</button>
-                            <button class="px-4 py-2 leading-none text-sm hover:underline text-teal-500">Source</button>
+                            <button disabled class="opacity-50 cursor-default px-4 py-2 leading-none text-sm bg-teal-500 hover:bg-teal-600 text-white text-shadow rounded shadow">View</button>
+                            <button disabled class="opacity-50 cursor-default px-4 py-2 leading-none text-sm hover:underline text-teal-500">Source</button>
                         </div>
                     </div>
                 </div>
@@ -114,18 +121,18 @@
 
 </div>
 
-<div id="modal-container" class="flex justify-center items-center">
+<div id="modal-container" class="flex justify-center items-center hidden">
     <div id="modal" class="bg-white relative shadow-xl rounded m-2 md:m-8 w-full md:w-2/3 xl:w-1/2 border-2 border-gray-200">
         <div class="modal-header flex justify-between p-3 text-gray-800 border-b border-gray-200">
-            <h3 class="text-xl font-semibold">Title</h3>
-            <a href="#"><i class="fas fa-window-close text-pink-500 text-shadow text-4xl"></i></a>
+            <h3 class="modal-title text-xl font-semibold">Title</h3>
+            <a href="javascript:document.getElementById('modal-container').classList.add('hidden');"><i class="fas fa-window-close text-pink-500 text-shadow text-4xl"></i></a>
         </div>
         <div class="modal-body bg-gray-100 py-5 px-2 md:px-5 text-gray-800 border-b border-gray-200">
-            <p>These are the details</p>
+            
         </div>
-        <div class="modal-footer p-3"></div>
+        <div class="modal-footer p-3 flex justify-end"></div>
     </div>
-    <div id="mask"></div>
+    <div id="mask" onclick="document.getElementById('modal-container').classList.add('hidden');"></div>
 </div>
 
 @endsection
