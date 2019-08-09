@@ -40,7 +40,7 @@
                             </p>
                         </div>
                         <div class="flex">
-                            <button disabled class="opacity-50 cursor-default px-4 py-2 leading-none text-sm bg-teal-500 hover:bg-teal-600 text-white text-shadow rounded shadow">View (Coming Soon!)</button>
+                            <a href="https://redditsm.clintgwinter.com" target="_blank" class="px-4 py-2 leading-none text-sm bg-teal-500 hover:bg-teal-600 text-white text-shadow rounded shadow">View</a>
                             <a href="https://github.com/ClintWinter/reddit-save-manager" target="_blank" class="px-4 py-2 leading-none text-sm hover:underline text-teal-500">Source</a>
                         </div>
                     </div>

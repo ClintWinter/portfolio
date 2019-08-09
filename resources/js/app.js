@@ -16,10 +16,10 @@ const projects = {
             <p class="mb-4">I think the other biggest challenge, which still continues, is keeping the codebase clean and manageable. Without paying attention, it's easy to let a function get out of control, but it's imperative for me to make sure I'm constantly going back over what I've written and looking for flags that tell me it's a good place to refactor. I find it difficult to know what the right solution is all the time, and the best developers make this process look easy. It's a complex and challenging process to make complicated solutions look simple and elegant, but I'll continue to strive towards that nevertheless.</p>
         `,
         footer: `
-            <button disabled class="opacity-50 cursor-default px-4 py-2 leading-none text-sm bg-teal-500 hover:bg-teal-600 text-white text-shadow rounded shadow">View (Coming Soon!)</button>
+            <a href="https://redditsm.clintgwinter.com" target="_blank" class="px-4 py-2 leading-none text-sm bg-teal-500 hover:bg-teal-600 text-white text-shadow rounded shadow">View</a>
             <a href="https://github.com/ClintWinter/reddit-save-manager" target="_blank" class="px-4 py-2 leading-none text-sm hover:underline text-teal-500">Source</a>
         `,
-        stack: ['Vue.js', 'axios', 'Laravel', 'MySQL', 'Sass', 'tailwindcss', 'OAuth2', 'Git/Github', 'Socialite']
+        stack: ['Vue.js', 'Laravel', 'JavaScript', 'axios', 'MySQL', 'Sass', 'tailwindcss', 'OAuth2', 'Git/Github', 'Socialite']
     }
 }
 
@@ -51,6 +51,5 @@ function modal(project) {
 }
 
 document.querySelector('.btn-details').addEventListener('click', function(event) {
-    console.log(event.currentTarget, event.currentTarget.dataset);
     modal(event.currentTarget.dataset.project);
 });
