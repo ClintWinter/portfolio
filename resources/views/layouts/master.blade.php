@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/app.css">
 </head>
-<body>
+<body class="font-body">
 
     <main class="container-fluid p-0">
 
