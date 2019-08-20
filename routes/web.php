@@ -6,7 +6,10 @@ Route::get('/', function() {
 
 Route::get('/portfolio', function() {
     return view('portfolio');
-});
+})->name('portfolio');
+
+Route::get('/blog', 'BlogController@index')->name('blog');
+Route::get('/blog/{slug}', 'BlogController@show')->name('blog.show');
 
 // Admin Panel
 Route::prefix('admin')->group(function() {
@@ -26,6 +29,10 @@ Route::prefix('admin')->group(function() {
             // Route::post('/new', 'BlogPostController@create');
             Route::get('/', 'BlogPostController@index');
             Route::post('/', 'BlogPostController@store');
+
+            Route::post('/{slug}/publish', 'BlogPostController@publish');
+            Route::get('/{slug}', 'BlogPostController@show');
+            Route::post('/{slug}', 'BlogPostController@update');
     
         });
 

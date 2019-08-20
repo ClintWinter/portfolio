@@ -20,7 +20,7 @@
                     >Blog Posts</li>
                     <li 
                         :class="{ 'text-white bg-teal-600': activeTab == 'project' }" 
-                        class="mb-2 py-3 px-8 cursor-pointer rounded hover:bg-gray-300" 
+                        class="mb-2 py-3 px-8 cursor-pointer rounded hover:bg-gray-300"
                     >Projects</li>
                 </ul>
             </div>
@@ -28,9 +28,25 @@
 
         <main class="flex-grow min-h-screen px-1 md:px-2 lg:px-8 mb-16 rounded">
             <div class="min-h-full bg-white shadow-md">
-                <blog-container>
-                    <blog-item v-for="blog in blogs" :key="blog.slug" :blog="blog"></blog-item>
+                <blog-container v-if="activeTab == 'blog' && tabState == 'index'" @changestate="changeState">
+                    <blog-item 
+                        v-for="(blog, index) in blogs" 
+                        :key="blog.slug" 
+                        :blog="blog"
+                        :index="index"
+                        @editblogpost="editBlogPost"
+                        @publishblogpost="publishBlogPost"></blog-item>
                 </blog-container>
+                <new-blog 
+                    v-if="activeTab == 'blog' && tabState == 'new'"
+                    @addblogpost="addBlogPost"
+                    @changestate="changeState"></new-blog>
+                <edit-blog 
+                    v-if="activeTab == 'blog' && tabState == 'edit'" 
+                    :blog="blogs[currentBlog]"
+                    :index="currentBlog"
+                    @updateblogpost="updateBlogPost"
+                    @changestate="changeState"></edit-blog>
             </div>
         </main>
     </div>

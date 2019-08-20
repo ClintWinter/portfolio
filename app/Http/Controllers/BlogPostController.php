@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\BlogPost;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class BlogPostController extends Controller
@@ -14,7 +15,7 @@ class BlogPostController extends Controller
      */
     public function index()
     {
-        return BlogPost::all();
+        return BlogPost::latest()->get();
     }
 
     /**
@@ -35,7 +36,15 @@ class BlogPostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validData = $request->validate([
+            'title' => 'required|unique:blog_posts|max:255',
+            'body' => 'required',
+            'cover_img_url' => 'max:255'
+        ]);
+
+        $blogPost = BlogPost::create($validData);
+
+        return $blogPost->toJson();
     }
 
     /**
@@ -44,9 +53,11 @@ class BlogPostController extends Controller
      * @param  \App\BlogPost  $blogPost
      * @return \Illuminate\Http\Response
      */
-    public function show(BlogPost $blogPost)
-    {
-        //
+    public function show($slug)
+    {   
+        $blogPost = BlogPost::where('slug', $slug)->first();
+        
+        return $blogPost->toJson();
     }
 
     /**
@@ -67,9 +78,40 @@ class BlogPostController extends Controller
      * @param  \App\BlogPost  $blogPost
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, BlogPost $blogPost)
+    public function update(Request $request, $slug)
     {
-        //
+        $validData = $request->validate([
+            'title' => 'required|unique:blog_posts|max:255',
+            'slug' => 'required',
+            'body' => 'required',
+            'cover_img_url' => 'max:255'
+        ]);
+
+        $blogPost = BlogPost::where('slug', $slug)->first();
+
+        $blogPost->fill($validData);
+
+        $blogPost->save();
+
+        return $blogPost->toJson();
+    }
+
+    public function publish(Request $request, $slug)
+    {
+        $validData = $request->validate([
+            'published' => 'required|boolean'
+        ]);
+
+        $blogPost = BlogPost::where('slug', $slug)->first();
+
+        $blogPost->published = $validData['published'];
+        $blogPost->published_at = $validData['published'] ? Carbon::now() : null;
+
+        $blogPost->save();
+
+        $blogPost = $blogPost->fresh();
+
+        return $blogPost->toJson();
     }
 
     /**

@@ -1,0 +1,47 @@
+<template>
+    <div class="px-5 py-8">
+        <a class="cursor-pointer block text-blue-500 underline mb-8" @click="$emit('changestate', 'index')"><i class="fas fa-arrow-left"></i> Back to Blog Posts</a>
+        <form @submit.prevent="createBlog">
+            <div class="flex mb-5">
+                <label class="w-1/3 md:w-1/6 mr-3" for="title">Title</label>
+                <input class="text-2xl font-bold shadow-md font-body flex-grow border border-gray-300 px-3 py-1" type="text" name="title" id="title" v-model="title">
+            </div>
+            <div class="flex mb-5 items-center">
+                <label class="w-1/3 md:w-1/6 mr-3" for="body">Body</label>
+                <textarea 
+                    class="shadow-md font-body flex-grow border border-gray-300 px-3 py-1 h-128" 
+                    style="resize:none;" 
+                    name="body" 
+                    id="body" 
+                    v-model="body"></textarea>
+            </div>
+            <div class="flex justify-end mb-3">
+                <input class="cursor-pointer shadow rounded uppercase px-6 py-2 bg-green-500 text-white" type="submit" value="Save">
+            </div>
+        </form>
+    </div>
+</template>
+
+<script>
+export default {
+    data() {
+        return {
+            title: '',
+            body: ''
+        }
+    },
+
+    methods: {
+        createBlog() {
+            axios.post('/admin/blogposts/', {
+                title: this.title,
+                body: this.body
+            })
+            .then(response => {
+                this.$emit('addblogpost', response.data);
+            })
+            .catch(error => console.log(error));
+        }
+    }
+}
+</script>

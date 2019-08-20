@@ -13,6 +13,12 @@ module.exports = {
         '32': '8rem',
         '64': '16rem',
         'full': '100%',
+      },
+      extend: {
+        height: {
+          '128': '32rem',
+          '256': '64rem',
+        }
       }
     },
     variants: {},
