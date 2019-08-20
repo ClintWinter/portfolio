@@ -14,7 +14,7 @@ class BlogPostController extends Controller
      */
     public function index()
     {
-        //
+        return BlogPost::all();
     }
 
     /**

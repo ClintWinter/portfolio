@@ -20,14 +20,18 @@ Route::prefix('admin')->group(function() {
 
         Route::get('/', 'AdminController@index');
 
+        // blog posts
+        Route::prefix('blogposts')->group(function() {
+
+            // Route::post('/new', 'BlogPostController@create');
+            Route::get('/', 'BlogPostController@index');
+            Route::post('/', 'BlogPostController@store');
+    
+        });
+
     });
 
-    Route::prefix('blogpost')->group(function() {
-
-        // Route::post('/new', 'BlogPostController@create');
-        Route::post('/', 'BlogPostController@store');
-
-    });
+    
     
 });
 
