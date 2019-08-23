@@ -5,14 +5,9 @@ $fa-font-path: "webfonts";
 @import "scss/brands";
 
 @tailwind base;
-
 @tailwind components;
 
 @import 'modal';
-
-html {
-  font-family: 'Roboto';
-}
 
 .bg-gradient {
   background: linear-gradient(to right, hsl(170, 50%, 50%), hsl(190, 50%, 60%));
@@ -23,3 +18,5 @@ html {
 }
 
 @tailwind utilities;
+@import 'customutilities';
+@import 'blogpost';
