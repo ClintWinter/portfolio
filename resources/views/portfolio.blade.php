@@ -2,20 +2,8 @@
 @section('content')
 
 <div>
-
-    <header class="col flex flex-col items-center py-5 bg-gradient text-white text-shadow">
-        <h1 class="display-3 text-center text-6xl font-semibold">Clint Winter</h1>
-        <h2 class="display-6 text-center text-3xl mb-4 opacity-50 leading-none"><small>( cwinter.web@gmail.com )</small></h2>
-        <p class="flex items-center text-4xl leading-loose">
-            <a aria-label="Github in new tab" href="https://github.com/clintwinter" class="mx-3" target="_blank" rel="noopener noreferrer"><i class="fab fa-github-square"></i></a>
-            <a aria-label="LinkedIn in new tab" href="https://linkedin.com/in/clint-winter" class="mx-3" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-            <a aria-label="View PDF resume in new tab" href="{{ Storage::url('ClintWinterResume.pdf') }}" class="mx-3" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i></a>
-            {{-- <a href="{{ Storage::url('ClintWinterResume.pdf') }}" class="mx-3" download><i class="fas fa-file-download"></i></a> --}}
-        </p>
-    </header>
-
     <div class="col flex justify-center py-16 px-2">
-        <p class="text-gray-600" style="max-width: 45rem;"><em>Hi, I'm Clint and I'm a self taught software developer from New Jersey. My goal is to help those that were like me when I was first starting out and lead them to becoming competent developers. Whether it be teaching, providing general advice or top-notch resources, or simply being there to assist in navigating roadblocks, I want to pay it forward from the community that has enabled me to be in this position.</em></p>
+        <p class="text-gray-600 leading-relaxed text-lg" style="max-width: 45rem;"><em>Hi, I'm Clint and I'm a self taught software developer from New Jersey. My goal is to help those that were like me when I was first starting out and lead them to becoming competent developers. Whether it be teaching, providing general advice or top-notch resources, or simply being there to assist in navigating roadblocks, I want to pay it forward from the community that has enabled me to be in this position.</em></p>
     </div>
 
     <div class="col bg-gray-100 py-5 px-2">
@@ -114,10 +102,6 @@
             </div>
         </div>
     </div>
-
-    <footer class="bg-gray-800 text-white py-5 px-2">
-        <div class="w-full md:w-2/3 xl:w-1/2 container mx-auto">Thanks for visiting!</div>
-    </footer>
 
 </div>
 

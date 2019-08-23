@@ -4,7 +4,17 @@
     <header class="bg-white shadow z-10">
         <ul class="flex justify-between p-6">
             <li class="text-xl font-bold">clintgwinter CMS</li>
-            <li>Sign Out</li>
+            <li >
+                <a 
+                    class="hover:underline"
+                    href="{{ route('logout') }}"
+                    onclick="event.preventDefault();document.getElementById('logout-form').submit();"
+                >{{ __('Logout') }}</a>
+
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
+            </li>
         </ul>
     </header>
 
@@ -31,7 +41,7 @@
                 <blog-container v-if="activeTab == 'blog' && tabState == 'index'" @changestate="changeState">
                     <blog-item 
                         v-for="(blog, index) in blogs" 
-                        :key="blog.slug" 
+                        :key="blog.slug"
                         :blog="blog"
                         :index="index"
                         @editblogpost="editBlogPost"
@@ -39,20 +49,20 @@
                 </blog-container>
                 <new-blog 
                     v-if="activeTab == 'blog' && tabState == 'new'"
+                    @previewpost="previewPost"
                     @addblogpost="addBlogPost"
                     @changestate="changeState"></new-blog>
                 <edit-blog 
                     v-if="activeTab == 'blog' && tabState == 'edit'" 
                     :blog="blogs[currentBlog]"
                     :index="currentBlog"
+                    @previewpost="previewPost"
                     @updateblogpost="updateBlogPost"
                     @changestate="changeState"></edit-blog>
             </div>
         </main>
-    </div>
 
-    <footer class="bg-gray-800 text-white px-16 py-8">
-        <p>This is the footer!</p>
-    </footer>
+        <preview-blog :preview="preview" @closepreview="closePreview"></preview-blog>
+    </div>
 
 @endsection

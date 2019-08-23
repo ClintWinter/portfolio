@@ -1,21 +1,16 @@
-@extends('blog.master')
+@extends('layouts.master')
 
 @section('title', $blogPost->title)
 
 @section('content')
 
-<div class="py-16">
-    <div class="mb-8">
-        <a class="text-blue-500 underline" href="{{ route('blog') }}">Back to Blog</a>
-    </div>
+<div class="px-1 md:px-5 py-8 w-full lg:w-2/3 mx-auto">
+    <view-blog blogpost="{{ $blogPost->toJson() }}"></view-blog>
 
-    <div class="mb-16">
-        <h1 class="text-3xl font-bold">{{ $blogPost->title }}</h1>
-        <p class="font-normal text-gray-600 text-sm">{{ \Carbon\Carbon::parse($blogPost->published_at)->format('n/j/Y') }}</p>
-    </div>
+    <div class="w-full h-1 border-b-2 border-gray-200 mb-6"></div>
 
-    <div class="text-lg leading-loose">
-    {{ $blogPost->body }}
+    <div class="mb-12">
+        <a class="text-blue-500 text-lg" href="{{ route('blog') }}"><i class="fas fa-chevron-left"></i> Back</a>
     </div>
 </div>
 

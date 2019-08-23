@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\BlogPost;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class BlogPostController extends Controller
 {
@@ -37,7 +38,11 @@ class BlogPostController extends Controller
     public function store(Request $request)
     {
         $validData = $request->validate([
-            'title' => 'required|unique:blog_posts|max:255',
+            'title' => [
+                'required',
+                'max:255',
+                Rule::unique('blog_posts')
+            ],
             'body' => 'required',
             'cover_img_url' => 'max:255'
         ]);
@@ -80,14 +85,18 @@ class BlogPostController extends Controller
      */
     public function update(Request $request, $slug)
     {
+        $blogPost = BlogPost::where('slug', $slug)->first();
+
         $validData = $request->validate([
-            'title' => 'required|unique:blog_posts|max:255',
+            'title' => [
+                'required',
+                'max:255',
+                Rule::unique('blog_posts')->ignore($blogPost)
+            ],
             'slug' => 'required',
             'body' => 'required',
             'cover_img_url' => 'max:255'
         ]);
-
-        $blogPost = BlogPost::where('slug', $slug)->first();
 
         $blogPost->fill($validData);
 

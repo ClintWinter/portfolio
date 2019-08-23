@@ -6,6 +6,7 @@ import BlogContainer from './components/BlogContainer';
 import BlogItem from './components/BlogItem';
 import NewBlog from './components/NewBlog';
 import EditBlog from './components/EditBlog';
+import PreviewBlog from './components/PreviewBlog';
 
 const app = new Vue({
     el: '#app',
@@ -15,14 +16,17 @@ const app = new Vue({
         tabState: 'index',
         blogs: [],
         currentBlog: 0,
+        preview: {
+            active: false,
+            title: '',
+            body: ''
+        }
     },
 
     created() {
         axios.get('/admin/blogposts')
         .then(function(response) {
             this.blogs = response.data;
-            console.log(this.blogs);
-            // console.log(response.data);
         }.bind(this))
         .catch(error => console.log(error));
     },
@@ -33,7 +37,6 @@ const app = new Vue({
         },
 
         changeState(state) {
-            console.log(state);
             this.tabState = state;
         },
 
@@ -54,6 +57,17 @@ const app = new Vue({
 
         publishBlogPost({blogPost, index}) {
             this.$set(this.blogs, index, blogPost);
+        },
+
+        previewPost({body, title}) {
+            this.preview.active = true;
+            this.preview.title = title;
+            this.preview.body = body;
+        },
+
+        closePreview() {
+            this.preview.active = false;
+            this.preview.body = '';
         }
     },
 
@@ -61,6 +75,7 @@ const app = new Vue({
         'blog-container': BlogContainer,
         'blog-item': BlogItem,
         'new-blog': NewBlog,
-        'edit-blog': EditBlog
+        'edit-blog': EditBlog,
+        'preview-blog': PreviewBlog
     }
 });

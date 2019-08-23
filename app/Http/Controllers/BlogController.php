@@ -14,7 +14,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $blog = BlogPost::all();
+        $blog = BlogPost::where('published', true)->latest('published_at')->get();
 
         return view('blog.index', compact('blog'));
     }
@@ -48,9 +48,12 @@ class BlogController extends Controller
      */
     public function show($slug)
     {
-        $blogPost = BlogPost::where('slug', $slug)->first();
+        $blogPost = BlogPost::where('slug', $slug)->where('published', true)->firstOrFail();
 
-        return view('blog.show', compact('blogPost'));
+        if ( $blogPost )
+            return view('blog.show', compact('blogPost'));
+        else
+            return view('errors.missing', [], 404);
     }
 
     /**

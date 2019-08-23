@@ -19,6 +19,8 @@
         "vue-template-compiler": "^2.6.10"
     },
     "dependencies": {
+        "highlight.js": "^9.15.10",
+        "markdown-it": "^9.1.0",
         "moment": "^2.24.0",
         "tailwindcss": "^1.0.5"
     }

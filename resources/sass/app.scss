@@ -5,7 +5,6 @@ $fa-font-path: "webfonts";
 @import "scss/brands";
 
 @tailwind base;
-
 @tailwind components;
 
 @import 'modal';
@@ -19,3 +18,5 @@ $fa-font-path: "webfonts";
 }
 
 @tailwind utilities;
+@import 'customutilities';
+@import 'blogpost';
