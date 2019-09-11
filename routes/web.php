@@ -19,7 +19,6 @@ Route::prefix('admin')->group(function() {
 
     // Authenticated Admin Panel
     Route::middleware('is_admin')->group(function() {
-    // Route::group([], function() {
 
         Route::get('/', 'AdminController@index');
 
