@@ -64108,8 +64108,8 @@ var render = function() {
                 "bg-blue-800 text-yellow-500 absolute pt-4 px-12 shadow",
               staticStyle: {
                 top: "0",
-                right: "0",
-                transform: "rotate(45deg) translate(25px, -40px)"
+                left: "0",
+                transform: "rotate(-45deg) translate(-27px, -40px)"
               }
             },
             [_c("i", { staticClass: "fas fa-star" })]

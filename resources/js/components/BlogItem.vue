@@ -3,7 +3,7 @@
     <div class="overflow-hidden relative bg-gray-200 shadow-lg mb-5 px-2 md:px-8 py-4 md:py-6">
         <div 
             class="bg-blue-800 text-yellow-500 absolute pt-4 px-12 shadow"
-            style="top: 0; right: 0; transform: rotate(45deg) translate(25px, -40px)"
+            style="top: 0; left: 0; transform: rotate(-45deg) translate(-27px, -40px)"
             v-if="blog.published"
         ><i class="fas fa-star"></i></div>
         <header class="px-5 py-2 flex justify-between items-center">
