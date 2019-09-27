@@ -18,7 +18,7 @@
 
     <div class="block mb-4">
         <h2 class="uppercase text-xl text-gray-600 font-black mb-4">RESULT</h2>
-        <div class="bg-gray-200 rounded shadow w-full p-4" v-text="result"></div>
+        <div class="bg-gray-200 rounded shadow w-full p-4 whitespace-pre-wrap" v-text="result"></div>
     </div>
 
 </div>
