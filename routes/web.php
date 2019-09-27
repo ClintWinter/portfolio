@@ -11,6 +11,10 @@ Route::get('/portfolio', function() {
 Route::get('/blog', 'BlogController@index')->name('blog');
 Route::get('/blog/{slug}', 'BlogController@show')->name('blog.show');
 
+Route::get('/text-helper', function() {
+    return view('helper');
+});
+
 // Admin Panel
 Route::prefix('admin')->group(function() {
 

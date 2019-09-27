@@ -53,6 +53,8 @@
         <script src="/js/app.js"></script>
     @elseif (\Request::is('blog/*'))
         <script src="/js/blog.js"></script>
+    @elseif (\Request::is('*helper'))
+        <script src="/js/helper.js"></script>
     @endif
 
 </body>
