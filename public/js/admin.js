@@ -64036,6 +64036,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -64088,54 +64093,71 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "bg-gray-200 shadow-lg mb-5" }, [
-    _c(
-      "header",
-      { staticClass: "px-5 py-2 flex justify-between items-center" },
-      [
-        _c(
-          "h1",
-          {
-            staticClass: "text-2xl font-bold cursor-pointer text-blue-700",
-            on: { click: _vm.getBlogPost }
-          },
-          [_vm._v(_vm._s(_vm.blog.title))]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "flex-grow flex flex-col flex-end items-end" },
-          [
-            _c("button", {
+  return _c(
+    "div",
+    {
+      staticClass:
+        "overflow-hidden relative bg-gray-200 shadow-lg mb-5 px-2 md:px-8 py-4 md:py-6"
+    },
+    [
+      _vm.blog.published
+        ? _c(
+            "div",
+            {
               staticClass:
-                "text-xs text-white rounded px-4 py-2 uppercase leading-none shadow-md mb-2",
-              class: _vm.blog.published
-                ? "bg-red-800 hover:bg-red-700"
-                : "bg-blue-800 hover:bg-blue-700",
-              domProps: {
-                textContent: _vm._s(
-                  _vm.blog.published ? "Unpublish" : "Publish"
-                )
-              },
-              on: { click: _vm.publishBlogPost }
-            }),
-            _vm._v(" "),
-            _vm.blog.published
-              ? _c(
-                  "div",
-                  { staticClass: "text-xs text-gray-600 whitespace-no-wrap" },
-                  [_vm._v(_vm._s(_vm.publishedDate))]
-                )
-              : _vm._e()
-          ]
-        )
-      ]
-    ),
-    _vm._v(" "),
-    _c("div", { staticClass: "px-5 py-2 leading-loose" }, [
-      _vm._v("\n        " + _vm._s(_vm.body) + "\n    ")
-    ])
-  ])
+                "bg-blue-800 text-yellow-500 absolute pt-4 px-12 shadow",
+              staticStyle: {
+                top: "0",
+                left: "0",
+                transform: "rotate(-45deg) translate(-27px, -40px)"
+              }
+            },
+            [_c("i", { staticClass: "fas fa-star" })]
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _c(
+        "header",
+        { staticClass: "px-5 py-2 flex justify-between items-center" },
+        [
+          _c(
+            "h1",
+            {
+              staticClass: "text-2xl font-bold cursor-pointer text-blue-700",
+              on: { click: _vm.getBlogPost }
+            },
+            [_vm._v(_vm._s(_vm.blog.title))]
+          )
+        ]
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "px-5 py-2 leading-loose mb-8" }, [
+        _vm._v("\n        " + _vm._s(_vm.body) + "\n    ")
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "px-5" }, [
+        _c("button", {
+          staticClass:
+            "text-xs text-white rounded px-4 py-2 uppercase leading-none shadow-md mb-2",
+          class: _vm.blog.published
+            ? "bg-red-800 hover:bg-red-700"
+            : "bg-blue-800 hover:bg-blue-700",
+          domProps: {
+            textContent: _vm._s(_vm.blog.published ? "Unpublish" : "Publish")
+          },
+          on: { click: _vm.publishBlogPost }
+        }),
+        _vm._v(" "),
+        _vm.blog.published
+          ? _c(
+              "div",
+              { staticClass: "text-xs text-gray-600 whitespace-no-wrap" },
+              [_vm._v(_vm._s(_vm.publishedDate))]
+            )
+          : _vm._e()
+      ])
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -64225,6 +64247,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -64262,122 +64292,119 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "px-5 py-8" }, [
-    _c(
-      "a",
-      {
-        staticClass: "cursor-pointer block text-blue-500 underline mb-8",
-        on: {
-          click: function($event) {
-            return _vm.$emit("changestate", "index")
-          }
-        }
-      },
-      [
-        _c("i", { staticClass: "fas fa-arrow-left" }),
-        _vm._v(" Back to Blog Posts")
-      ]
-    ),
-    _vm._v(" "),
-    _c(
-      "form",
-      {
-        on: {
-          submit: function($event) {
-            $event.preventDefault()
-            return _vm.createBlog($event)
-          }
-        }
-      },
-      [
-        _c("div", { staticClass: "flex flex-col sm:flex-row mb-5" }, [
-          _c(
-            "label",
-            { staticClass: "w-full sm:w-1/6 mr-3", attrs: { for: "title" } },
-            [_vm._v("Title")]
-          ),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.title,
-                expression: "title"
-              }
-            ],
-            staticClass:
-              "w-full text-2xl font-bold shadow-md font-body flex-grow border border-gray-300 px-3 py-1",
-            attrs: { type: "text", name: "title", id: "title" },
-            domProps: { value: _vm.title },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.title = $event.target.value
-              }
+  return _c(
+    "div",
+    { staticClass: "px-5 py-8 w-full lg:w-2/3 xl:w-1/2 mx-auto" },
+    [
+      _c(
+        "a",
+        {
+          staticClass: "cursor-pointer block text-blue-500 underline mb-8",
+          on: {
+            click: function($event) {
+              return _vm.$emit("changestate", "index")
             }
-          })
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "flex flex-col sm:flex-row mb-5 items-start" },
-          [
-            _c(
-              "label",
-              { staticClass: "w-full sm:w-1/6 mr-3", attrs: { for: "body" } },
-              [_vm._v("Body")]
-            ),
-            _vm._v(" "),
-            _c("textarea", {
+          }
+        },
+        [
+          _c("i", { staticClass: "fas fa-arrow-left" }),
+          _vm._v(" Back to Blog Posts")
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "form",
+        {
+          on: {
+            submit: function($event) {
+              $event.preventDefault()
+              return _vm.createBlog($event)
+            }
+          }
+        },
+        [
+          _c("div", { staticClass: "flex flex-col sm:flex-row mb-5" }, [
+            _c("input", {
               directives: [
                 {
                   name: "model",
                   rawName: "v-model",
-                  value: _vm.body,
-                  expression: "body"
+                  value: _vm.title,
+                  expression: "title"
                 }
               ],
               staticClass:
-                "w-full shadow-md font-body flex-grow border border-gray-300 px-3 py-1 h-128",
-              staticStyle: { resize: "none" },
-              attrs: { name: "body", id: "body" },
-              domProps: { value: _vm.body },
+                "w-full text-3xl font-bold rounded font-body flex-grow border-2 border-gray-200 px-3 py-1",
+              attrs: {
+                type: "text",
+                name: "title",
+                id: "title",
+                placeholder: "Title"
+              },
+              domProps: { value: _vm.title },
               on: {
                 input: function($event) {
                   if ($event.target.composing) {
                     return
                   }
-                  _vm.body = $event.target.value
+                  _vm.title = $event.target.value
                 }
               }
             })
-          ]
-        ),
-        _vm._v(" "),
-        _c("div", { staticClass: "flex justify-end mb-3" }, [
+          ]),
+          _vm._v(" "),
           _c(
-            "button",
-            {
-              staticClass:
-                "cursor-pointer shadow rounded uppercase px-6 py-2 text-green-500 hover:bg-gray-100 mr-4",
-              attrs: { type: "button" },
-              on: { click: _vm.openPreview }
-            },
-            [_vm._v("Preview")]
+            "div",
+            { staticClass: "flex flex-col sm:flex-row mb-5 items-start" },
+            [
+              _c("textarea", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.body,
+                    expression: "body"
+                  }
+                ],
+                staticClass:
+                  "w-full leading-relaxed font-body flex-grow border-2 border-gray-200 rounded px-3 py-1 h-128",
+                staticStyle: { resize: "none" },
+                attrs: { name: "body", id: "body", placeholder: "Body" },
+                domProps: { value: _vm.body },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.body = $event.target.value
+                  }
+                }
+              })
+            ]
           ),
           _vm._v(" "),
-          _c("input", {
-            staticClass:
-              "cursor-pointer shadow rounded uppercase px-6 py-2 bg-green-500 hover:bg-green-600 text-white",
-            attrs: { type: "submit", value: "Save" }
-          })
-        ])
-      ]
-    )
-  ])
+          _c("div", { staticClass: "flex justify-end mb-3" }, [
+            _c(
+              "button",
+              {
+                staticClass:
+                  "cursor-pointer shadow rounded uppercase px-6 py-2 text-green-500 hover:bg-gray-100 mr-4",
+                attrs: { type: "button" },
+                on: { click: _vm.openPreview }
+              },
+              [_vm._v("Preview")]
+            ),
+            _vm._v(" "),
+            _c("input", {
+              staticClass:
+                "cursor-pointer shadow rounded uppercase px-6 py-2 bg-green-500 hover:bg-green-600 text-white",
+              attrs: { type: "submit", value: "Save" }
+            })
+          ])
+        ]
+      )
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -64467,6 +64494,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: {
@@ -64510,122 +64545,119 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "px-5 py-8" }, [
-    _c(
-      "a",
-      {
-        staticClass: "cursor-pointer block text-blue-500 underline mb-8",
-        on: {
-          click: function($event) {
-            return _vm.$emit("changestate", "index")
-          }
-        }
-      },
-      [
-        _c("i", { staticClass: "fas fa-arrow-left" }),
-        _vm._v(" Back to Blog Posts")
-      ]
-    ),
-    _vm._v(" "),
-    _c(
-      "form",
-      {
-        on: {
-          submit: function($event) {
-            $event.preventDefault()
-            return _vm.updateBlogPost($event)
-          }
-        }
-      },
-      [
-        _c("div", { staticClass: "flex flex-col sm:flex-row mb-5" }, [
-          _c(
-            "label",
-            { staticClass: "w-full sm:w-1/6 mr-3", attrs: { for: "title" } },
-            [_vm._v("Title")]
-          ),
-          _vm._v(" "),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.title,
-                expression: "title"
-              }
-            ],
-            staticClass:
-              "w-full text-2xl font-bold shadow-md font-body flex-grow border border-gray-300 px-3 py-1",
-            attrs: { type: "text", name: "title", id: "title" },
-            domProps: { value: _vm.title },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.title = $event.target.value
-              }
+  return _c(
+    "div",
+    { staticClass: "px-5 py-8 w-full lg:w-2/3 xl:w-1/2 mx-auto" },
+    [
+      _c(
+        "a",
+        {
+          staticClass: "cursor-pointer block text-blue-500 underline mb-8",
+          on: {
+            click: function($event) {
+              return _vm.$emit("changestate", "index")
             }
-          })
-        ]),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "flex flex-col sm:flex-row mb-5 items-start" },
-          [
-            _c(
-              "label",
-              { staticClass: "w-full sm:w-1/6 mr-3", attrs: { for: "body" } },
-              [_vm._v("Body")]
-            ),
-            _vm._v(" "),
-            _c("textarea", {
+          }
+        },
+        [
+          _c("i", { staticClass: "fas fa-arrow-left" }),
+          _vm._v(" Back to Blog Posts")
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "form",
+        {
+          on: {
+            submit: function($event) {
+              $event.preventDefault()
+              return _vm.updateBlogPost($event)
+            }
+          }
+        },
+        [
+          _c("div", { staticClass: "flex flex-col sm:flex-row mb-5" }, [
+            _c("input", {
               directives: [
                 {
                   name: "model",
                   rawName: "v-model",
-                  value: _vm.body,
-                  expression: "body"
+                  value: _vm.title,
+                  expression: "title"
                 }
               ],
               staticClass:
-                "w-full shadow-md font-body flex-grow border border-gray-300 px-3 py-1 h-128",
-              staticStyle: { resize: "none" },
-              attrs: { name: "body", id: "body" },
-              domProps: { value: _vm.body },
+                "w-full text-3xl font-bold rounded font-body flex-grow border-2 border-gray-200 px-3 py-1",
+              attrs: {
+                type: "text",
+                name: "title",
+                id: "title",
+                placeholder: "Title"
+              },
+              domProps: { value: _vm.title },
               on: {
                 input: function($event) {
                   if ($event.target.composing) {
                     return
                   }
-                  _vm.body = $event.target.value
+                  _vm.title = $event.target.value
                 }
               }
             })
-          ]
-        ),
-        _vm._v(" "),
-        _c("div", { staticClass: "flex justify-end mb-3" }, [
+          ]),
+          _vm._v(" "),
           _c(
-            "button",
-            {
-              staticClass:
-                "cursor-pointer shadow rounded uppercase px-6 py-2 text-green-500 hover:bg-gray-100 mr-4",
-              attrs: { type: "button" },
-              on: { click: _vm.openPreview }
-            },
-            [_vm._v("Preview")]
+            "div",
+            { staticClass: "flex flex-col sm:flex-row mb-5 items-start" },
+            [
+              _c("textarea", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.body,
+                    expression: "body"
+                  }
+                ],
+                staticClass:
+                  "w-full leading-relaxed font-body flex-grow border-2 border-gray-200 rounded px-3 py-1 h-128",
+                staticStyle: { resize: "none" },
+                attrs: { name: "body", id: "body", placeholder: "Body" },
+                domProps: { value: _vm.body },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.body = $event.target.value
+                  }
+                }
+              })
+            ]
           ),
           _vm._v(" "),
-          _c("input", {
-            staticClass:
-              "cursor-pointer shadow rounded uppercase px-6 py-2 bg-green-500 hover:bg-green-600 text-white",
-            attrs: { type: "submit", value: "Save" }
-          })
-        ])
-      ]
-    )
-  ])
+          _c("div", { staticClass: "flex justify-end mb-3" }, [
+            _c(
+              "button",
+              {
+                staticClass:
+                  "cursor-pointer shadow rounded uppercase px-6 py-2 text-green-500 hover:bg-gray-100 mr-4",
+                attrs: { type: "button" },
+                on: { click: _vm.openPreview }
+              },
+              [_vm._v("Preview")]
+            ),
+            _vm._v(" "),
+            _c("input", {
+              staticClass:
+                "cursor-pointer shadow rounded uppercase px-6 py-2 bg-green-500 hover:bg-green-600 text-white",
+              attrs: { type: "submit", value: "Save" }
+            })
+          ])
+        ]
+      )
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -64709,6 +64741,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
 
 
 
@@ -64758,7 +64795,7 @@ var render = function() {
     "div",
     {
       staticClass:
-        "fixed inset-0 flex items-center justify-center z-50 px-1 py-24 md:px-16 md:py-32",
+        "fixed inset-0 flex items-center justify-center z-50 py-24 px-1",
       class: { hidden: !_vm.preview.active }
     },
     [
@@ -64768,7 +64805,7 @@ var render = function() {
         "div",
         {
           staticClass:
-            "z-20 shadow-xl rounded bg-white h-full p-1 py-6 md:px-12 md:py-12 overflow-y-auto"
+            "w-full md:w-2/3 xl:w-1/2 z-20 shadow-xl rounded bg-white h-full px-1 py-6 md:px-12 md:py-12 overflow-y-auto"
         },
         [
           _c(
