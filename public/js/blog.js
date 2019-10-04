@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 441);
+/******/ 	return __webpack_require__(__webpack_require__.s = 451);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -4861,7 +4861,7 @@ function isWhiteSpace(code) {
 ////////////////////////////////////////////////////////////////////////////////
 
 /*eslint-disable max-len*/
-var UNICODE_PUNCT_RE = __webpack_require__(5);
+var UNICODE_PUNCT_RE = __webpack_require__(10);
 
 // Currently without astral characters support.
 function isPunctChar(ch) {
@@ -5137,575 +5137,6 @@ module.exports = function normalizeComponent (
 /* 5 */
 /***/ (function(module, exports) {
 
-module.exports=/[!-#%-\*,-\/:;\?@\[-\]_\{\}\xA1\xA7\xAB\xB6\xB7\xBB\xBF\u037E\u0387\u055A-\u055F\u0589\u058A\u05BE\u05C0\u05C3\u05C6\u05F3\u05F4\u0609\u060A\u060C\u060D\u061B\u061E\u061F\u066A-\u066D\u06D4\u0700-\u070D\u07F7-\u07F9\u0830-\u083E\u085E\u0964\u0965\u0970\u09FD\u0A76\u0AF0\u0C84\u0DF4\u0E4F\u0E5A\u0E5B\u0F04-\u0F12\u0F14\u0F3A-\u0F3D\u0F85\u0FD0-\u0FD4\u0FD9\u0FDA\u104A-\u104F\u10FB\u1360-\u1368\u1400\u166D\u166E\u169B\u169C\u16EB-\u16ED\u1735\u1736\u17D4-\u17D6\u17D8-\u17DA\u1800-\u180A\u1944\u1945\u1A1E\u1A1F\u1AA0-\u1AA6\u1AA8-\u1AAD\u1B5A-\u1B60\u1BFC-\u1BFF\u1C3B-\u1C3F\u1C7E\u1C7F\u1CC0-\u1CC7\u1CD3\u2010-\u2027\u2030-\u2043\u2045-\u2051\u2053-\u205E\u207D\u207E\u208D\u208E\u2308-\u230B\u2329\u232A\u2768-\u2775\u27C5\u27C6\u27E6-\u27EF\u2983-\u2998\u29D8-\u29DB\u29FC\u29FD\u2CF9-\u2CFC\u2CFE\u2CFF\u2D70\u2E00-\u2E2E\u2E30-\u2E4E\u3001-\u3003\u3008-\u3011\u3014-\u301F\u3030\u303D\u30A0\u30FB\uA4FE\uA4FF\uA60D-\uA60F\uA673\uA67E\uA6F2-\uA6F7\uA874-\uA877\uA8CE\uA8CF\uA8F8-\uA8FA\uA8FC\uA92E\uA92F\uA95F\uA9C1-\uA9CD\uA9DE\uA9DF\uAA5C-\uAA5F\uAADE\uAADF\uAAF0\uAAF1\uABEB\uFD3E\uFD3F\uFE10-\uFE19\uFE30-\uFE52\uFE54-\uFE61\uFE63\uFE68\uFE6A\uFE6B\uFF01-\uFF03\uFF05-\uFF0A\uFF0C-\uFF0F\uFF1A\uFF1B\uFF1F\uFF20\uFF3B-\uFF3D\uFF3F\uFF5B\uFF5D\uFF5F-\uFF65]|\uD800[\uDD00-\uDD02\uDF9F\uDFD0]|\uD801\uDD6F|\uD802[\uDC57\uDD1F\uDD3F\uDE50-\uDE58\uDE7F\uDEF0-\uDEF6\uDF39-\uDF3F\uDF99-\uDF9C]|\uD803[\uDF55-\uDF59]|\uD804[\uDC47-\uDC4D\uDCBB\uDCBC\uDCBE-\uDCC1\uDD40-\uDD43\uDD74\uDD75\uDDC5-\uDDC8\uDDCD\uDDDB\uDDDD-\uDDDF\uDE38-\uDE3D\uDEA9]|\uD805[\uDC4B-\uDC4F\uDC5B\uDC5D\uDCC6\uDDC1-\uDDD7\uDE41-\uDE43\uDE60-\uDE6C\uDF3C-\uDF3E]|\uD806[\uDC3B\uDE3F-\uDE46\uDE9A-\uDE9C\uDE9E-\uDEA2]|\uD807[\uDC41-\uDC45\uDC70\uDC71\uDEF7\uDEF8]|\uD809[\uDC70-\uDC74]|\uD81A[\uDE6E\uDE6F\uDEF5\uDF37-\uDF3B\uDF44]|\uD81B[\uDE97-\uDE9A]|\uD82F\uDC9F|\uD836[\uDE87-\uDE8B]|\uD83A[\uDD5E\uDD5F]/
-
-/***/ }),
-/* 6 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/**
- * class Ruler
- *
- * Helper class, used by [[MarkdownIt#core]], [[MarkdownIt#block]] and
- * [[MarkdownIt#inline]] to manage sequences of functions (rules):
- *
- * - keep rules in defined order
- * - assign the name to each rule
- * - enable/disable rules
- * - add/replace rules
- * - allow assign rules to additional named chains (in the same)
- * - cacheing lists of active rules
- *
- * You will not need use this class directly until write plugins. For simple
- * rules control use [[MarkdownIt.disable]], [[MarkdownIt.enable]] and
- * [[MarkdownIt.use]].
- **/
-
-
-
-/**
- * new Ruler()
- **/
-function Ruler() {
-  // List of added rules. Each element is:
-  //
-  // {
-  //   name: XXX,
-  //   enabled: Boolean,
-  //   fn: Function(),
-  //   alt: [ name2, name3 ]
-  // }
-  //
-  this.__rules__ = [];
-
-  // Cached rule chains.
-  //
-  // First level - chain name, '' for default.
-  // Second level - diginal anchor for fast filtering by charcodes.
-  //
-  this.__cache__ = null;
-}
-
-////////////////////////////////////////////////////////////////////////////////
-// Helper methods, should not be used directly
-
-
-// Find rule index by name
-//
-Ruler.prototype.__find__ = function (name) {
-  for (var i = 0; i < this.__rules__.length; i++) {
-    if (this.__rules__[i].name === name) {
-      return i;
-    }
-  }
-  return -1;
-};
-
-
-// Build rules lookup cache
-//
-Ruler.prototype.__compile__ = function () {
-  var self = this;
-  var chains = [ '' ];
-
-  // collect unique names
-  self.__rules__.forEach(function (rule) {
-    if (!rule.enabled) { return; }
-
-    rule.alt.forEach(function (altName) {
-      if (chains.indexOf(altName) < 0) {
-        chains.push(altName);
-      }
-    });
-  });
-
-  self.__cache__ = {};
-
-  chains.forEach(function (chain) {
-    self.__cache__[chain] = [];
-    self.__rules__.forEach(function (rule) {
-      if (!rule.enabled) { return; }
-
-      if (chain && rule.alt.indexOf(chain) < 0) { return; }
-
-      self.__cache__[chain].push(rule.fn);
-    });
-  });
-};
-
-
-/**
- * Ruler.at(name, fn [, options])
- * - name (String): rule name to replace.
- * - fn (Function): new rule function.
- * - options (Object): new rule options (not mandatory).
- *
- * Replace rule by name with new function & options. Throws error if name not
- * found.
- *
- * ##### Options:
- *
- * - __alt__ - array with names of "alternate" chains.
- *
- * ##### Example
- *
- * Replace existing typographer replacement rule with new one:
- *
- * ```javascript
- * var md = require('markdown-it')();
- *
- * md.core.ruler.at('replacements', function replace(state) {
- *   //...
- * });
- * ```
- **/
-Ruler.prototype.at = function (name, fn, options) {
-  var index = this.__find__(name);
-  var opt = options || {};
-
-  if (index === -1) { throw new Error('Parser rule not found: ' + name); }
-
-  this.__rules__[index].fn = fn;
-  this.__rules__[index].alt = opt.alt || [];
-  this.__cache__ = null;
-};
-
-
-/**
- * Ruler.before(beforeName, ruleName, fn [, options])
- * - beforeName (String): new rule will be added before this one.
- * - ruleName (String): name of added rule.
- * - fn (Function): rule function.
- * - options (Object): rule options (not mandatory).
- *
- * Add new rule to chain before one with given name. See also
- * [[Ruler.after]], [[Ruler.push]].
- *
- * ##### Options:
- *
- * - __alt__ - array with names of "alternate" chains.
- *
- * ##### Example
- *
- * ```javascript
- * var md = require('markdown-it')();
- *
- * md.block.ruler.before('paragraph', 'my_rule', function replace(state) {
- *   //...
- * });
- * ```
- **/
-Ruler.prototype.before = function (beforeName, ruleName, fn, options) {
-  var index = this.__find__(beforeName);
-  var opt = options || {};
-
-  if (index === -1) { throw new Error('Parser rule not found: ' + beforeName); }
-
-  this.__rules__.splice(index, 0, {
-    name: ruleName,
-    enabled: true,
-    fn: fn,
-    alt: opt.alt || []
-  });
-
-  this.__cache__ = null;
-};
-
-
-/**
- * Ruler.after(afterName, ruleName, fn [, options])
- * - afterName (String): new rule will be added after this one.
- * - ruleName (String): name of added rule.
- * - fn (Function): rule function.
- * - options (Object): rule options (not mandatory).
- *
- * Add new rule to chain after one with given name. See also
- * [[Ruler.before]], [[Ruler.push]].
- *
- * ##### Options:
- *
- * - __alt__ - array with names of "alternate" chains.
- *
- * ##### Example
- *
- * ```javascript
- * var md = require('markdown-it')();
- *
- * md.inline.ruler.after('text', 'my_rule', function replace(state) {
- *   //...
- * });
- * ```
- **/
-Ruler.prototype.after = function (afterName, ruleName, fn, options) {
-  var index = this.__find__(afterName);
-  var opt = options || {};
-
-  if (index === -1) { throw new Error('Parser rule not found: ' + afterName); }
-
-  this.__rules__.splice(index + 1, 0, {
-    name: ruleName,
-    enabled: true,
-    fn: fn,
-    alt: opt.alt || []
-  });
-
-  this.__cache__ = null;
-};
-
-/**
- * Ruler.push(ruleName, fn [, options])
- * - ruleName (String): name of added rule.
- * - fn (Function): rule function.
- * - options (Object): rule options (not mandatory).
- *
- * Push new rule to the end of chain. See also
- * [[Ruler.before]], [[Ruler.after]].
- *
- * ##### Options:
- *
- * - __alt__ - array with names of "alternate" chains.
- *
- * ##### Example
- *
- * ```javascript
- * var md = require('markdown-it')();
- *
- * md.core.ruler.push('my_rule', function replace(state) {
- *   //...
- * });
- * ```
- **/
-Ruler.prototype.push = function (ruleName, fn, options) {
-  var opt = options || {};
-
-  this.__rules__.push({
-    name: ruleName,
-    enabled: true,
-    fn: fn,
-    alt: opt.alt || []
-  });
-
-  this.__cache__ = null;
-};
-
-
-/**
- * Ruler.enable(list [, ignoreInvalid]) -> Array
- * - list (String|Array): list of rule names to enable.
- * - ignoreInvalid (Boolean): set `true` to ignore errors when rule not found.
- *
- * Enable rules with given names. If any rule name not found - throw Error.
- * Errors can be disabled by second param.
- *
- * Returns list of found rule names (if no exception happened).
- *
- * See also [[Ruler.disable]], [[Ruler.enableOnly]].
- **/
-Ruler.prototype.enable = function (list, ignoreInvalid) {
-  if (!Array.isArray(list)) { list = [ list ]; }
-
-  var result = [];
-
-  // Search by name and enable
-  list.forEach(function (name) {
-    var idx = this.__find__(name);
-
-    if (idx < 0) {
-      if (ignoreInvalid) { return; }
-      throw new Error('Rules manager: invalid rule name ' + name);
-    }
-    this.__rules__[idx].enabled = true;
-    result.push(name);
-  }, this);
-
-  this.__cache__ = null;
-  return result;
-};
-
-
-/**
- * Ruler.enableOnly(list [, ignoreInvalid])
- * - list (String|Array): list of rule names to enable (whitelist).
- * - ignoreInvalid (Boolean): set `true` to ignore errors when rule not found.
- *
- * Enable rules with given names, and disable everything else. If any rule name
- * not found - throw Error. Errors can be disabled by second param.
- *
- * See also [[Ruler.disable]], [[Ruler.enable]].
- **/
-Ruler.prototype.enableOnly = function (list, ignoreInvalid) {
-  if (!Array.isArray(list)) { list = [ list ]; }
-
-  this.__rules__.forEach(function (rule) { rule.enabled = false; });
-
-  this.enable(list, ignoreInvalid);
-};
-
-
-/**
- * Ruler.disable(list [, ignoreInvalid]) -> Array
- * - list (String|Array): list of rule names to disable.
- * - ignoreInvalid (Boolean): set `true` to ignore errors when rule not found.
- *
- * Disable rules with given names. If any rule name not found - throw Error.
- * Errors can be disabled by second param.
- *
- * Returns list of found rule names (if no exception happened).
- *
- * See also [[Ruler.enable]], [[Ruler.enableOnly]].
- **/
-Ruler.prototype.disable = function (list, ignoreInvalid) {
-  if (!Array.isArray(list)) { list = [ list ]; }
-
-  var result = [];
-
-  // Search by name and disable
-  list.forEach(function (name) {
-    var idx = this.__find__(name);
-
-    if (idx < 0) {
-      if (ignoreInvalid) { return; }
-      throw new Error('Rules manager: invalid rule name ' + name);
-    }
-    this.__rules__[idx].enabled = false;
-    result.push(name);
-  }, this);
-
-  this.__cache__ = null;
-  return result;
-};
-
-
-/**
- * Ruler.getRules(chainName) -> Array
- *
- * Return array of active functions (rules) for given chain name. It analyzes
- * rules configuration, compiles caches if not exists and returns result.
- *
- * Default chain name is `''` (empty string). It can't be skipped. That's
- * done intentionally, to keep signature monomorphic for high speed.
- **/
-Ruler.prototype.getRules = function (chainName) {
-  if (this.__cache__ === null) {
-    this.__compile__();
-  }
-
-  // Chain can be empty, if rules disabled. But we still have to return Array.
-  return this.__cache__[chainName] || [];
-};
-
-module.exports = Ruler;
-
-
-/***/ }),
-/* 7 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-// Token class
-
-
-
-
-/**
- * class Token
- **/
-
-/**
- * new Token(type, tag, nesting)
- *
- * Create new token and fill passed properties.
- **/
-function Token(type, tag, nesting) {
-  /**
-   * Token#type -> String
-   *
-   * Type of the token (string, e.g. "paragraph_open")
-   **/
-  this.type     = type;
-
-  /**
-   * Token#tag -> String
-   *
-   * html tag name, e.g. "p"
-   **/
-  this.tag      = tag;
-
-  /**
-   * Token#attrs -> Array
-   *
-   * Html attributes. Format: `[ [ name1, value1 ], [ name2, value2 ] ]`
-   **/
-  this.attrs    = null;
-
-  /**
-   * Token#map -> Array
-   *
-   * Source map info. Format: `[ line_begin, line_end ]`
-   **/
-  this.map      = null;
-
-  /**
-   * Token#nesting -> Number
-   *
-   * Level change (number in {-1, 0, 1} set), where:
-   *
-   * -  `1` means the tag is opening
-   * -  `0` means the tag is self-closing
-   * - `-1` means the tag is closing
-   **/
-  this.nesting  = nesting;
-
-  /**
-   * Token#level -> Number
-   *
-   * nesting level, the same as `state.level`
-   **/
-  this.level    = 0;
-
-  /**
-   * Token#children -> Array
-   *
-   * An array of child nodes (inline and img tokens)
-   **/
-  this.children = null;
-
-  /**
-   * Token#content -> String
-   *
-   * In a case of self-closing tag (code, html, fence, etc.),
-   * it has contents of this tag.
-   **/
-  this.content  = '';
-
-  /**
-   * Token#markup -> String
-   *
-   * '*' or '_' for emphasis, fence string for fence, etc.
-   **/
-  this.markup   = '';
-
-  /**
-   * Token#info -> String
-   *
-   * fence infostring
-   **/
-  this.info     = '';
-
-  /**
-   * Token#meta -> Object
-   *
-   * A place for plugins to store an arbitrary data
-   **/
-  this.meta     = null;
-
-  /**
-   * Token#block -> Boolean
-   *
-   * True for block-level tokens, false for inline tokens.
-   * Used in renderer to calculate line breaks
-   **/
-  this.block    = false;
-
-  /**
-   * Token#hidden -> Boolean
-   *
-   * If it's true, ignore this element when rendering. Used for tight lists
-   * to hide paragraphs.
-   **/
-  this.hidden   = false;
-}
-
-
-/**
- * Token.attrIndex(name) -> Number
- *
- * Search attribute index by name.
- **/
-Token.prototype.attrIndex = function attrIndex(name) {
-  var attrs, i, len;
-
-  if (!this.attrs) { return -1; }
-
-  attrs = this.attrs;
-
-  for (i = 0, len = attrs.length; i < len; i++) {
-    if (attrs[i][0] === name) { return i; }
-  }
-  return -1;
-};
-
-
-/**
- * Token.attrPush(attrData)
- *
- * Add `[ name, value ]` attribute to list. Init attrs if necessary
- **/
-Token.prototype.attrPush = function attrPush(attrData) {
-  if (this.attrs) {
-    this.attrs.push(attrData);
-  } else {
-    this.attrs = [ attrData ];
-  }
-};
-
-
-/**
- * Token.attrSet(name, value)
- *
- * Set `name` attribute to `value`. Override old value if exists.
- **/
-Token.prototype.attrSet = function attrSet(name, value) {
-  var idx = this.attrIndex(name),
-      attrData = [ name, value ];
-
-  if (idx < 0) {
-    this.attrPush(attrData);
-  } else {
-    this.attrs[idx] = attrData;
-  }
-};
-
-
-/**
- * Token.attrGet(name)
- *
- * Get the value of attribute `name`, or null if it does not exist.
- **/
-Token.prototype.attrGet = function attrGet(name) {
-  var idx = this.attrIndex(name), value = null;
-  if (idx >= 0) {
-    value = this.attrs[idx][1];
-  }
-  return value;
-};
-
-
-/**
- * Token.attrJoin(name, value)
- *
- * Join value to existing attribute via space. Or create new attribute if not
- * exists. Useful to operate with token classes.
- **/
-Token.prototype.attrJoin = function attrJoin(name, value) {
-  var idx = this.attrIndex(name);
-
-  if (idx < 0) {
-    this.attrPush([ name, value ]);
-  } else {
-    this.attrs[idx][1] = this.attrs[idx][1] + ' ' + value;
-  }
-};
-
-
-module.exports = Token;
-
-
-/***/ }),
-/* 8 */
-/***/ (function(module, exports) {
-
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -5893,18 +5324,18 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 9 */
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 if (false) {
   module.exports = require('./vue.common.prod.js')
 } else {
-  module.exports = __webpack_require__(10)
+  module.exports = __webpack_require__(7)
 }
 
 
 /***/ }),
-/* 10 */
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17847,10 +17278,10 @@ Vue.compile = compileToFunctions;
 
 module.exports = Vue;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(11).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(8).setImmediate))
 
 /***/ }),
-/* 11 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var scope = (typeof global !== "undefined" && global) ||
@@ -17906,7 +17337,7 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(12);
+__webpack_require__(9);
 // On some exotic environments, it's not clear which object `setimmediate` was
 // able to install onto.  Search each possibility in the same order as the
 // `setimmediate` library.
@@ -17920,7 +17351,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
-/* 12 */
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -18110,7 +17541,576 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(8)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2), __webpack_require__(5)))
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports) {
+
+module.exports=/[!-#%-\*,-\/:;\?@\[-\]_\{\}\xA1\xA7\xAB\xB6\xB7\xBB\xBF\u037E\u0387\u055A-\u055F\u0589\u058A\u05BE\u05C0\u05C3\u05C6\u05F3\u05F4\u0609\u060A\u060C\u060D\u061B\u061E\u061F\u066A-\u066D\u06D4\u0700-\u070D\u07F7-\u07F9\u0830-\u083E\u085E\u0964\u0965\u0970\u09FD\u0A76\u0AF0\u0C84\u0DF4\u0E4F\u0E5A\u0E5B\u0F04-\u0F12\u0F14\u0F3A-\u0F3D\u0F85\u0FD0-\u0FD4\u0FD9\u0FDA\u104A-\u104F\u10FB\u1360-\u1368\u1400\u166D\u166E\u169B\u169C\u16EB-\u16ED\u1735\u1736\u17D4-\u17D6\u17D8-\u17DA\u1800-\u180A\u1944\u1945\u1A1E\u1A1F\u1AA0-\u1AA6\u1AA8-\u1AAD\u1B5A-\u1B60\u1BFC-\u1BFF\u1C3B-\u1C3F\u1C7E\u1C7F\u1CC0-\u1CC7\u1CD3\u2010-\u2027\u2030-\u2043\u2045-\u2051\u2053-\u205E\u207D\u207E\u208D\u208E\u2308-\u230B\u2329\u232A\u2768-\u2775\u27C5\u27C6\u27E6-\u27EF\u2983-\u2998\u29D8-\u29DB\u29FC\u29FD\u2CF9-\u2CFC\u2CFE\u2CFF\u2D70\u2E00-\u2E2E\u2E30-\u2E4E\u3001-\u3003\u3008-\u3011\u3014-\u301F\u3030\u303D\u30A0\u30FB\uA4FE\uA4FF\uA60D-\uA60F\uA673\uA67E\uA6F2-\uA6F7\uA874-\uA877\uA8CE\uA8CF\uA8F8-\uA8FA\uA8FC\uA92E\uA92F\uA95F\uA9C1-\uA9CD\uA9DE\uA9DF\uAA5C-\uAA5F\uAADE\uAADF\uAAF0\uAAF1\uABEB\uFD3E\uFD3F\uFE10-\uFE19\uFE30-\uFE52\uFE54-\uFE61\uFE63\uFE68\uFE6A\uFE6B\uFF01-\uFF03\uFF05-\uFF0A\uFF0C-\uFF0F\uFF1A\uFF1B\uFF1F\uFF20\uFF3B-\uFF3D\uFF3F\uFF5B\uFF5D\uFF5F-\uFF65]|\uD800[\uDD00-\uDD02\uDF9F\uDFD0]|\uD801\uDD6F|\uD802[\uDC57\uDD1F\uDD3F\uDE50-\uDE58\uDE7F\uDEF0-\uDEF6\uDF39-\uDF3F\uDF99-\uDF9C]|\uD803[\uDF55-\uDF59]|\uD804[\uDC47-\uDC4D\uDCBB\uDCBC\uDCBE-\uDCC1\uDD40-\uDD43\uDD74\uDD75\uDDC5-\uDDC8\uDDCD\uDDDB\uDDDD-\uDDDF\uDE38-\uDE3D\uDEA9]|\uD805[\uDC4B-\uDC4F\uDC5B\uDC5D\uDCC6\uDDC1-\uDDD7\uDE41-\uDE43\uDE60-\uDE6C\uDF3C-\uDF3E]|\uD806[\uDC3B\uDE3F-\uDE46\uDE9A-\uDE9C\uDE9E-\uDEA2]|\uD807[\uDC41-\uDC45\uDC70\uDC71\uDEF7\uDEF8]|\uD809[\uDC70-\uDC74]|\uD81A[\uDE6E\uDE6F\uDEF5\uDF37-\uDF3B\uDF44]|\uD81B[\uDE97-\uDE9A]|\uD82F\uDC9F|\uD836[\uDE87-\uDE8B]|\uD83A[\uDD5E\uDD5F]/
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/**
+ * class Ruler
+ *
+ * Helper class, used by [[MarkdownIt#core]], [[MarkdownIt#block]] and
+ * [[MarkdownIt#inline]] to manage sequences of functions (rules):
+ *
+ * - keep rules in defined order
+ * - assign the name to each rule
+ * - enable/disable rules
+ * - add/replace rules
+ * - allow assign rules to additional named chains (in the same)
+ * - cacheing lists of active rules
+ *
+ * You will not need use this class directly until write plugins. For simple
+ * rules control use [[MarkdownIt.disable]], [[MarkdownIt.enable]] and
+ * [[MarkdownIt.use]].
+ **/
+
+
+
+/**
+ * new Ruler()
+ **/
+function Ruler() {
+  // List of added rules. Each element is:
+  //
+  // {
+  //   name: XXX,
+  //   enabled: Boolean,
+  //   fn: Function(),
+  //   alt: [ name2, name3 ]
+  // }
+  //
+  this.__rules__ = [];
+
+  // Cached rule chains.
+  //
+  // First level - chain name, '' for default.
+  // Second level - diginal anchor for fast filtering by charcodes.
+  //
+  this.__cache__ = null;
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// Helper methods, should not be used directly
+
+
+// Find rule index by name
+//
+Ruler.prototype.__find__ = function (name) {
+  for (var i = 0; i < this.__rules__.length; i++) {
+    if (this.__rules__[i].name === name) {
+      return i;
+    }
+  }
+  return -1;
+};
+
+
+// Build rules lookup cache
+//
+Ruler.prototype.__compile__ = function () {
+  var self = this;
+  var chains = [ '' ];
+
+  // collect unique names
+  self.__rules__.forEach(function (rule) {
+    if (!rule.enabled) { return; }
+
+    rule.alt.forEach(function (altName) {
+      if (chains.indexOf(altName) < 0) {
+        chains.push(altName);
+      }
+    });
+  });
+
+  self.__cache__ = {};
+
+  chains.forEach(function (chain) {
+    self.__cache__[chain] = [];
+    self.__rules__.forEach(function (rule) {
+      if (!rule.enabled) { return; }
+
+      if (chain && rule.alt.indexOf(chain) < 0) { return; }
+
+      self.__cache__[chain].push(rule.fn);
+    });
+  });
+};
+
+
+/**
+ * Ruler.at(name, fn [, options])
+ * - name (String): rule name to replace.
+ * - fn (Function): new rule function.
+ * - options (Object): new rule options (not mandatory).
+ *
+ * Replace rule by name with new function & options. Throws error if name not
+ * found.
+ *
+ * ##### Options:
+ *
+ * - __alt__ - array with names of "alternate" chains.
+ *
+ * ##### Example
+ *
+ * Replace existing typographer replacement rule with new one:
+ *
+ * ```javascript
+ * var md = require('markdown-it')();
+ *
+ * md.core.ruler.at('replacements', function replace(state) {
+ *   //...
+ * });
+ * ```
+ **/
+Ruler.prototype.at = function (name, fn, options) {
+  var index = this.__find__(name);
+  var opt = options || {};
+
+  if (index === -1) { throw new Error('Parser rule not found: ' + name); }
+
+  this.__rules__[index].fn = fn;
+  this.__rules__[index].alt = opt.alt || [];
+  this.__cache__ = null;
+};
+
+
+/**
+ * Ruler.before(beforeName, ruleName, fn [, options])
+ * - beforeName (String): new rule will be added before this one.
+ * - ruleName (String): name of added rule.
+ * - fn (Function): rule function.
+ * - options (Object): rule options (not mandatory).
+ *
+ * Add new rule to chain before one with given name. See also
+ * [[Ruler.after]], [[Ruler.push]].
+ *
+ * ##### Options:
+ *
+ * - __alt__ - array with names of "alternate" chains.
+ *
+ * ##### Example
+ *
+ * ```javascript
+ * var md = require('markdown-it')();
+ *
+ * md.block.ruler.before('paragraph', 'my_rule', function replace(state) {
+ *   //...
+ * });
+ * ```
+ **/
+Ruler.prototype.before = function (beforeName, ruleName, fn, options) {
+  var index = this.__find__(beforeName);
+  var opt = options || {};
+
+  if (index === -1) { throw new Error('Parser rule not found: ' + beforeName); }
+
+  this.__rules__.splice(index, 0, {
+    name: ruleName,
+    enabled: true,
+    fn: fn,
+    alt: opt.alt || []
+  });
+
+  this.__cache__ = null;
+};
+
+
+/**
+ * Ruler.after(afterName, ruleName, fn [, options])
+ * - afterName (String): new rule will be added after this one.
+ * - ruleName (String): name of added rule.
+ * - fn (Function): rule function.
+ * - options (Object): rule options (not mandatory).
+ *
+ * Add new rule to chain after one with given name. See also
+ * [[Ruler.before]], [[Ruler.push]].
+ *
+ * ##### Options:
+ *
+ * - __alt__ - array with names of "alternate" chains.
+ *
+ * ##### Example
+ *
+ * ```javascript
+ * var md = require('markdown-it')();
+ *
+ * md.inline.ruler.after('text', 'my_rule', function replace(state) {
+ *   //...
+ * });
+ * ```
+ **/
+Ruler.prototype.after = function (afterName, ruleName, fn, options) {
+  var index = this.__find__(afterName);
+  var opt = options || {};
+
+  if (index === -1) { throw new Error('Parser rule not found: ' + afterName); }
+
+  this.__rules__.splice(index + 1, 0, {
+    name: ruleName,
+    enabled: true,
+    fn: fn,
+    alt: opt.alt || []
+  });
+
+  this.__cache__ = null;
+};
+
+/**
+ * Ruler.push(ruleName, fn [, options])
+ * - ruleName (String): name of added rule.
+ * - fn (Function): rule function.
+ * - options (Object): rule options (not mandatory).
+ *
+ * Push new rule to the end of chain. See also
+ * [[Ruler.before]], [[Ruler.after]].
+ *
+ * ##### Options:
+ *
+ * - __alt__ - array with names of "alternate" chains.
+ *
+ * ##### Example
+ *
+ * ```javascript
+ * var md = require('markdown-it')();
+ *
+ * md.core.ruler.push('my_rule', function replace(state) {
+ *   //...
+ * });
+ * ```
+ **/
+Ruler.prototype.push = function (ruleName, fn, options) {
+  var opt = options || {};
+
+  this.__rules__.push({
+    name: ruleName,
+    enabled: true,
+    fn: fn,
+    alt: opt.alt || []
+  });
+
+  this.__cache__ = null;
+};
+
+
+/**
+ * Ruler.enable(list [, ignoreInvalid]) -> Array
+ * - list (String|Array): list of rule names to enable.
+ * - ignoreInvalid (Boolean): set `true` to ignore errors when rule not found.
+ *
+ * Enable rules with given names. If any rule name not found - throw Error.
+ * Errors can be disabled by second param.
+ *
+ * Returns list of found rule names (if no exception happened).
+ *
+ * See also [[Ruler.disable]], [[Ruler.enableOnly]].
+ **/
+Ruler.prototype.enable = function (list, ignoreInvalid) {
+  if (!Array.isArray(list)) { list = [ list ]; }
+
+  var result = [];
+
+  // Search by name and enable
+  list.forEach(function (name) {
+    var idx = this.__find__(name);
+
+    if (idx < 0) {
+      if (ignoreInvalid) { return; }
+      throw new Error('Rules manager: invalid rule name ' + name);
+    }
+    this.__rules__[idx].enabled = true;
+    result.push(name);
+  }, this);
+
+  this.__cache__ = null;
+  return result;
+};
+
+
+/**
+ * Ruler.enableOnly(list [, ignoreInvalid])
+ * - list (String|Array): list of rule names to enable (whitelist).
+ * - ignoreInvalid (Boolean): set `true` to ignore errors when rule not found.
+ *
+ * Enable rules with given names, and disable everything else. If any rule name
+ * not found - throw Error. Errors can be disabled by second param.
+ *
+ * See also [[Ruler.disable]], [[Ruler.enable]].
+ **/
+Ruler.prototype.enableOnly = function (list, ignoreInvalid) {
+  if (!Array.isArray(list)) { list = [ list ]; }
+
+  this.__rules__.forEach(function (rule) { rule.enabled = false; });
+
+  this.enable(list, ignoreInvalid);
+};
+
+
+/**
+ * Ruler.disable(list [, ignoreInvalid]) -> Array
+ * - list (String|Array): list of rule names to disable.
+ * - ignoreInvalid (Boolean): set `true` to ignore errors when rule not found.
+ *
+ * Disable rules with given names. If any rule name not found - throw Error.
+ * Errors can be disabled by second param.
+ *
+ * Returns list of found rule names (if no exception happened).
+ *
+ * See also [[Ruler.enable]], [[Ruler.enableOnly]].
+ **/
+Ruler.prototype.disable = function (list, ignoreInvalid) {
+  if (!Array.isArray(list)) { list = [ list ]; }
+
+  var result = [];
+
+  // Search by name and disable
+  list.forEach(function (name) {
+    var idx = this.__find__(name);
+
+    if (idx < 0) {
+      if (ignoreInvalid) { return; }
+      throw new Error('Rules manager: invalid rule name ' + name);
+    }
+    this.__rules__[idx].enabled = false;
+    result.push(name);
+  }, this);
+
+  this.__cache__ = null;
+  return result;
+};
+
+
+/**
+ * Ruler.getRules(chainName) -> Array
+ *
+ * Return array of active functions (rules) for given chain name. It analyzes
+ * rules configuration, compiles caches if not exists and returns result.
+ *
+ * Default chain name is `''` (empty string). It can't be skipped. That's
+ * done intentionally, to keep signature monomorphic for high speed.
+ **/
+Ruler.prototype.getRules = function (chainName) {
+  if (this.__cache__ === null) {
+    this.__compile__();
+  }
+
+  // Chain can be empty, if rules disabled. But we still have to return Array.
+  return this.__cache__[chainName] || [];
+};
+
+module.exports = Ruler;
+
+
+/***/ }),
+/* 12 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+// Token class
+
+
+
+
+/**
+ * class Token
+ **/
+
+/**
+ * new Token(type, tag, nesting)
+ *
+ * Create new token and fill passed properties.
+ **/
+function Token(type, tag, nesting) {
+  /**
+   * Token#type -> String
+   *
+   * Type of the token (string, e.g. "paragraph_open")
+   **/
+  this.type     = type;
+
+  /**
+   * Token#tag -> String
+   *
+   * html tag name, e.g. "p"
+   **/
+  this.tag      = tag;
+
+  /**
+   * Token#attrs -> Array
+   *
+   * Html attributes. Format: `[ [ name1, value1 ], [ name2, value2 ] ]`
+   **/
+  this.attrs    = null;
+
+  /**
+   * Token#map -> Array
+   *
+   * Source map info. Format: `[ line_begin, line_end ]`
+   **/
+  this.map      = null;
+
+  /**
+   * Token#nesting -> Number
+   *
+   * Level change (number in {-1, 0, 1} set), where:
+   *
+   * -  `1` means the tag is opening
+   * -  `0` means the tag is self-closing
+   * - `-1` means the tag is closing
+   **/
+  this.nesting  = nesting;
+
+  /**
+   * Token#level -> Number
+   *
+   * nesting level, the same as `state.level`
+   **/
+  this.level    = 0;
+
+  /**
+   * Token#children -> Array
+   *
+   * An array of child nodes (inline and img tokens)
+   **/
+  this.children = null;
+
+  /**
+   * Token#content -> String
+   *
+   * In a case of self-closing tag (code, html, fence, etc.),
+   * it has contents of this tag.
+   **/
+  this.content  = '';
+
+  /**
+   * Token#markup -> String
+   *
+   * '*' or '_' for emphasis, fence string for fence, etc.
+   **/
+  this.markup   = '';
+
+  /**
+   * Token#info -> String
+   *
+   * fence infostring
+   **/
+  this.info     = '';
+
+  /**
+   * Token#meta -> Object
+   *
+   * A place for plugins to store an arbitrary data
+   **/
+  this.meta     = null;
+
+  /**
+   * Token#block -> Boolean
+   *
+   * True for block-level tokens, false for inline tokens.
+   * Used in renderer to calculate line breaks
+   **/
+  this.block    = false;
+
+  /**
+   * Token#hidden -> Boolean
+   *
+   * If it's true, ignore this element when rendering. Used for tight lists
+   * to hide paragraphs.
+   **/
+  this.hidden   = false;
+}
+
+
+/**
+ * Token.attrIndex(name) -> Number
+ *
+ * Search attribute index by name.
+ **/
+Token.prototype.attrIndex = function attrIndex(name) {
+  var attrs, i, len;
+
+  if (!this.attrs) { return -1; }
+
+  attrs = this.attrs;
+
+  for (i = 0, len = attrs.length; i < len; i++) {
+    if (attrs[i][0] === name) { return i; }
+  }
+  return -1;
+};
+
+
+/**
+ * Token.attrPush(attrData)
+ *
+ * Add `[ name, value ]` attribute to list. Init attrs if necessary
+ **/
+Token.prototype.attrPush = function attrPush(attrData) {
+  if (this.attrs) {
+    this.attrs.push(attrData);
+  } else {
+    this.attrs = [ attrData ];
+  }
+};
+
+
+/**
+ * Token.attrSet(name, value)
+ *
+ * Set `name` attribute to `value`. Override old value if exists.
+ **/
+Token.prototype.attrSet = function attrSet(name, value) {
+  var idx = this.attrIndex(name),
+      attrData = [ name, value ];
+
+  if (idx < 0) {
+    this.attrPush(attrData);
+  } else {
+    this.attrs[idx] = attrData;
+  }
+};
+
+
+/**
+ * Token.attrGet(name)
+ *
+ * Get the value of attribute `name`, or null if it does not exist.
+ **/
+Token.prototype.attrGet = function attrGet(name) {
+  var idx = this.attrIndex(name), value = null;
+  if (idx >= 0) {
+    value = this.attrs[idx][1];
+  }
+  return value;
+};
+
+
+/**
+ * Token.attrJoin(name, value)
+ *
+ * Join value to existing attribute via space. Or create new attribute if not
+ * exists. Useful to operate with token classes.
+ **/
+Token.prototype.attrJoin = function attrJoin(name, value) {
+  var idx = this.attrIndex(name);
+
+  if (idx < 0) {
+    this.attrPush([ name, value ]);
+  } else {
+    this.attrs[idx][1] = this.attrs[idx][1] + ' ' + value;
+  }
+};
+
+
+module.exports = Token;
+
 
 /***/ }),
 /* 13 */
@@ -56247,7 +56247,7 @@ module.exports = urlParse;
 exports.Any = __webpack_require__(143);
 exports.Cc  = __webpack_require__(144);
 exports.Cf  = __webpack_require__(349);
-exports.P   = __webpack_require__(5);
+exports.P   = __webpack_require__(10);
 exports.Z   = __webpack_require__(145);
 
 
@@ -56828,7 +56828,7 @@ module.exports = Renderer;
 
 
 
-var Ruler  = __webpack_require__(6);
+var Ruler  = __webpack_require__(11);
 
 
 var _rules = [
@@ -57415,7 +57415,7 @@ module.exports = function smartquotes(state) {
 //
 
 
-var Token = __webpack_require__(7);
+var Token = __webpack_require__(12);
 
 
 function StateCore(src, md, env) {
@@ -57446,7 +57446,7 @@ module.exports = StateCore;
 
 
 
-var Ruler           = __webpack_require__(6);
+var Ruler           = __webpack_require__(11);
 
 
 var _rules = [
@@ -59206,7 +59206,7 @@ module.exports = function paragraph(state, startLine/*, endLine*/) {
 
 
 
-var Token = __webpack_require__(7);
+var Token = __webpack_require__(12);
 var isSpace = __webpack_require__(1).isSpace;
 
 
@@ -59448,7 +59448,7 @@ module.exports = StateBlock;
 
 
 
-var Ruler           = __webpack_require__(6);
+var Ruler           = __webpack_require__(11);
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -60497,7 +60497,7 @@ module.exports = function text_collapse(state) {
 
 
 
-var Token          = __webpack_require__(7);
+var Token          = __webpack_require__(12);
 var isWhiteSpace   = __webpack_require__(1).isWhiteSpace;
 var isPunctChar    = __webpack_require__(1).isPunctChar;
 var isMdAsciiPunct = __webpack_require__(1).isMdAsciiPunct;
@@ -61282,7 +61282,7 @@ module.exports = function (opts) {
   re.src_Any = __webpack_require__(143).source;
   re.src_Cc  = __webpack_require__(144).source;
   re.src_Z   = __webpack_require__(145).source;
-  re.src_P   = __webpack_require__(5).source;
+  re.src_P   = __webpack_require__(10).source;
 
   // \p{\Z\P\Cc\CF} (white spaces + control + format + punctuation)
   re.src_ZPCc = [ re.src_Z, re.src_P, re.src_Cc ].join('|');
@@ -62285,21 +62285,31 @@ exports.push([module.i, "/*\n\nDracula Theme v1.2.0\n\nhttps://github.com/zenoro
 /* 438 */,
 /* 439 */,
 /* 440 */,
-/* 441 */
+/* 441 */,
+/* 442 */,
+/* 443 */,
+/* 444 */,
+/* 445 */,
+/* 446 */,
+/* 447 */,
+/* 448 */,
+/* 449 */,
+/* 450 */,
+/* 451 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(442);
+module.exports = __webpack_require__(452);
 
 
 /***/ }),
-/* 442 */
+/* 452 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_ViewBlog__ = __webpack_require__(443);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_ViewBlog__ = __webpack_require__(453);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__components_ViewBlog___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__components_ViewBlog__);
 
 
@@ -62313,15 +62323,15 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
 });
 
 /***/ }),
-/* 443 */
+/* 453 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var normalizeComponent = __webpack_require__(4)
 /* script */
-var __vue_script__ = __webpack_require__(444)
+var __vue_script__ = __webpack_require__(454)
 /* template */
-var __vue_template__ = __webpack_require__(445)
+var __vue_template__ = __webpack_require__(455)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -62360,7 +62370,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 444 */
+/* 454 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -62438,7 +62448,7 @@ var md = __WEBPACK_IMPORTED_MODULE_2_markdown_it___default()({
 });
 
 /***/ }),
-/* 445 */
+/* 455 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {

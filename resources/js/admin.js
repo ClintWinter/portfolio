@@ -8,6 +8,10 @@ import NewBlog from './components/NewBlog';
 import EditBlog from './components/EditBlog';
 import PreviewBlog from './components/PreviewBlog';
 
+import LibraryList from './components/LibraryList';
+import LibraryResource from './components/LibraryResource';
+import LibraryNew from './components/LibraryNew';
+
 const app = new Vue({
     el: '#app',
 
@@ -16,6 +20,9 @@ const app = new Vue({
         tabState: 'index',
         blogs: [],
         currentBlog: 0,
+        library: [],
+        languages: [],
+        currentResource: 0,
         preview: {
             active: false,
             title: '',
@@ -29,6 +36,18 @@ const app = new Vue({
             this.blogs = response.data;
         }.bind(this))
         .catch(error => console.log(error));
+
+        axios.get('admin/resources')
+        .then(function(response) {
+            this.library = response.data;
+            this.languages = this.library.reduce((acc, val, i) => {
+                let languages = val.languages;
+                acc.push(...languages)
+
+                return acc;
+            }, [] );
+        }.bind(this))
+        .catch(error => console.log(error));
     },
 
     methods: {
@@ -40,6 +59,9 @@ const app = new Vue({
             this.tabState = state;
         },
 
+        // Resources
+
+        // Blog Posts
         addBlogPost(blogPost) {
             this.blogs.unshift(blogPost);
             this.tabState = 'index';
@@ -76,6 +98,9 @@ const app = new Vue({
         'blog-item': BlogItem,
         'new-blog': NewBlog,
         'edit-blog': EditBlog,
-        'preview-blog': PreviewBlog
+        'preview-blog': PreviewBlog,
+        'library-list': LibraryList,
+        'library-resource': LibraryResource,
+        'library-new': LibraryNew
     }
 });

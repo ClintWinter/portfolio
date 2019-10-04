@@ -1,5 +1,7 @@
 <?php
 
+use App\Resource;
+
 Route::get('/', function() {
     return redirect('/portfolio');
 });
@@ -13,6 +15,10 @@ Route::get('/blog/{slug}', 'BlogController@show')->name('blog.show');
 
 Route::get('/text-helper', function() {
     return view('helper');
+});
+
+Route::get('/library', function() {
+    return Resource::first()->languages;
 });
 
 // Admin Panel
@@ -37,6 +43,12 @@ Route::prefix('admin')->group(function() {
             Route::get('/{slug}', 'BlogPostController@show');
             Route::post('/{slug}', 'BlogPostController@update');
     
+        });
+
+        Route::prefix('resources')->group(function() {
+
+            Route::get('/', 'ResourceController@index');
+
         });
 
     });
