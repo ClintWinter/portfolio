@@ -1,24 +1,24 @@
 <template>
     <div class="px-5 py-8 w-full lg:w-2/3 xl:w-1/2 mx-auto">
         <a class="cursor-pointer block text-blue-500 underline mb-8" @click="$emit('changestate', 'index')"><i class="fas fa-arrow-left"></i> Back to Blog Posts</a>
-        <form @submit.prevent="createBlog">
+        <form @submit.prevent="updateBlogPost">
             <div class="flex flex-col sm:flex-row mb-5">
                 <!-- <label class="w-full sm:w-1/6 mr-3" for="title">Title</label> -->
-                <input 
-                    class="w-full text-3xl font-bold rounded font-body flex-grow border-2 border-gray-200 px-3 py-1" 
-                    type="text" 
-                    name="title" 
-                    id="title" 
-                    v-model="title" 
+                <input
+                    class="w-full text-3xl font-bold rounded font-body flex-grow border-2 border-gray-500 px-3 py-1 bg-gray-600"
+                    type="text"
+                    name="title"
+                    id="title"
+                    v-model="title"
                     placeholder="Title">
             </div>
             <div class="flex flex-col sm:flex-row mb-5 items-start">
                 <!-- <label class="w-full sm:w-1/6 mr-3" for="body">Body</label> -->
-                <textarea 
-                    class="w-full leading-relaxed font-body flex-grow border-2 border-gray-200 rounded px-3 py-1 h-128" 
-                    style="resize:none;" 
-                    name="body" 
-                    id="body" 
+                <textarea
+                    class="w-full leading-relaxed font-body flex-grow border-2 border-gray-500 rounded px-3 py-1 h-128 bg-gray-600"
+                    style="resize:none;"
+                    name="body"
+                    id="body"
                     v-model="body"
                     placeholder="Body"
                 ></textarea>
@@ -33,21 +33,27 @@
 
 <script>
 export default {
+    props: {
+        blog: { required: true },
+        index: { required: true }
+    },
+
     data() {
         return {
-            title: '',
-            body: ''
+            title: this.blog.title,
+            body: this.blog.body
         }
     },
 
     methods: {
-        createBlog() {
-            axios.post('/admin/blogposts/', {
+        updateBlogPost() {
+            axios.post('/admin/blogposts/' + this.blog.slug, {
                 title: this.title,
-                body: this.body
+                body: this.body,
+                slug: this.blog.slug
             })
             .then(response => {
-                this.$emit('addblogpost', response.data);
+                this.$emit('updateblogpost', { blogPost: response.data, index: this.index });
             })
             .catch(error => console.log(error));
         },

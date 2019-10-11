@@ -2,15 +2,18 @@ import axios from 'axios';
 window.axios = axios;
 
 import Vue from 'vue';
-import BlogContainer from './components/BlogContainer';
-import BlogItem from './components/BlogItem';
-import NewBlog from './components/NewBlog';
-import EditBlog from './components/EditBlog';
-import PreviewBlog from './components/PreviewBlog';
+import BlogContainer from './components/Blog/BlogContainer';
+import BlogItem from './components/Blog/BlogItem';
+import NewBlog from './components/Blog/NewBlog';
+import EditBlog from './components/Blog/EditBlog';
+import PreviewBlog from './components/Blog/PreviewBlog';
 
-import LibraryList from './components/LibraryList';
-import LibraryResource from './components/LibraryResource';
-import LibraryNew from './components/LibraryNew';
+import LibraryList from './components/Library/LibraryList';
+import LibraryResource from './components/Library/LibraryResource';
+import LibraryNew from './components/Library/LibraryNew';
+import LibraryEdit from './components/Library/LibraryEdit';
+
+import LanguageNew from './components/Library/LanguageNew';
 
 const app = new Vue({
     el: '#app',
@@ -22,6 +25,10 @@ const app = new Vue({
         currentBlog: 0,
         library: [],
         languages: [],
+        language: {
+            active: false,
+            name: ''
+        },
         currentResource: 0,
         preview: {
             active: false,
@@ -31,27 +38,31 @@ const app = new Vue({
     },
 
     created() {
+        // Get Blog Posts
         axios.get('/admin/blogposts')
         .then(function(response) {
             this.blogs = response.data;
         }.bind(this))
         .catch(error => console.log(error));
 
+        // Get Resources
         axios.get('admin/resources')
         .then(function(response) {
             this.library = response.data;
-            this.languages = this.library.reduce((acc, val, i) => {
-                let languages = val.languages;
-                acc.push(...languages)
-
-                return acc;
-            }, [] );
         }.bind(this))
+        .catch(error => console.log(error));
+
+        // Get Languages
+        axios.get('admin/languages')
+        .then(response => {
+            this.languages = response.data;
+        })
         .catch(error => console.log(error));
     },
 
     methods: {
         setActiveTab(tabName) {
+            this.changeState('index');
             this.activeTab = tabName;
         },
 
@@ -60,6 +71,34 @@ const app = new Vue({
         },
 
         // Resources
+        addResource(resource) {
+            this.resources.unshift(resource);
+            this.tabState = 'index';
+        },
+
+        editResource(index) {
+            this.tabState = 'edit';
+            this.currentResource = index;
+        },
+
+        updateResource({resource, index}) {
+            this.$set(this.library, index, resource);
+            this.tabState = 'index';
+        },
+
+        // Languages
+        newLanguage() {
+            this.language.active = true;
+        },
+
+        addLanguage(language) {
+            this.languages.unshift(language);
+            this.closeLanguage();
+        },
+
+        closeLanguage() {
+            this.language.active = false;
+        },
 
         // Blog Posts
         addBlogPost(blogPost) {
@@ -101,6 +140,8 @@ const app = new Vue({
         'preview-blog': PreviewBlog,
         'library-list': LibraryList,
         'library-resource': LibraryResource,
-        'library-new': LibraryNew
+        'library-new': LibraryNew,
+        'library-edit': LibraryEdit,
+        'language-new': LanguageNew
     }
 });

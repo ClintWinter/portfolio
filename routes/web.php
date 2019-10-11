@@ -42,22 +42,31 @@ Route::prefix('admin')->group(function() {
             Route::post('/{slug}/publish', 'BlogPostController@publish');
             Route::get('/{slug}', 'BlogPostController@show');
             Route::post('/{slug}', 'BlogPostController@update');
-    
+
         });
 
         Route::prefix('resources')->group(function() {
 
             Route::get('/', 'ResourceController@index');
+            Route::post('/', 'ResourceController@store');
+            Route::post('/{id}', 'ResourceController@update');
+
+        });
+
+        Route::prefix('languages')->group(function() {
+
+            Route::get('/', 'LanguageController@index');
+            Route::post('/', 'LanguageController@store');
 
         });
 
     });
 
-    
-    
+
+
 });
 
 
 Route::group(['prefix' => 'admin'], function() {
-    
+
 });

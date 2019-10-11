@@ -60,21 +60,21 @@
 /******/ 	__webpack_require__.p = "/";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 403);
+/******/ 	return __webpack_require__(__webpack_require__.s = 405);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 403:
+/***/ 405:
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(404);
-module.exports = __webpack_require__(405);
+__webpack_require__(406);
+module.exports = __webpack_require__(407);
 
 
 /***/ }),
 
-/***/ 404:
+/***/ 406:
 /***/ (function(module, exports) {
 
 // require('./bootstrap');
@@ -120,7 +120,7 @@ document.querySelector('.btn-details').addEventListener('click', function (event
 
 /***/ }),
 
-/***/ 405:
+/***/ 407:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

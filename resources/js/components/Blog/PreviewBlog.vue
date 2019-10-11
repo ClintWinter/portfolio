@@ -1,10 +1,10 @@
 <template>
-    <div 
-        :class="{'hidden': !preview.active}" 
-        class="fixed inset-0 flex items-center justify-center z-50 py-24 px-1"
+    <div
+        :class="{'hidden': !preview.active}"
+        class="fixed inset-0 flex items-center justify-center z-50 py-24 px-1 text-gray-800"
     >
         <div class="absolute inset-0 bg-black opacity-50"></div>
-        <div 
+        <div
             class="w-full md:w-2/3 xl:w-1/2 z-20 shadow-xl rounded bg-white h-full px-1 py-6 md:px-12 md:py-12 overflow-y-auto"
         >
             <div class="flex items-center justify-between border-b-2 border-gray-200 mb-4">
@@ -44,7 +44,7 @@ export default {
             return this.md.render(this.preview.body);
         }
     },
-    
+
     methods: {
         closePreview() {
             this.$emit('closepreview');

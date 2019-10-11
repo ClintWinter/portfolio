@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Resource;
+use App\Language;
 use Illuminate\Http\Request;
 
-class ResourceController extends Controller
+class LanguageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class ResourceController extends Controller
      */
     public function index()
     {
-        return Resource::with('languages')->get();
+        return Language::all();
     }
 
     /**
@@ -36,19 +36,12 @@ class ResourceController extends Controller
     public function store(Request $request)
     {
         $validData = $request->validate([
-            'name'          => ['required', 'max:255'],
-            'url'           => ['required', 'max:255'],
-            'resource_type' => ['required', 'max:255']
+            'name' => ['required', 'max:255']
         ]);
 
-        $resource = Resource::create($validData);
+        $language = Language::create($validData);
 
-        foreach ( $request->input('langauges') as $languageId )
-        {
-            $resource->languages()->attach($languageId);
-        }
-
-        return $resource;
+        return $language;
     }
 
     /**
