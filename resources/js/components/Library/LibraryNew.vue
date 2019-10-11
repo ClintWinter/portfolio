@@ -52,7 +52,7 @@
                     class="text-sm font-bold tracking-wider px-6 py-2 rounded bg-gray-700 hover:bg-gray-600 text-gray-200 shadow"
                     @click="newLanguage"
                 >ADD LANGUAGE</button>
-                <input class="cursor-pointer shadow rounded uppercase px-6 py-2 bg-indigo-500 hover:bg-indigo-600 text-white" type="submit" value="Save">
+                <input class="cursor-pointer shadow rounded uppercase px-6 py-2 bg-teal-500 hover:bg-teal-600 text-white" type="submit" value="Save">
             </div>
         </form>
     </div>

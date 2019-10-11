@@ -36,7 +36,7 @@ class LanguageController extends Controller
     public function store(Request $request)
     {
         $validData = $request->validate([
-            'name' => ['required', 'max:255']
+            'name' => ['required', 'max:255', 'unique:languages']
         ]);
 
         $language = Language::create($validData);

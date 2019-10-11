@@ -17,11 +17,11 @@
                     ref="languageName"
                     placeholder="Name">
                 <div v-if="errors" class="mb-6">
-                    <p v-for="error in errors" :key="error">{{ error }}</p>
+                    <p class="text-md text-red-400" v-for="error in errors" :key="error">{{ error }}</p>
                 </div>
                 <div class="flex justify-between">
                     <button class="w-1/2 mr-4 cursor-pointer shadow rounded uppercase px-6 py-2 bg-gray-500 hover:bg-gray-600 text-gray-100 text-shadow" type="button" @click="cancel">CANCEL</button>
-                    <input class="w-1/2 cursor-pointer shadow rounded uppercase px-6 py-2 bg-indigo-500 hover:bg-indigo-600 text-white" type="submit" value="SAVE">
+                    <input class="w-1/2 cursor-pointer shadow rounded uppercase px-6 py-2 bg-teal-500 hover:bg-teal-600 text-white" type="submit" value="SAVE">
                 </div>
             </form>
         </div>
@@ -45,8 +45,9 @@ export default {
                 name: this.name
             })
             .then(response => {
-                console.log(response);
                 this.$emit('addlanguage', response.data);
+                this.errors = [];
+                this.name = '';
             })
             .catch(error => {
                 this.errors = error.response.data.errors.name;
@@ -55,6 +56,8 @@ export default {
 
         cancel() {
             this.$emit('closelanguage');
+            this.errors= [];
+            this.name = '';
         }
     },
 

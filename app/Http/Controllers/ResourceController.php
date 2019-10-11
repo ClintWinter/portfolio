@@ -36,7 +36,7 @@ class ResourceController extends Controller
     public function store(Request $request)
     {
         $validData = $request->validate([
-            'name'          => ['required', 'max:255'],
+            'name'          => ['required', 'max:255', 'unique:resources'],
             'url'           => ['required', 'max:255'],
             'resource_type' => ['required', 'max:255']
         ]);

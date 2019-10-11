@@ -20,22 +20,22 @@
 
     <div class="flex flex-col md:flex-row items-stretch">
 
-        <nav class="min-w-64 bg-indigo-800 text-white text-shadow shadow-md">
+        <nav class="min-w-64 bg-teal-800 text-white text-shadow shadow-md">
             <div class="py-8">
                 <ul class="flex flex-col sm:flex-row md:flex-col text-lg">
                     <li
-                        :class="{ 'text-white bg-indigo-400 hover:bg-indigo-400': activeTab == 'blog' }"
-                        class="py-3 px-8 cursor-pointer hover:bg-indigo-400"
+                        :class="{ 'text-white bg-teal-500 hover:bg-teal-500': activeTab == 'blog' }"
+                        class="py-3 px-8 cursor-pointer hover:bg-teal-500"
                         @click="setActiveTab('blog')"
                     >Blog Posts</li>
                     <li
-                        :class="{ 'text-white bg-indigo-400': activeTab == 'library' }"
-                        class="py-3 px-8 cursor-pointer hover:bg-indigo-400"
+                        :class="{ 'text-white bg-teal-500': activeTab == 'library' }"
+                        class="py-3 px-8 cursor-pointer hover:bg-teal-500"
                         @click="setActiveTab('library')"
                     >Library</li>
                     <li
-                        :class="{ 'text-white bg-indigo-400': activeTab == 'project' }"
-                        class="py-3 px-8 cursor-pointer hover:bg-indigo-400"
+                        :class="{ 'text-white bg-teal-500': activeTab == 'project' }"
+                        class="py-3 px-8 cursor-pointer hover:bg-teal-500"
                     >Projects</li>
                 </ul>
             </div>
