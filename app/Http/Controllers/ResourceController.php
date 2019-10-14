@@ -43,7 +43,7 @@ class ResourceController extends Controller
 
         $resource = Resource::create($validData);
 
-        foreach ( $request->input('langauges') as $languageId )
+        foreach ( $request->input('languages') as $languageId )
         {
             $resource->languages()->attach($languageId);
         }

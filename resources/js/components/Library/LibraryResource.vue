@@ -1,5 +1,5 @@
 <template>
-    <div class="bg-gray-600 px-6 py-4 shadow-md">
+    <div class="bg-gray-600 px-6 py-4 shadow-md mr-4 mb-2">
         <h1 class="text-xl font-semibold mb-4">
             <a
                 href="javascript:;"

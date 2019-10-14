@@ -73,11 +73,11 @@ const app = new Vue({
         // Resources
         addResource(resource) {
             this.resources.unshift(resource);
-            this.tabState = 'index';
+            this.changeState('index');
         },
 
         editResource(index) {
-            this.tabState = 'edit';
+            this.changeState('edit');
             this.currentResource = index;
         },
 
@@ -103,17 +103,17 @@ const app = new Vue({
         // Blog Posts
         addBlogPost(blogPost) {
             this.blogs.unshift(blogPost);
-            this.tabState = 'index';
+            this.changeState('index');
         },
 
         editBlogPost(index) {
-            this.tabState = 'edit';
+            this.changeState('edit');
             this.currentBlog = index;
         },
 
         updateBlogPost({blogPost, index}) {
             this.$set(this.blogs, index, blogPost);
-            this.tabState = 'index';
+            this.changeState('index');
         },
 
         publishBlogPost({blogPost, index}) {

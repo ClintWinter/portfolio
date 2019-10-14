@@ -63300,10 +63300,10 @@ var app = new __WEBPACK_IMPORTED_MODULE_1_vue___default.a({
         // Resources
         addResource: function addResource(resource) {
             this.resources.unshift(resource);
-            this.tabState = 'index';
+            this.changeState('index');
         },
         editResource: function editResource(index) {
-            this.tabState = 'edit';
+            this.changeState('edit');
             this.currentResource = index;
         },
         updateResource: function updateResource(_ref) {
@@ -63331,10 +63331,10 @@ var app = new __WEBPACK_IMPORTED_MODULE_1_vue___default.a({
         // Blog Posts
         addBlogPost: function addBlogPost(blogPost) {
             this.blogs.unshift(blogPost);
-            this.tabState = 'index';
+            this.changeState('index');
         },
         editBlogPost: function editBlogPost(index) {
-            this.tabState = 'edit';
+            this.changeState('edit');
             this.currentBlog = index;
         },
         updateBlogPost: function updateBlogPost(_ref2) {
@@ -63342,7 +63342,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_1_vue___default.a({
                 index = _ref2.index;
 
             this.$set(this.blogs, index, blogPost);
-            this.tabState = 'index';
+            this.changeState('index');
         },
         publishBlogPost: function publishBlogPost(_ref3) {
             var blogPost = _ref3.blogPost,
@@ -65300,7 +65300,7 @@ var render = function() {
       [_vm._v("New Resource")]
     ),
     _vm._v(" "),
-    _c("div", { staticClass: "flex" }, [_vm._t("default")], 2)
+    _c("div", { staticClass: "flex flex-wrap" }, [_vm._t("default")], 2)
   ])
 }
 var staticRenderFns = []
@@ -65483,38 +65483,42 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "bg-gray-600 px-6 py-4 shadow-md" }, [
-    _c("h1", { staticClass: "text-xl font-semibold mb-4" }, [
-      _c(
-        "a",
-        { attrs: { href: "javascript:;" }, on: { click: _vm.getResource } },
-        [
-          _vm._v(
-            "\n            " + _vm._s(_vm.resource.name) + "\n            "
-          ),
-          _c("small", { staticClass: "text-sm text-gray-800" }, [
-            _vm._v(_vm._s(_vm.resource.resource_type))
-          ])
-        ]
-      )
-    ]),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "flex text-md -mx-2" },
-      _vm._l(_vm.resource.languages, function(language) {
-        return _c(
-          "div",
-          {
-            key: language.name,
-            staticClass: "mx-2 px-2 py-1 rounded bg-gray-700 shadow"
-          },
-          [_vm._v(_vm._s(language.name))]
+  return _c(
+    "div",
+    { staticClass: "bg-gray-600 px-6 py-4 shadow-md mr-4 mb-2" },
+    [
+      _c("h1", { staticClass: "text-xl font-semibold mb-4" }, [
+        _c(
+          "a",
+          { attrs: { href: "javascript:;" }, on: { click: _vm.getResource } },
+          [
+            _vm._v(
+              "\n            " + _vm._s(_vm.resource.name) + "\n            "
+            ),
+            _c("small", { staticClass: "text-sm text-gray-800" }, [
+              _vm._v(_vm._s(_vm.resource.resource_type))
+            ])
+          ]
         )
-      }),
-      0
-    )
-  ])
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "flex text-md -mx-2" },
+        _vm._l(_vm.resource.languages, function(language) {
+          return _c(
+            "div",
+            {
+              key: language.name,
+              staticClass: "mx-2 px-2 py-1 rounded bg-gray-700 shadow"
+            },
+            [_vm._v(_vm._s(language.name))]
+          )
+        }),
+        0
+      )
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
