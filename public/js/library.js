@@ -2105,19 +2105,82 @@ var app = new __WEBPACK_IMPORTED_MODULE_0_vue___default.a({
     el: '#app',
 
     data: {
-        resources: []
+        resources: [],
+        languages: [],
+        types: [],
+        selectedLanguage: 0,
+        selectedType: ''
     },
 
     mounted: function mounted() {
         var _this = this;
 
         __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('/resources').then(function (response) {
-            _this.resources = response.data;
+            _this.resources = response.data.sort(function (a, b) {
+                return a.name > b.name;
+            });
+            _this.types = _this.resources.map(function (v) {
+                return v.resource_type;
+            }).filter(function (v, i, a) {
+                return a.indexOf(v) === i;
+            }).sort(function (a, b) {
+                return a > b;
+            });
+        }).catch(function (error) {
+            return console.log(error);
+        });
+
+        __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('/languages').then(function (response) {
+            _this.languages = response.data.sort(function (a, b) {
+                return a.name > b.name;
+            });
+        }).catch(function (error) {
+            return console.log(error);
         });
     },
 
 
-    methods: {},
+    methods: {
+        filterByLanguage: function filterByLanguage(id) {
+            var _this2 = this;
+
+            __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('/resources', {
+                params: {
+                    language: id
+                }
+            }).then(function (response) {
+                _this2.resources = response.data.sort(function (a, b) {
+                    return a.name > b.name;
+                });
+            }).catch(function (error) {
+                return console.log(error);
+            });
+        },
+        filterByType: function filterByType(type) {
+            var _this3 = this;
+
+            __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('/resources', {
+                params: {
+                    resource_type: type
+                }
+            }).then(function (response) {
+                _this3.resources = response.data.sort(function (a, b) {
+                    return a.name > b.name;
+                });
+            }).catch(function (error) {
+                return console.log(error);
+            });
+        }
+    },
+
+    watch: {
+        selectedLanguage: function selectedLanguage() {
+            this.filterByLanguage(this.selectedLanguage);
+        },
+        selectedType: function selectedType() {
+            this.filterByType(this.selectedType);
+        }
+    },
 
     components: {
         'fe-resource-list': __WEBPACK_IMPORTED_MODULE_2__components_FrontEnd_ResourceList___default.a,
@@ -2189,7 +2252,7 @@ var content = __webpack_require__(479);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(398)("e8dc619e", content, false, {});
+var update = __webpack_require__(398)("1f885dd1", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -2320,7 +2383,7 @@ var content = __webpack_require__(484);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(398)("37c7e344", content, false, {});
+var update = __webpack_require__(398)("68831c38", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -2386,9 +2449,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     props: ['resource'],
 
-    mounted: function mounted() {
-        console.log(this.resource);
-    }
+    mounted: function mounted() {}
 });
 
 /***/ }),
@@ -2416,7 +2477,7 @@ var render = function() {
             _c(
               "span",
               {
-                staticClass: "text-xl text-blue-500 hover:underline text-black"
+                staticClass: "text-xl text-blue-500 hover:underline font-bold"
               },
               [_vm._v(_vm._s(_vm.resource.name))]
             ),

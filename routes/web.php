@@ -21,7 +21,8 @@ Route::get('/library', function() {
     return view('library.index');
 })->name('library');
 
-Route::get('/resources', 'ResourceController@index')->middleware('auth');
+Route::get('/resources', 'ResourceController@index');
+Route::get('/languages', 'LanguageController@index');
 
 // Admin Panel
 Route::prefix('admin')->group(function() {
