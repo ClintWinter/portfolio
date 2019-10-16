@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Resource;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class ResourceController extends Controller
 {
@@ -37,7 +38,7 @@ class ResourceController extends Controller
     {
         $validData = $request->validate([
             'name'          => ['required', 'max:255', 'unique:resources'],
-            'url'           => ['required', 'max:255'],
+            'url'           => ['required', 'max:255', 'unique:resources'],
             'resource_type' => ['required', 'max:255']
         ]);
 
@@ -48,7 +49,9 @@ class ResourceController extends Controller
             $resource->languages()->attach($languageId);
         }
 
-        return $resource;
+        $id = $resource->id;
+
+        return Resource::with('languages')->find($id);
     }
 
     /**
@@ -82,7 +85,33 @@ class ResourceController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $validData = $request->validate([
+            'name'          => [
+                'required',
+                'max:255',
+                Rule::unique('resources')->ignore($id)
+            ],
+            'url'           => [
+                'required',
+                'max:255',
+                Rule::unique('resources')->ignore($id)
+            ],
+            'resource_type' => ['required', 'max:255']
+        ]);
+
+        $resource = Resource::with('languages')->find($id);
+
+        $resource->update($validData);
+
+        $resource->languages()->detach();
+        foreach ( $request->input('languages') as $languageId )
+        {
+            $resource->languages()->attach($languageId);
+        }
+
+        $resource->save();
+
+        return Resource::with('languages')->find($id);
     }
 
     /**
@@ -93,6 +122,8 @@ class ResourceController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Resource::find($id)->delete();
+
+        return 0;
     }
 }

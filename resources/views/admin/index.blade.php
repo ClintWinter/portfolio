@@ -90,6 +90,9 @@
                         :languages="languages"
                         :resource="library[currentResource]"
                         :index="currentResource"
+                        @newlanguage="newLanguage"
+                        @updateresource="updateResource"
+                        @deleteresource="deleteResource"
                     ></library-edit>
                 </div>
             </div>

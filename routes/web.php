@@ -50,6 +50,7 @@ Route::prefix('admin')->group(function() {
             Route::get('/', 'ResourceController@index');
             Route::post('/', 'ResourceController@store');
             Route::post('/{id}', 'ResourceController@update');
+            Route::delete('/{id}', 'ResourceController@destroy');
 
         });
 

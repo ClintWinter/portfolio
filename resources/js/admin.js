@@ -72,7 +72,7 @@ const app = new Vue({
 
         // Resources
         addResource(resource) {
-            this.resources.unshift(resource);
+            this.library.unshift(resource);
             this.changeState('index');
         },
 
@@ -83,7 +83,12 @@ const app = new Vue({
 
         updateResource({resource, index}) {
             this.$set(this.library, index, resource);
-            this.tabState = 'index';
+            this.changeState('index');
+        },
+
+        deleteResource(index) {
+            this.library = this.library.filter((v, i) => i != index);
+            this.changeState('index');
         },
 
         // Languages

@@ -63299,7 +63299,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_1_vue___default.a({
 
         // Resources
         addResource: function addResource(resource) {
-            this.resources.unshift(resource);
+            this.library.unshift(resource);
             this.changeState('index');
         },
         editResource: function editResource(index) {
@@ -63311,7 +63311,13 @@ var app = new __WEBPACK_IMPORTED_MODULE_1_vue___default.a({
                 index = _ref.index;
 
             this.$set(this.library, index, resource);
-            this.tabState = 'index';
+            this.changeState('index');
+        },
+        deleteResource: function deleteResource(index) {
+            this.library = this.library.filter(function (v, i) {
+                return i != index;
+            });
+            this.changeState('index');
         },
 
 
@@ -65616,7 +65622,7 @@ exports = module.exports = __webpack_require__(13)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -65725,7 +65731,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 _this.$emit('addresource', response.data);
             }).catch(function (error) {
                 var errors = error.response.data.errors;
-                console.log(errors);
                 if (errors.name) _this.errors.name = errors.name || '';
                 if (errors.url) _this.errors.url = errors.url || '';
                 if (errors.resource_type) _this.errors.resource_type = errors.resource_type || '';
@@ -66179,6 +66184,29 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -66195,14 +66223,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             url: this.resource.url,
             resource_type: this.resource.resource_type,
             allLanguages: this.languages,
-            currentLanguages: this.resource.languages
+            checkedLanguages: this.resource.languages,
+            errors: {
+                name: [],
+                url: [],
+                resource_type: []
+            }
         };
     },
 
 
     computed: {
         languageNames: function languageNames() {
-            return this.currentLanguages.map(function (v) {
+            return this.checkedLanguages.map(function (v) {
                 return v.name;
             });
         }
@@ -66213,15 +66246,46 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             axios.post('/admin/resources/' + this.resource.id, {
-                title: this.title,
+                name: this.name,
                 url: this.url,
                 resource_type: this.resource_type,
-                id: this.resource.id
+                id: this.resource.id,
+                languages: this.checkedLanguages.map(function (v) {
+                    return v.id;
+                })
             }).then(function (response) {
+                console.log(response.data);
                 _this.$emit('updateresource', { resource: response.data, index: _this.index });
             }).catch(function (error) {
-                return console.log(error);
+                var errors = error.response.data.errors;
+                if (errors.name) _this.errors.name = errors.name || '';
+                if (errors.url) _this.errors.url = errors.url || '';
+                if (errors.resource_type) _this.errors.resource_type = errors.resource_type || '';
             });
+        },
+        deleteResource: function deleteResource() {
+            var _this2 = this;
+
+            axios.delete('/admin/resources/' + this.resource.id).then(function (response) {
+                console.log(response.data);
+                if (response.data == 0) {
+                    _this2.$emit('deleteresource', _this2.index);
+                }
+            }).catch(function (error) {
+                console.log(error.response);
+            });
+        },
+        checked: function checked(isChecked, language) {
+            if (isChecked) {
+                this.checkedLanguages.push(language);
+            } else {
+                this.checkedLanguages = this.checkedLanguages.filter(function (v) {
+                    return v.id != language.id;
+                });
+            }
+        },
+        newLanguage: function newLanguage() {
+            this.$emit('newlanguage');
         }
     },
 
@@ -66243,6 +66307,12 @@ var render = function() {
     { staticClass: "px-5 py-8 w-full lg:w-2/3 xl:w-1/2 mx-auto" },
     [
       _c(
+        "h2",
+        { staticClass: "text-xl font-black mb-8 text-gray-500 tracking-wider" },
+        [_vm._v("EDIT RESOURCE")]
+      ),
+      _vm._v(" "),
+      _c(
         "form",
         {
           on: {
@@ -66253,7 +66323,7 @@ var render = function() {
           }
         },
         [
-          _c("div", { staticClass: "flex flex-col sm:flex-row mb-5" }, [
+          _c("div", { staticClass: "flex flex-col mb-5" }, [
             _c("input", {
               directives: [
                 {
@@ -66264,7 +66334,7 @@ var render = function() {
                 }
               ],
               staticClass:
-                "w-full font-bold rounded font-body flex-grow border-2 border-gray-500 px-3 py-1 bg-gray-600",
+                "w-full font-bold rounded font-body flex-grow px-4 py-2 bg-gray-600 mb-2 text-xl shadow-md",
               attrs: {
                 type: "text",
                 name: "name",
@@ -66280,10 +66350,24 @@ var render = function() {
                   _vm.name = $event.target.value
                 }
               }
-            })
+            }),
+            _vm._v(" "),
+            _vm.errors.name
+              ? _c(
+                  "div",
+                  _vm._l(_vm.errors.name, function(error) {
+                    return _c(
+                      "p",
+                      { key: error, staticClass: "text-md text-red-400" },
+                      [_vm._v(_vm._s(error))]
+                    )
+                  }),
+                  0
+                )
+              : _vm._e()
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "flex flex-col sm:flex-row mb-5" }, [
+          _c("div", { staticClass: "flex flex-col mb-5" }, [
             _c("input", {
               directives: [
                 {
@@ -66294,7 +66378,7 @@ var render = function() {
                 }
               ],
               staticClass:
-                "w-full font-bold rounded font-body flex-grow border-2 border-gray-500 px-3 py-1 bg-gray-600",
+                "w-full font-bold rounded font-body flex-grow px-4 py-2 bg-gray-600 mb-2 text-xl shadow-md",
               attrs: {
                 type: "text",
                 name: "url",
@@ -66310,10 +66394,24 @@ var render = function() {
                   _vm.url = $event.target.value
                 }
               }
-            })
+            }),
+            _vm._v(" "),
+            _vm.errors.url
+              ? _c(
+                  "div",
+                  _vm._l(_vm.errors.url, function(error) {
+                    return _c(
+                      "p",
+                      { key: error, staticClass: "text-md text-red-400" },
+                      [_vm._v(_vm._s(error))]
+                    )
+                  }),
+                  0
+                )
+              : _vm._e()
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "flex flex-col sm:flex-row mb-5" }, [
+          _c("div", { staticClass: "flex flex-col mb-5" }, [
             _c("input", {
               directives: [
                 {
@@ -66324,7 +66422,7 @@ var render = function() {
                 }
               ],
               staticClass:
-                "w-full font-bold rounded font-body flex-grow border-2 border-gray-500 px-3 py-1 bg-gray-600",
+                "w-full font-bold rounded font-body flex-grow px-4 py-2 bg-gray-600 mb-2 text-xl shadow-md",
               attrs: {
                 type: "text",
                 name: "resource_type",
@@ -66340,44 +66438,76 @@ var render = function() {
                   _vm.resource_type = $event.target.value
                 }
               }
-            })
+            }),
+            _vm._v(" "),
+            _vm.errors.resource_type
+              ? _c(
+                  "div",
+                  _vm._l(_vm.errors.resource_type, function(error) {
+                    return _c(
+                      "p",
+                      { key: error, staticClass: "text-md text-red-400" },
+                      [_vm._v(_vm._s(error))]
+                    )
+                  }),
+                  0
+                )
+              : _vm._e()
           ]),
           _vm._v(" "),
           _c(
             "div",
-            { staticClass: "flex flex-col sm:flex-row mb-5 justify-center" },
+            { staticClass: "flex flex-col sm:flex-row mb-5" },
             _vm._l(_vm.allLanguages, function(language) {
               return _c("language-checkbox", {
                 key: language.name,
                 attrs: {
                   language: language,
                   checked: _vm.languageNames.includes(language.name)
-                }
+                },
+                on: { checked: _vm.checked }
               })
             }),
             1
           ),
           _vm._v(" "),
-          _vm._m(0)
+          _c("div", { staticClass: "flex justify-between mb-3" }, [
+            _c(
+              "button",
+              {
+                staticClass:
+                  "text-sm font-bold tracking-wider px-6 py-2 rounded bg-gray-700 hover:bg-gray-600 text-gray-200 shadow",
+                attrs: { type: "button" },
+                on: { click: _vm.newLanguage }
+              },
+              [_vm._v("ADD LANGUAGE")]
+            ),
+            _vm._v(" "),
+            _c("div", [
+              _c(
+                "button",
+                {
+                  staticClass:
+                    "px-5 py-2mr-4 text-red-400 hover:text-red-500 text-shadow",
+                  attrs: { type: "button" },
+                  on: { click: _vm.deleteResource }
+                },
+                [_vm._v("DELETE")]
+              ),
+              _vm._v(" "),
+              _c("input", {
+                staticClass:
+                  "cursor-pointer shadow rounded uppercase px-6 py-2 bg-teal-500 hover:bg-teal-600 text-white",
+                attrs: { type: "submit", value: "Save" }
+              })
+            ])
+          ])
         ]
       )
     ]
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "flex justify-end mb-3" }, [
-      _c("input", {
-        staticClass:
-          "cursor-pointer shadow rounded uppercase px-6 py-2 bg-teal-500 hover:bg-teal-600 text-white",
-        attrs: { type: "submit", value: "Save" }
-      })
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {

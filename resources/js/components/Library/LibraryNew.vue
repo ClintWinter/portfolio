@@ -91,7 +91,6 @@ export default {
             })
             .catch(error => {
                 let errors = error.response.data.errors;
-                console.log(errors);
                 if (errors.name)
                     this.errors.name = errors.name || '';
                 if (errors.url)
