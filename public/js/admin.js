@@ -63272,7 +63272,7 @@ var app = new __WEBPACK_IMPORTED_MODULE_1_vue___default.a({
         });
 
         // Get Resources
-        __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('admin/resources').then(function (response) {
+        __WEBPACK_IMPORTED_MODULE_0_axios___default.a.get('/resources').then(function (response) {
             this.library = response.data;
         }.bind(this)).catch(function (error) {
             return console.log(error);
@@ -65381,7 +65381,7 @@ var content = __webpack_require__(448);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(398)("1d067444", content, false, {});
+var update = __webpack_require__(398)("1bf98dde", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -65598,7 +65598,7 @@ var content = __webpack_require__(454);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(398)("3d9fdd43", content, false, {});
+var update = __webpack_require__(398)("12f5ab69", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
@@ -65766,7 +65766,7 @@ var content = __webpack_require__(457);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(398)("4b2cb734", content, false, {});
+var update = __webpack_require__(398)("8c4c83e8", content, false, {});
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags

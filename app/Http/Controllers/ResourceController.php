@@ -15,7 +15,20 @@ class ResourceController extends Controller
      */
     public function index()
     {
-        return Resource::with('languages')->get();
+        $builder = Resource::with('languages');
+
+        if ( request('language') ) {
+            $languageId = request('language');
+            $builder = $builder->whereHas('languages', function($query) use ($languageId) {
+                return $query->where('id', $languageId);
+            });
+        }
+
+        if ( request('resource_type') ) {
+            $builder = $builder->where('resource_type', request('resource_type'));
+        }
+
+        return $builder->get();
     }
 
     /**

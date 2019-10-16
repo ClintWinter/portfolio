@@ -1,24 +1,30 @@
 import Vue from 'vue';
+import axios from 'axios';
+window.axios = axios;
+
+import ResourceList from './components/FrontEnd/ResourceList';
+import ResourceItem from './components/FrontEnd/ResourceItem';
 
 const app = new Vue({
     el: '#app',
 
     data: {
-        text: '',
-        result: ''
+        resources: []
+    },
+
+    mounted() {
+        axios.get('/resources')
+        .then(response => {
+            this.resources = response.data;
+        });
     },
 
     methods: {
-        toUpper() {
-            this.result = this.text.toUpperCase();
-        },
 
-        toLower() {
-            this.result = this.text.toLowerCase();
-        },
+    },
 
-        toInvert() {
-            this.result = this.text.replace(/./g, c => c === c.toUpperCase() ? c.toLowerCase() : c.toUpperCase())
-        }
+    components: {
+        'fe-resource-list': ResourceList,
+        'fe-resource-item': ResourceItem
     }
 });

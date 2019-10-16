@@ -39,6 +39,13 @@
                 >Blog</a>
                 <div class="h-1 {{ \Request::is('blog*') ? 'bg-gradient' : '' }}"></div>
             </div>
+            <div class="pr-10">
+                <a 
+                    class="block py-4 px-2 font-black text-md sm:text-xl font-bold uppercase hover:text-teal-400 text-gray-800 {{ \Request::is('library*') ? '' : '' }}" 
+                    href="{{ route('library') }}"
+                >Library</a>
+                <div class="h-1 {{ \Request::is('library*') ? 'bg-gradient' : '' }}"></div>
+            </div>
         </nav>
     
         <div id="app" class="min-h-screen">
@@ -51,10 +58,12 @@
 
     @if (\Request::is('portfolio'))
         <script src="/js/app.js"></script>
-    @elseif (\Request::is('blog/*'))
+    @elseif (\Request::is('blog*'))
         <script src="/js/blog.js"></script>
     @elseif (\Request::is('*helper'))
         <script src="/js/helper.js"></script>
+    @elseif (\Request::is('library*'))
+        <script src="/js/library.js"></script>
     @endif
 
 </body>

@@ -18,8 +18,10 @@ Route::get('/text-helper', function() {
 });
 
 Route::get('/library', function() {
-    return Resource::first()->languages;
-});
+    return view('library.index');
+})->name('library');
+
+Route::get('/resources', 'ResourceController@index')->middleware('auth');
 
 // Admin Panel
 Route::prefix('admin')->group(function() {
@@ -47,7 +49,6 @@ Route::prefix('admin')->group(function() {
 
         Route::prefix('resources')->group(function() {
 
-            Route::get('/', 'ResourceController@index');
             Route::post('/', 'ResourceController@store');
             Route::post('/{id}', 'ResourceController@update');
             Route::delete('/{id}', 'ResourceController@destroy');

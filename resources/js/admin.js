@@ -46,7 +46,7 @@ const app = new Vue({
         .catch(error => console.log(error));
 
         // Get Resources
-        axios.get('admin/resources')
+        axios.get('/resources')
         .then(function(response) {
             this.library = response.data;
         }.bind(this))
