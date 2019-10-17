@@ -12,7 +12,7 @@ const app = new Vue({
         resources: [],
         languages: [],
         types: [],
-        selectedLanguage: 0,
+        selectedLanguage: '',
         selectedType: ''
     },
 
