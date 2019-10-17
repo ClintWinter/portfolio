@@ -15,7 +15,9 @@ class ResourceController extends Controller
      */
     public function index()
     {
-        $builder = Resource::with('languages');
+        $builder = Resource::with(['languages' => function($query) {
+            return $query->orderBy('name', 'asc');
+        }]);
 
         if ( request('language') ) {
             $languageId = request('language');
@@ -28,7 +30,7 @@ class ResourceController extends Controller
             $builder = $builder->where('resource_type', request('resource_type'));
         }
 
-        return $builder->get();
+        return $builder->orderBy('name', 'asc')->get();
     }
 
     /**

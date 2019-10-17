@@ -2485,7 +2485,7 @@ exports = module.exports = __webpack_require__(5)(false);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -2497,6 +2497,8 @@ exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
 //
 //
 //
@@ -2542,36 +2544,42 @@ var render = function() {
     "div",
     { staticClass: "w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 mb-4 px-2" },
     [
-      _c("div", { staticClass: "px-4 py-2 rounded bg-gray-100 shadow-md" }, [
-        _c("h3", { staticClass: "mb-2" }, [
+      _c("div", { staticClass: "px-4 py-2 rounded bg-indigo-100 shadow-xl" }, [
+        _c("div", { staticClass: "flex items-end" }, [
           _c(
-            "a",
+            "h3",
             {
-              attrs: {
-                href: _vm.resource.url,
-                target: "_blank",
-                rel: "noreferrer noopener"
-              }
+              staticClass: "mb-2 mr-2 flex-grow",
+              attrs: { title: _vm.resource.url }
             },
             [
               _c(
-                "span",
+                "a",
                 {
-                  staticClass: "text-xl text-blue-500 hover:underline font-bold"
+                  attrs: {
+                    href: _vm.resource.url,
+                    target: "_blank",
+                    rel: "noreferrer noopener"
+                  }
                 },
-                [_vm._v(_vm._s(_vm.resource.name))]
-              )
+                [
+                  _c(
+                    "span",
+                    {
+                      staticClass:
+                        "text-xl text-blue-500 hover:underline font-bold"
+                    },
+                    [_vm._v(_vm._s(_vm.resource.name))]
+                  )
+                ]
+              ),
+              _c("br")
             ]
           ),
-          _c("br"),
           _vm._v(" "),
-          _c("small", { staticClass: "text-gray-700" }, [
-            _vm._v(_vm._s(_vm.resource.url))
+          _c("p", { staticClass: "mb-4" }, [
+            _vm._v(_vm._s(_vm.resource.resource_type))
           ])
-        ]),
-        _vm._v(" "),
-        _c("p", { staticClass: "mb-4" }, [
-          _vm._v(_vm._s(_vm.resource.resource_type))
         ]),
         _vm._v(" "),
         _c(

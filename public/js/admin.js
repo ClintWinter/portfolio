@@ -66457,7 +66457,7 @@ var render = function() {
           _vm._v(" "),
           _c(
             "div",
-            { staticClass: "flex flex-col sm:flex-row mb-5" },
+            { staticClass: "flex flex-wrap flex-col sm:flex-row mb-5" },
             _vm._l(_vm.allLanguages, function(language) {
               return _c("language-checkbox", {
                 key: language.name,
