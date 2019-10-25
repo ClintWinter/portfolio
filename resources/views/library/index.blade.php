@@ -6,7 +6,7 @@
 
 <div class="flex flex-col md:flex-row px-4 py-4 md:py-16">
 
-    <div class="w-full md:w-64 rounded px-4 py-6 mb-4">
+    <div class="w-full sm:w-64 rounded px-4 mb-4">
         <h3
             :class="{ 'text-pink-500' : selectedLanguage || selectedType }"
             class="text-xl tracking-wider text-gray-600 font-black mb-6">FILTER</h3>

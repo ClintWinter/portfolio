@@ -38,7 +38,7 @@
                     <p class="text-md text-red-400" v-for="error in errors.resource_type" :key="error">{{ error }}</p>
                 </div>
             </div>
-            <div class="flex flex-col sm:flex-row mb-5">
+            <div class="flex flex-wrap flex-col sm:flex-row mb-5">
                 <language-checkbox
                     v-for="language in languages"
                     :key="language.name"
