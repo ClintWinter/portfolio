@@ -12,6 +12,10 @@ const app = new Vue({
         resources: [],
         languages: [],
         types: [],
+        filter: {
+            language_id: '',
+            resource_type: ''
+        },
         selectedLanguage: '',
         selectedType: ''
     },
@@ -32,10 +36,11 @@ const app = new Vue({
     },
 
     methods: {
-        filterByLanguage(id) {
+        filter() {
             axios.get('/resources', {
                 params: {
-                    language: id
+                    language: this.filter.language_id,
+                    resource_type: this.filter.resource_type
                 }
             })
             .then(response => {
@@ -44,16 +49,19 @@ const app = new Vue({
             .catch(error => console.log(error));
         },
 
+        clearFilters() {
+            this.filter.language_id = '';
+            this.filter.resource_type = '';
+        },
+
+        filterByLanguage(id) {
+            this.filter.language_id = id;
+            this.filter();
+        },
+
         filterByType(type) {
-            axios.get('/resources', {
-                params: {
-                    resource_type: type
-                }
-            })
-            .then(response => {
-                this.resources = response.data.sort((a, b) => a.name > b.name);
-            })
-            .catch(error => console.log(error));
+            this.filter.resource_type = type;
+            this.filter();
         }
     },
 

@@ -6,7 +6,7 @@
 
 <div class="flex flex-col md:flex-row px-4 py-4 md:py-16">
 
-    <div class="w-full sm:w-64 rounded px-4 mb-4">
+    <div class="min-w-48 lg:min-w-64 sm:w-64 rounded px-4 mb-4">
         <h3
             :class="{ 'text-pink-500' : selectedLanguage || selectedType }"
             class="text-xl tracking-wider text-gray-600 font-black mb-6">FILTER</h3>
@@ -26,7 +26,7 @@
         </div>
     </div>
 
-    <div class="flex-grow">
+    <div class="w-full">
         <fe-resource-list>
             <fe-resource-item v-for="resource in resources" :resource="resource" :key="resource.id"></fe-resource-item>
         </fe-resource-list>
