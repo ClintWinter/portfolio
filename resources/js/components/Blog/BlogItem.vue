@@ -23,6 +23,7 @@
                 @click="publishBlogPost"
             ></button>
             <div class="text-xs text-gray-600 whitespace-no-wrap" v-if="blog.published">{{ publishedDate }}</div>
+            <div class="text-xs text-gray-600 whitespace-no-wrap" v-if="blog.published">Reads: {{ blog.reads }}</div>
         </div>
     </div>
 
@@ -56,11 +57,6 @@ export default {
     methods: {
         getBlogPost() {
             this.$emit('editblogpost', this.index);
-            // axios('/admin/blogposts/' + this.blog.slug)
-            // .then(response => {
-            //     this.$emit('editblogpost', response.data);
-            // })
-            // .catch(error => console.log(error));
         },
 
         publishBlogPost() {

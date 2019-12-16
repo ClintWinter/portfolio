@@ -8,11 +8,9 @@ use Illuminate\Support\Str as Str;
 class BlogPost extends Model
 {
 
-    protected $fillable = ['title', 'body', 'slug', 'cover_img_url', 'published', 'published_at'];
+    protected $fillable = ['title', 'body', 'reads', 'slug', 'cover_img_url', 'published', 'published_at'];
 
-    protected $visible = ['title', 'body', 'slug', 'cover_img_url', 'published', 'published_at'];
-
-    // protected $dates = ['published_at'];
+    protected $visible = ['title', 'body', 'reads', 'slug', 'cover_img_url', 'published', 'published_at'];
 
     public static function boot()
     {
@@ -26,5 +24,11 @@ class BlogPost extends Model
     public function getRouteKeyName()
     {
         return 'slug';
+    }
+
+    public function read()
+    {
+        $this->reads = $this->reads + 1;
+        $this->save();
     }
 }

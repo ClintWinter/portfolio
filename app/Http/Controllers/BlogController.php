@@ -50,10 +50,13 @@ class BlogController extends Controller
     {
         $blogPost = BlogPost::where('slug', $slug)->where('published', true)->firstOrFail();
 
-        if ( $blogPost )
+        if ( $blogPost ) {
+            $blogPost->read();
+
             return view('blog.show', compact('blogPost'));
-        else
+        } else {
             return view('errors.missing', [], 404);
+        }
     }
 
     /**
