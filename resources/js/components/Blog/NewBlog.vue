@@ -5,7 +5,7 @@
             <div class="flex flex-col sm:flex-row mb-5">
                 <!-- <label class="w-full sm:w-1/6 mr-3" for="title">Title</label> -->
                 <input
-                    class="w-full text-3xl font-bold rounded font-body flex-grow border-2 border-gray-500 px-3 py-1 bg-gray-600"
+                    class="w-full text-3xl font-bold rounded font-body flex-grow border-2 border-gray-500 px-3 py-1 text-gray-700 bg-gray-300"
                     type="text"
                     name="title"
                     id="title"
@@ -15,7 +15,7 @@
             <div class="flex flex-col sm:flex-row mb-5 items-start">
                 <!-- <label class="w-full sm:w-1/6 mr-3" for="body">Body</label> -->
                 <textarea
-                    class="w-full leading-relaxed font-body flex-grow border-2 border-gray-500 rounded px-3 py-1 h-128 bg-gray-600"
+                    class="w-full leading-relaxed font-body flex-grow border-2 border-gray-500 rounded px-3 py-1 h-128 text-gray-700 bg-gray-300"
                     style="resize:none;"
                     name="body"
                     id="body"
