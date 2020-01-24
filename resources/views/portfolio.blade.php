@@ -34,34 +34,18 @@
                     </div>
                 </div>
                 <div class="flex p-3 bg-white shadow-lg w-full mb-8">
-                    <div class="w-1/4 md:w-1/3 mr-2 md:mr-5 h-40 bg-gray-600 shadow flex-auto md:flex-none"></div>
-                    <div class="flex flex-col justify-between self-stretch px-3">
-                        <div class="mb-8">
-                            <h5 class="leading-none mb-2 text-lg text-gray-800 font-semibold">To be determined</h5>
-                            <p class="mb-2 text-md text-gray-700">
-                                This is a placeholder for my next project!
-                            </p>
-                            <p class="leading-none"><a href="javascript:;" class="opacity-50 cursor-default"><small class="text-teal-500 hover:underline">Details</small></a></p>
-                        </div>
-                        <div class="flex">
-                            <button disabled class="opacity-50 cursor-default px-4 py-2 leading-none text-sm bg-teal-500 hover:bg-teal-600 text-white text-shadow rounded shadow">View</button>
-                            <button disabled class="opacity-50 cursor-default px-4 py-2 leading-none text-sm hover:underline text-teal-500">Source</button>
-                        </div>
+                    <div class="w-1/4 md:w-1/3 mr-2 md:mr-5 h-40 flex-auto md:flex-none flex items-center">
+                        <img src="{{ Storage::url('public/images/devcelerate.png') }}" alt="">
                     </div>
-                </div>
-                <div class="flex p-3 bg-white shadow-lg w-full mb-8">
-                    <div class="w-1/4 md:w-1/3 mr-2 md:mr-5 h-40 bg-gray-600 shadow flex-auto md:flex-none"></div>
                     <div class="flex flex-col justify-between self-stretch px-3">
                         <div class="mb-8">
-                            <h5 class="leading-none mb-2 text-lg text-gray-800 font-semibold">To be determined</h5>
+                            <h5 class="leading-none mb-2 text-lg text-gray-800 font-semibold">DEVcelerate</h5>
                             <p class="mb-2 text-md text-gray-700">
-                                This is a placeholder for my next project!
+                                Devcelerate is where I offer courses to (future) web developers. I have a <a class="text-teal-500 hover:underline" href="https://clintgwinter.com/blog/a-laravel-project-start-to-finish-part-1-object-oriented-design-tdd">blog series</a> that goes through building this project step by step!
                             </p>
-                            <p class="leading-none"><a href="javascript:;" class="opacity-50 cursor-default"><small class="text-teal-500 hover:underline">Details</small></a></p>
                         </div>
                         <div class="flex">
-                            <button disabled class="opacity-50 cursor-default px-4 py-2 leading-none text-sm bg-teal-500 hover:bg-teal-600 text-white text-shadow rounded shadow">View</button>
-                            <button disabled class="opacity-50 cursor-default px-4 py-2 leading-none text-sm hover:underline text-teal-500">Source</button>
+                            <a target="_blank" href="https://devcelerate.io" class="px-4 py-2 leading-none text-sm bg-teal-500 hover:bg-teal-600 text-white text-shadow rounded shadow">View</a>
                         </div>
                     </div>
                 </div>
@@ -112,7 +96,7 @@
             <a href="javascript:document.getElementById('modal-container').classList.add('hidden');"><i class="fas fa-window-close text-pink-500 text-shadow text-4xl"></i></a>
         </div>
         <div class="modal-body bg-gray-100 py-5 px-2 md:px-5 text-gray-800 border-b border-gray-200">
-            
+
         </div>
         <div class="modal-footer p-3 flex justify-end"></div>
     </div>

@@ -1,53 +1,61 @@
 .blogpost {
 
     > * {
-        @apply .mb-6;
+        @apply mb-6;
     }
 
     h1 {
-        @apply .text-2xl .font-bold;
+        @apply text-2xl font-bold;
     }
 
     h2 {
-        @apply .text-xl .font-bold;
+        @apply text-xl font-bold;
     }
 
     h3 {
-        @apply .text-lg .font-bold;
+        @apply text-lg font-bold;
     }
 
     h4 {
-        @apply .text-lg .font-bold;
+        @apply text-lg font-bold;
     }
 
     ul {
-        @apply .ml-10 .list-disc;
+        @apply ml-10 list-disc;
     }
 
     ol {
-        @apply .ml-10 .list-decimal;
+        @apply ml-10 list-decimal;
     }
 
     blockquote {
-        @apply .px-6 .py-4 .border-l-4 .border-pink-400 .bg-white .shadow-lg;
+        @apply px-6 py-4 border-l-4 border-pink-400 bg-white shadow-lg;
     }
 
     > p > code {
-        @apply .rounded .bg-gray-200 .text-red-700 .px-1 .inline;
+        @apply rounded bg-gray-200 text-red-700 px-1 inline;
     }
 
-    > p > a {
-        @apply .text-blue-500;
+    a {
+        @apply text-blue-500;
 
         &:hover {
-            @apply .underline;
+            @apply underline;
         }
     }
 
     pre {
         background-color: #282a36;
         color: #f7f7f0;
-        @apply .px-6 .py-4 .rounded .shadow-lg;
+        @apply px-6 py-4 rounded shadow-lg overflow-x-auto text-xs;
+
+        @screen md {
+            @apply text-sm;
+        }
+
+        @screen lg {
+            @apply text-base;
+        }
     }
 
     img {
