@@ -1,8 +1,8 @@
 module.exports = {
     theme: {
       fontFamily: {
-        display: ['Roboto', 'Segoe UI', 'Helvetica Neue', 'Arial', 'sans-serif'],
-        body: ['Roboto', 'Segoe UI', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        display: ['Inter', 'Segoe UI', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        body: ['Inter', 'Segoe UI', 'Helvetica Neue', 'Arial', 'sans-serif'],
       },
       minWidth: {
         '0': '0',
