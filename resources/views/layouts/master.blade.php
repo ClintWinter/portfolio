@@ -8,7 +8,7 @@
     <title>@yield('title', 'Clint G Winter')</title>
 
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Inter:400,700,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/app.css">
 </head>
 <body class="font-body">
@@ -26,32 +26,32 @@
         </header>
         <nav class="px-0 sm:px-4 col flex bg-gray-100 shadow-md">
             <div class="pr-10">
-                <a 
-                    class="block py-4 px-2 font-black text-md sm:text-xl font-bold uppercase hover:text-teal-400 text-gray-800 {{ \Request::is('portfolio') ? '' : '' }}" 
+                <a
+                    class="block py-4 px-2 font-black text-md sm:text-xl font-bold uppercase hover:text-teal-400 text-gray-800 {{ \Request::is('portfolio') ? '' : '' }}"
                     href="{{ route('portfolio') }}"
                 >Portfolio</a>
                 <div class="h-1 {{ \Request::is('portfolio') ? 'bg-gradient' : '' }}"></div>
             </div>
             <div class="pr-10">
-                <a 
-                    class="block py-4 px-2 font-black text-md sm:text-xl font-bold uppercase hover:text-teal-400 text-gray-800 {{ \Request::is('blog*') ? '' : '' }}" 
+                <a
+                    class="block py-4 px-2 font-black text-md sm:text-xl font-bold uppercase hover:text-teal-400 text-gray-800 {{ \Request::is('blog*') ? '' : '' }}"
                     href="{{ route('blog') }}"
                 >Blog</a>
                 <div class="h-1 {{ \Request::is('blog*') ? 'bg-gradient' : '' }}"></div>
             </div>
             <div class="pr-10">
-                <a 
-                    class="block py-4 px-2 font-black text-md sm:text-xl font-bold uppercase hover:text-teal-400 text-gray-800 {{ \Request::is('library*') ? '' : '' }}" 
+                <a
+                    class="block py-4 px-2 font-black text-md sm:text-xl font-bold uppercase hover:text-teal-400 text-gray-800 {{ \Request::is('library*') ? '' : '' }}"
                     href="{{ route('library') }}"
                 >Library</a>
                 <div class="h-1 {{ \Request::is('library*') ? 'bg-gradient' : '' }}"></div>
             </div>
         </nav>
-    
+
         <div id="app" class="min-h-screen">
             @yield('content')
         </div>
-    
+
         {{-- <footer class="bg-blue-900 text-white text-xl font-black px-2 md:px-16 py-4">
             &copy; {{ \Carbon\Carbon::now()->format('Y') }}
         </footer> --}}
