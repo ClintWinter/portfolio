@@ -66,11 +66,6 @@
         <script src="/js/library.js"></script>
     @endif
 
-    <script
-        src="https://cdn.usefathom.com/script.js"
-        site="YFXFFNIJ"
-        included-domains="clintgwinter.com"
-        defer
-    ></script>
+    <script src="https://cdn.usefathom.com/script.js" site="YFXFFNIJ" defer></script>
 </body>
 </html>
