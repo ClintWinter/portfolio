@@ -13,38 +13,44 @@
 </head>
 <body class="font-body">
 
-        <header class="col flex justify-between items-center sm:items-end px-2 sm:px-4 py-6 bg-gradient text-white">
-            <div>
-                <h1 class="text-5xl leading-none font-semibold text-shadow">Clint Winter</h1>
-                <h2 class="text-2xl leading-none"><small><a class="hover:underline" href="mailto:cwinter.web@gmail.com">cwinter.web@gmail.com</a></small></h2>
+        <header class="bg-gradient text-white">
+            <div class="container mx-auto flex justify-between items-center sm:items-end px-2 sm:px-4 py-6">
+                <div>
+                    <h1 class="text-5xl leading-none font-semibold text-shadow">Clint Winter</h1>
+                    <h2 class="text-2xl leading-none"><small><a class="hover:underline" href="mailto:cwinter.web@gmail.com">cwinter.web@gmail.com</a></small></h2>
+                </div>
+                <p class="font-normal flex flex-col sm:flex-row items-center text-3xl leading-none text-shadow">
+                    <a aria-label="Github in new tab" href="https://github.com/clintwinter" class="mb-3 sm:mb-0 mr-0 sm:mr-6 hover:text-pink-200" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                    <a aria-label="LinkedIn in new tab" href="https://linkedin.com/in/clint-winter" class="mb-3 sm:mb-0 mr-0 sm:mr-6 hover:text-pink-200" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                    <a aria-label="View PDF resume in new tab" href="{{ Storage::url('ClintWinterResume.pdf') }}" class="hover:text-pink-200" target="_blank" rel="noopener noreferrer"><i class="fas fa-user-tie"></i></a>
+                </p>
             </div>
-            <p class="font-normal flex flex-col sm:flex-row items-center text-3xl leading-none text-shadow">
-                <a aria-label="Github in new tab" href="https://github.com/clintwinter" class="mb-3 sm:mb-0 mr-0 sm:mr-6 hover:text-pink-200" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
-                <a aria-label="LinkedIn in new tab" href="https://linkedin.com/in/clint-winter" class="mb-3 sm:mb-0 mr-0 sm:mr-6 hover:text-pink-200" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
-                <a aria-label="View PDF resume in new tab" href="{{ Storage::url('ClintWinterResume.pdf') }}" class="hover:text-pink-200" target="_blank" rel="noopener noreferrer"><i class="fas fa-user-tie"></i></a>
-            </p>
         </header>
-        <nav class="px-0 sm:px-4 col flex bg-gray-100 shadow-md">
-            <div class="pr-10">
-                <a
-                    class="block py-4 px-2 font-black text-md sm:text-xl font-bold uppercase hover:text-teal-400 text-gray-800 {{ \Request::is('portfolio') ? '' : '' }}"
-                    href="{{ route('portfolio') }}"
-                >Portfolio</a>
-                <div class="h-1 {{ \Request::is('portfolio') ? 'bg-gradient' : '' }}"></div>
-            </div>
-            <div class="pr-10">
-                <a
-                    class="block py-4 px-2 font-black text-md sm:text-xl font-bold uppercase hover:text-teal-400 text-gray-800 {{ \Request::is('blog*') ? '' : '' }}"
-                    href="{{ route('blog') }}"
-                >Blog</a>
-                <div class="h-1 {{ \Request::is('blog*') ? 'bg-gradient' : '' }}"></div>
-            </div>
-            <div class="pr-10">
-                <a
-                    class="block py-4 px-2 font-black text-md sm:text-xl font-bold uppercase hover:text-teal-400 text-gray-800 {{ \Request::is('library*') ? '' : '' }}"
-                    href="{{ route('library') }}"
-                >Library</a>
-                <div class="h-1 {{ \Request::is('library*') ? 'bg-gradient' : '' }}"></div>
+        <nav class="bg-gray-100 shadow-md">
+            <div class="container mx-auto flex px-0 sm:px-4">
+                <div class="pr-10">
+                    <a
+                        class="block py-4 px-2 font-black text-md sm:text-xl font-bold uppercase hover:text-teal-400 text-gray-800 {{ \Request::is('portfolio') ? '' : '' }}"
+                        href="{{ route('portfolio') }}"
+                    >Portfolio</a>
+                    <div class="h-1 {{ \Request::is('portfolio') ? 'bg-gradient' : '' }}"></div>
+                </div>
+
+                <div class="pr-10">
+                    <a
+                        class="block py-4 px-2 font-black text-md sm:text-xl font-bold uppercase hover:text-teal-400 text-gray-800 {{ \Request::is('blog*') ? '' : '' }}"
+                        href="{{ route('blog') }}"
+                    >Blog</a>
+                    <div class="h-1 {{ \Request::is('blog*') ? 'bg-gradient' : '' }}"></div>
+                </div>
+
+                <div class="pr-10">
+                    <a
+                        class="block py-4 px-2 font-black text-md sm:text-xl font-bold uppercase hover:text-teal-400 text-gray-800 {{ \Request::is('library*') ? '' : '' }}"
+                        href="{{ route('library') }}"
+                    >Library</a>
+                    <div class="h-1 {{ \Request::is('library*') ? 'bg-gradient' : '' }}"></div>
+                </div>
             </div>
         </nav>
 

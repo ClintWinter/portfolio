@@ -36,7 +36,7 @@ const app = new Vue({
     },
 
     methods: {
-        filter() {
+        filterResources() {
             axios.get('/resources', {
                 params: {
                     language: this.filter.language_id,
@@ -56,12 +56,12 @@ const app = new Vue({
 
         filterByLanguage(id) {
             this.filter.language_id = id;
-            this.filter();
+            this.filterResources();
         },
 
         filterByType(type) {
             this.filter.resource_type = type;
-            this.filter();
+            this.filterResources();
         }
     },
 
