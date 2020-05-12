@@ -66,6 +66,6 @@
         <script src="/js/library.js"></script>
     @endif
 
-    <script src="https://cdn.usefathom.com/script.js" site="YFXFFNIJ" defer></script>
+    <script src="https://caribou.clintgwinter.com/script.js" site="YFXFFNIJ" defer></script>
 </body>
 </html>
