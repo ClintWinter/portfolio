@@ -16,12 +16,12 @@
         <header class="col flex justify-between items-center sm:items-end px-2 sm:px-4 py-6 bg-gradient text-white">
             <div>
                 <h1 class="text-5xl leading-none font-semibold text-shadow">Clint Winter</h1>
-                <h2 class="text-2xl opacity-50 leading-none text-shadow"><small>cwinter.web@gmail.com</small></h2>
+                <h2 class="text-2xl leading-none"><small><a class="hover:underline" href="mailto:cwinter.web@gmail.com">cwinter.web@gmail.com</a></small></h2>
             </div>
             <p class="font-normal flex flex-col sm:flex-row items-center text-3xl leading-none text-shadow">
-                <a aria-label="Github in new tab" href="https://github.com/clintwinter" class="mb-3 sm:mb-0 mr-0 sm:mr-6 hover:text-pink-200" target="_blank" rel="noopener noreferrer"><i class="fab fa-github-square"></i></a>
-                <a aria-label="LinkedIn in new tab" href="https://linkedin.com/in/clint-winter" class="mb-3 sm:mb-0 mr-0 sm:mr-6 hover:text-pink-200" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i></a>
-                <a aria-label="View PDF resume in new tab" href="{{ Storage::url('ClintWinterResume.pdf') }}" class="hover:text-pink-200" target="_blank" rel="noopener noreferrer"><i class="fas fa-file-pdf"></i></a>
+                <a aria-label="Github in new tab" href="https://github.com/clintwinter" class="mb-3 sm:mb-0 mr-0 sm:mr-6 hover:text-pink-200" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i></a>
+                <a aria-label="LinkedIn in new tab" href="https://linkedin.com/in/clint-winter" class="mb-3 sm:mb-0 mr-0 sm:mr-6 hover:text-pink-200" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i></a>
+                <a aria-label="View PDF resume in new tab" href="{{ Storage::url('ClintWinterResume.pdf') }}" class="hover:text-pink-200" target="_blank" rel="noopener noreferrer"><i class="fas fa-user-tie"></i></a>
             </p>
         </header>
         <nav class="px-0 sm:px-4 col flex bg-gray-100 shadow-md">
@@ -52,9 +52,47 @@
             @yield('content')
         </div>
 
-        {{-- <footer class="bg-blue-900 text-white text-xl font-black px-2 md:px-16 py-4">
-            &copy; {{ \Carbon\Carbon::now()->format('Y') }}
-        </footer> --}}
+        <footer class="bg-gray-900 text-gray-300 px-2 md:px-16 py-12">
+            <div class="flex justify-center container mx-auto">
+                <div class="flex flex-col pr-12 md:pr-32">
+                    <p class="font-bold uppercase">Resources</p>
+
+                    <div class="h-4"></div>
+
+                    <a class="text-sm hover:underline" href="{{ route('portfolio') }}">Portfolio</a>
+
+                    <div class="h-2"></div>
+
+                    <a class="text-sm hover:underline" href="{{ route('blog') }}">Blog</a>
+
+                    <div class="h-2"></div>
+
+                    <a class="text-sm hover:underline" href="{{ route('library') }}">Library</a>
+                </div>
+
+                <div class="flex flex-col pr-12 md:pr-32">
+                    <p class="font-bold uppercase">Contact</p>
+
+                    <div class="h-4"></div>
+
+                    <a class="text-sm hover:underline" href="mailto:cwinter.web@gmail.com">Email</a>
+                </div>
+
+                <div class="flex flex-col md:flex-row">
+                    <a aria-label="Github in new tab" href="https://github.com/clintwinter" class="mb-3 md:mb-0 mr-0 md:mr-6 hover:text-gray-100" target="_blank" rel="noopener noreferrer"><i class="text-4xl fab fa-github"></i></a>
+
+                    <a aria-label="LinkedIn in new tab" href="https://linkedin.com/in/clint-winter" class="mb-3 md:mb-0 mr-0 md:mr-6 hover:text-gray-100" target="_blank" rel="noopener noreferrer"><i class="text-4xl fab fa-linkedin-in"></i></a>
+
+                    <a aria-label="View PDF resume in new tab" href="{{ Storage::url('ClintWinterResume.pdf') }}" class="hover:text-gray-100" target="_blank" rel="noopener noreferrer"><i class="text-4xl fas fa-user-tie"></i></a>
+                </div>
+            </div>
+
+            <div class="h-12"></div>
+
+            <div class="text-center">
+                <p class="text-xs"> This website is being designed and produced by Clint Winter &nbsp;&bullet;&nbsp; Website stats that don't track your personal data by <a class="font-bold underline" href="https://usefathom.com/ref/Y84A28">Fathom Analytics</a> &nbsp;&bullet;&nbsp; Proudly hosted with <a class="font-bold underline" href="https://m.do.co/c/1bd7d55ee985">Digital Ocean</a></p>
+            </div>
+        </footer>
 
     @if (\Request::is('portfolio'))
         <script src="/js/app.js"></script>
@@ -66,6 +104,6 @@
         <script src="/js/library.js"></script>
     @endif
 
-    <script src="https://caribou.clintgwinter.com/script.js" site="YFXFFNIJ" defer></script>
+    <script src="https://caribou.clintgwinter.com/script.js" site="YFXFFNIJ" excluded-domains="localhost" included-domains="clintgwinter.com" defer></script>
 </body>
 </html>
