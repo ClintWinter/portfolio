@@ -29,32 +29,46 @@
     }
 
     blockquote {
-        @apply px-6 py-4 border-l-4 border-pink-400 bg-white shadow-lg;
+        @apply px-6 py-4 border-l-4 border-teal;
     }
 
     > p > code {
-        @apply rounded bg-gray-200 text-red-700 px-1 inline;
+        // bg-gray-200
+        // text-red-700
+        @apply font-display rounded px-1 inline text-red;
+    }
+
+    em {
+        @apply font-body italic;
+    }
+
+    strong {
+        @apply font-body font-bold;
     }
 
     a {
-        @apply text-blue-500;
+        @apply text-yellow;
 
         &:hover {
             @apply underline;
         }
     }
 
-    pre {
-        background-color: #282a36;
-        color: #f7f7f0;
-        @apply px-6 py-4 rounded shadow-lg overflow-x-auto text-xs;
+    code {
+        @apply font-display text-xs;
 
         @screen md {
             @apply text-sm;
         }
+    }
 
-        @screen lg {
-            @apply text-base;
+    pre {
+        // background-color: #282a36;
+        // color: #f7f7f0;
+        @apply leading-relaxed p-2 font-display overflow-x-auto text-xs border-2 border-teal rounded;
+
+        @screen md {
+            @apply text-sm;
         }
     }
 

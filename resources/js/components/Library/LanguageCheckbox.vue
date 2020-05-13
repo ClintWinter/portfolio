@@ -1,5 +1,5 @@
 <template>
-    <div class="mr-4">
+    <div class="w-1/2 md:w-1/3 pr-2 pb-2">
         <input
             type="checkbox"
             :id="language.name"
@@ -9,7 +9,8 @@
             @change="check"
         >
         <label
-            :class="{ 'text-teal-500 underline':isChecked }"
+            class="font-display text-xs hover:text-yellow"
+            :class="{ 'text-yellow underline':isChecked }"
             :for="language.name"
         >{{ language.name }}</label>
     </div>

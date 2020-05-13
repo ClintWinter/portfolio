@@ -1,15 +1,15 @@
 @extends('admin.master')
 @section('content')
 
-    <header class="bg-gray-900 text-white shadow z-10">
-        <ul class="flex justify-between p-6">
-            <li class="text-xl font-bold">clintgwinter CMS</li>
+    <header class="z-10 border-b border-dark">
+        <ul class="flex justify-between items-center p-6">
+            <li class="text-xl text-red"><strong>$clintgwinterCMS</strong></li>
             <li >
                 <a
-                    class="hover:underline"
+                    class="bg-orange text-darkbg px-2 py-1"
                     href="{{ route('logout') }}"
                     onclick="event.preventDefault();document.getElementById('logout-form').submit();"
-                >{{ __('Logout') }}</a>
+                ><strong>$logout</strong></a>
 
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf
@@ -20,29 +20,29 @@
 
     <div class="flex flex-col md:flex-row items-stretch">
 
-        <nav class="min-w-64 bg-teal-800 text-white text-shadow shadow-md">
+        <nav class="min-w-64 border-r border-dark">
             <div class="py-8">
                 <ul class="flex flex-col sm:flex-row md:flex-col text-lg">
                     <li
-                        :class="{ 'text-white bg-teal-500 hover:bg-teal-500': activeTab == 'blog' }"
-                        class="py-3 px-8 cursor-pointer hover:bg-teal-500"
+                        :class="{ 'text-darkbg bg-orange': activeTab == 'blog' }"
+                        class="py-3 px-8 cursor-pointer hover:bg-yellow hover:text-darkbg"
                         @click="setActiveTab('blog')"
-                    >Blog Posts</li>
+                    ><strong>$Blog_Posts</strong></li>
                     <li
-                        :class="{ 'text-white bg-teal-500': activeTab == 'library' }"
-                        class="py-3 px-8 cursor-pointer hover:bg-teal-500"
+                        :class="{ 'text-darkbg bg-orange': activeTab == 'library' }"
+                        class="py-3 px-8 cursor-pointer hover:bg-yellow hover:text-darkbg"
                         @click="setActiveTab('library')"
-                    >Library</li>
+                    ><strong>$Library</strong></li>
                     <li
-                        :class="{ 'text-white bg-teal-500': activeTab == 'project' }"
-                        class="py-3 px-8 cursor-pointer hover:bg-teal-500"
-                    >Projects</li>
+                        :class="{ 'text-darkbg bg-orange': activeTab == 'project' }"
+                        class="py-3 px-8 cursor-pointer hover:bg-yellow hover:text-darkbg"
+                    ><strong>$Projects</strong></li>
                 </ul>
             </div>
         </nav>
 
         <main class="flex-grow min-h-screen">
-            <div class="min-h-full shadow-md">
+            <div class="min-h-full">
                 <div class="blog-container" v-if="activeTab == 'blog'">
                     <blog-container v-if="tabState == 'index'" @changestate="changeState">
                         <blog-item

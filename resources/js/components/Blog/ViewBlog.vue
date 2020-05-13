@@ -1,14 +1,14 @@
 <template>
     <div class="flex flex-col items-center">
 
-        <div class="mb-16 w-full">
+        <div class="w-full">
             <div class="">
-                <h1 class="mb-2 leading-tight text-2xl md:text-3xl font-bold font-black text-gray-800 flex justify-between items-center">{{ post.title }}</h1>
-                <p class="no-text-shadow font-normal text-gray-600 text-sm">{{ publishedDate }}</p>
+                <h1 class="mb-2 leading-tight text-2xl md:text-3xl text-purple"><strong>{{ post.title }}</strong></h1>
+                <p class="text-dark text-sm"><em>{{ publishedDate }}</em></p>
             </div>
-            <!-- <div class="h-2 w-full bg-teal-400 opacity-75"></div> -->
-            <!-- <p class="font-normal text-gray-600 text-sm"></!-->
         </div>
+
+        <div class="h-16"></div>
 
         <div class="blogpost text-base leading-relaxed w-full" v-html="body"></div>
     </div>

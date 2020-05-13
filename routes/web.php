@@ -3,12 +3,12 @@
 use App\Resource;
 
 Route::get('/', function() {
-    return redirect('/portfolio');
+    return view('index');
 });
 
-Route::get('/portfolio', function() {
+Route::get('/projects', function() {
     return view('portfolio');
-})->name('portfolio');
+})->name('projects');
 
 Route::get('/blog', 'BlogController@index')->name('blog');
 Route::get('/blog/{slug}', 'BlogController@show')->name('blog.show');

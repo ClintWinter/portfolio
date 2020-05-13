@@ -5,18 +5,53 @@ $fa-font-path: "webfonts";
 @import "scss/brands";
 
 @tailwind base;
-@tailwind components;
+
+@font-face {
+  font-family: 'JetBrainsMono';
+  src: url('/fonts/JetBrainsMono-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'JetBrainsMonoBold';
+  src: url('/fonts/JetBrainsMono-ExtraBold.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'JetBrainsMonoItalic';
+  src: url('/fonts/JetBrainsMono-Italic.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'JetBrainsMonoBoldItalic';
+  src: url('/fonts/JetBrainsMono-ExtraBold-Italic.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+strong {
+  font-family: 'JetBrainsMonoBold';
+  font-weight: normal;
+  font-style: normal;
+}
+
+em {
+  font-family: 'JetBrainsMonoItalic';
+  font-weight: normal;
+  font-style: normal;
+}
 
 @import 'modal';
 
-.bg-gradient {
-  background: linear-gradient(to right, hsl(170, 50%, 50%), hsl(190, 50%, 60%));
-}
+@import 'blogpost';
 
-.text-shadow {
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.15);
-}
+@tailwind components;
 
 @tailwind utilities;
+
 @import 'customutilities';
-@import 'blogpost';

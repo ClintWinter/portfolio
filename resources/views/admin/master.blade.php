@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/app.css">
 </head>
-<body class="font-body text-gray-100 bg-gray-800">
+<body class="font-body bg-darkbg text-regular">
 
     <div id="app">
         @yield('content')

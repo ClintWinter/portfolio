@@ -1,7 +1,7 @@
 module.exports = {
     theme: {
       fontFamily: {
-        display: ['Inter', 'Segoe UI', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        display: ['JetBrainsMono', 'Segoe UI', 'Helvetica Neue', 'Arial', 'sans-serif'],
         body: ['Inter', 'Segoe UI', 'Helvetica Neue', 'Arial', 'sans-serif'],
       },
       minWidth: {
@@ -16,6 +16,16 @@ module.exports = {
         '128': '32rem',
         'full': '100%',
       },
+      colors: {
+        'darkbg': '#1C1E26',
+        'dark': '#4A5568',
+        'regular': '#BBBBBB',
+        'purple': '#B877DB',
+        'teal': '#25B0BC',
+        'yellow': '#FAB795',
+        'orange': '#F09483',
+        'red': '#E95678',
+      },
       extend: {
         height: {
           '128': '32rem',
@@ -28,9 +38,6 @@ module.exports = {
           '1/5': '20%',
           '1/6': '16.666667%',
         },
-        colors: {
-          'new-teal': 'hsl(170, 50%, 50%)',
-        }
       }
     },
     variants: {},

@@ -10,12 +10,12 @@
     #mask {
         position: absolute;
         top: 0; left: 0; right: 0; bottom: 0;
-        @apply .bg-black .opacity-50;
+        @apply .bg-darkbg .opacity-50;
     }
 
     #modal {
         z-index: 51;
-        
+
 
         .modal-body {
             max-height: 60vh;

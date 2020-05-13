@@ -1,44 +1,65 @@
 <template>
     <div class="px-5 py-8 w-full lg:w-2/3 xl:w-1/2 mx-auto">
-        <h2 class="text-xl font-black mb-8 text-gray-500 tracking-wider">EDIT RESOURCE</h2>
+        <h2 class="text-xl text-purple uppercase"><strong>Edit Resource</strong></h2>
+
+        <div class="h-8"></div>
+
         <form @submit.prevent="updateResource">
             <div class="flex flex-col mb-5">
                 <input
-                    class="w-full font-bold rounded font-body flex-grow px-4 py-2 bg-gray-600 mb-2 text-xl shadow-md"
+                    class="w-full flex-grow px-4 py-2 text-xl bg-darkbg border-2 border-teal"
                     type="text"
                     name="name"
                     id="name"
                     v-model="name"
-                    placeholder="Name">
+                    placeholder="Name"
+                >
+
+                <div class="h-2"></div>
+
                 <div v-if="errors.name">
-                    <p class="text-md text-red-400" v-for="error in errors.name" :key="error">{{ error }}</p>
+                    <p class="text-md text-red" v-for="error in errors.name" :key="error">{{ error }}</p>
                 </div>
             </div>
-            <div class="flex flex-col mb-5">
+            <div class="flex flex-col">
                 <input
-                    class="w-full font-bold rounded font-body flex-grow px-4 py-2 bg-gray-600 mb-2 text-xl shadow-md"
+                    class="w-full flex-grow px-4 py-2 text-xl bg-darkbg border-2 border-teal"
                     type="text"
                     name="url"
                     id="url"
                     v-model="url"
-                    placeholder="URL">
+                    placeholder="URL"
+                >
+
+                <div class="h-2"></div>
+
                 <div v-if="errors.url">
-                    <p class="text-md text-red-400" v-for="error in errors.url" :key="error">{{ error }}</p>
+                    <p class="text-md text-red" v-for="error in errors.url" :key="error">{{ error }}</p>
                 </div>
             </div>
-            <div class="flex flex-col mb-5">
+
+            <div class="h-5"></div>
+
+            <div class="flex flex-col">
                 <input
-                    class="w-full font-bold rounded font-body flex-grow px-4 py-2 bg-gray-600 mb-2 text-xl shadow-md"
+                    class="w-full flex-grow px-4 py-2 text-xl bg-darkbg border-2 border-teal"
                     type="text"
                     name="resource_type"
                     id="resource_type"
                     v-model="resource_type"
-                    placeholder="Type">
+                    placeholder="Type"
+                >
+
+                <div class="h-2"></div>
+
                 <div v-if="errors.resource_type">
                     <p class="text-md text-red-400" v-for="error in errors.resource_type" :key="error">{{ error }}</p>
                 </div>
             </div>
-            <div class="flex flex-wrap flex-col sm:flex-row mb-5">
+
+            <div class="h-5"></div>
+
+            <div class="flex flex-wrap flex-row">
                 <language-checkbox
                     v-for="language in allLanguages"
                     :key="language.name"
@@ -47,21 +68,31 @@
                     @checked="checked"
                 ></language-checkbox>
             </div>
-            <div class="flex justify-between mb-3">
+
+            <div class="h-5"></div>
+
+            <div class="flex justify-between">
                 <button
                     type="button"
-                    class="text-sm font-bold tracking-wider px-6 py-2 rounded bg-gray-700 hover:bg-gray-600 text-gray-200 shadow"
+                    class="px-6 py-2 border-2 border-yellow text-yellow hover:bg-yellow hover:text-darkbg"
                     @click="newLanguage"
-                >ADD LANGUAGE</button>
+                ><strong>$add_language</strong></button>
                 <div>
                     <button
                         type="button"
-                        class="px-5 py-2mr-4 text-red-400 hover:text-red-500 text-shadow"
+                        class="px-5 py-2 mr-4 text-red hover:bg-red hover:text-darkbg"
                         @click="deleteResource"
-                    >DELETE</button>
-                    <input class="cursor-pointer shadow rounded uppercase px-6 py-2 bg-teal-500 hover:bg-teal-600 text-white" type="submit" value="Save">
+                    ><strong>$delete</strong></button>
+
+                    <button
+                    class="px-6 py-2 bg-orange text-darkbg"
+                    type="submit"
+                    ><strong>$save</strong></button>
+
                 </div>
             </div>
+
+            <div class="h-3"></div>
         </form>
     </div>
 </template>
