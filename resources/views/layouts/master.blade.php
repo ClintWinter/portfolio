@@ -79,7 +79,7 @@
 
                     <div class="h-4"></div>
 
-                    <a class="text-sm hover:underline" href="{{ route('projects') }}">Portfolio</a>
+                    <a class="text-sm hover:underline" href="{{ route('projects') }}">Projects</a>
 
                     <div class="h-2"></div>
 
