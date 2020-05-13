@@ -6,7 +6,7 @@
     <div class="font-display text-sm md:text-lg leading-loose">
         <p>&nbsp;<span class="text-dark">1</span> <span class="text-purple"><em>var</em></span> <span class="text-red"><strong>clint_winter</strong></span> = {</p>
         <p>&nbsp;<span class="text-dark">2</span>&nbsp;&nbsp;&nbsp;<span class="text-red">name</span>: <span class="text-yellow">'Clint Winter'</span>,</p>
-        <p>&nbsp;<span class="text-dark">3</span>&nbsp;&nbsp;&nbsp;<span class="text-red">age</span>: <span class="text-orange">27</span>,</p>
+        <p>&nbsp;<span class="text-dark">3</span>&nbsp;&nbsp;&nbsp;<span class="text-red">age</span>: <span class="text-orange">{{ \Carbon\Carbon::parse('1993-04-02 08:30:00')->diffInYears(\Carbon\Carbon::now('America/New_York')) }}</span>,</p>
         <p>&nbsp;<span class="text-dark">4</span>&nbsp;&nbsp;&nbsp;<span class="text-red">location</span>: <span class="text-yellow">'New Jersey'</span>,</p>
         <p>&nbsp;<span class="text-dark">5</span>&nbsp;&nbsp;&nbsp;<span class="text-red">employer</span>: <span class="text-yellow">'<a rel="noopener noreferer" href="https://directlync.com" class="underline">DirectLync</a>'</span>,</p>
         <p>&nbsp;<span class="text-dark">6</span>&nbsp;&nbsp;&nbsp;<span class="text-red">title</span>: <span class="text-yellow">'Software Engineer II'</span>,</p>
