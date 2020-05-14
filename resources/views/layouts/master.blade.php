@@ -98,12 +98,30 @@
                     <a class="text-sm hover:underline" href="mailto:cwinter.web@gmail.com">Email</a>
                 </div>
 
-                <div class="flex flex-col md:flex-row">
-                    <a aria-label="Github in new tab" href="https://github.com/clintwinter" class="mb-3 md:mb-0 mr-0 md:mr-6 hover:text-yellow" target="_blank" rel="noopener noreferrer"><i class="text-4xl fab fa-github"></i></a>
+                <div class="flex flex-col">
+                    <a
+                        aria-label="Github in new tab"
+                        href="https://github.com/clintwinter"
+                        class="mb-6 flex items-center hover:text-yellow"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    ><i class="text-2xl fab fa-github mr-2"></i><span class="text-sm">Github</span></a>
 
-                    <a aria-label="LinkedIn in new tab" href="https://linkedin.com/in/clint-winter" class="mb-3 md:mb-0 mr-0 md:mr-6 hover:text-yellow" target="_blank" rel="noopener noreferrer"><i class="text-4xl fab fa-linkedin-in"></i></a>
+                    <a
+                        aria-label="LinkedIn in new tab"
+                        href="https://linkedin.com/in/clint-winter"
+                         class="mb-6 flex items-center hover:text-yellow"
+                         target="_blank"
+                         rel="noopener noreferrer"
+                        ><i class="text-2xl fab fa-linkedin-in mr-2"></i><span class="text-sm">LinkedIn</span></a>
 
-                    <a aria-label="View PDF resume in new tab" href="{{ Storage::url('ClintWinterResume.pdf') }}" class="hover:text-yellow" target="_blank" rel="noopener noreferrer"><i class="text-4xl fas fa-user-tie"></i></a>
+                    <a
+                        aria-label="View PDF resume in new tab"
+                        href="{{ Storage::url('ClintWinterResume.pdf') }}"
+                        class="flex items-center hover:text-yellow"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    ><i class="text-2xl fas fa-user-tie mr-2"></i><span class="text-sm">Resume</span></a>
                 </div>
             </div>
 

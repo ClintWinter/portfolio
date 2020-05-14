@@ -19,8 +19,8 @@
         <p><span class="text-dark">12</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-yellow">'<a rel="noopener noreferer" class="underline" href="https://laravel-livewire.com/">Laravel Livewire</a>'</span>,</p>
         <p><span class="text-dark">13</span>&nbsp;&nbsp;&nbsp;],</p>
         <p><span class="text-dark">14</span>&nbsp;&nbsp;&nbsp;<span class="text-red">activities</span>: [<span class="text-yellow">'<a href="{{ route('blog') }}" class="underline">Blogging</a>'</span>],</p>
-            {{-- <p>15&nbsp;&nbsp;&nbsp;<span class="text-red">uses</span>: [<span class="text-yellow">'<a href="{{ route('uses') }}" class="underline">/uses'</span>],</p> --}}
-        <p><span class="text-dark">15</span>&nbsp;};</p>
+        <p><span class="text-dark">15</span>&nbsp;&nbsp;&nbsp;<span class="text-red">uses</span>: <span class="text-yellow">'<a href="{{ route('uses') }}" class="underline">/uses</a>'</span>,</p>
+        <p><span class="text-dark">16</span>&nbsp;};</p>
     </div>
 
     <div class="h-20"></div>

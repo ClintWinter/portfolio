@@ -15,6 +15,10 @@ Route::get('/text-helper', function() {
     return view('helper');
 });
 
+Route::get('/uses', function() {
+    return view('uses');
+})->name('uses');
+
 Route::get('/library', function() {
     return view('library.index');
 })->name('library');
@@ -30,12 +34,10 @@ Route::prefix('admin')->group(function() {
 
     // Authenticated Admin Panel
     Route::middleware('is_admin')->group(function() {
-
         Route::get('/', 'AdminController@index');
 
         // blog posts
         Route::prefix('blogposts')->group(function() {
-
             // Route::post('/new', 'BlogPostController@create');
             Route::get('/', 'BlogPostController@index');
             Route::post('/', 'BlogPostController@store');
@@ -47,27 +49,14 @@ Route::prefix('admin')->group(function() {
         });
 
         Route::prefix('resources')->group(function() {
-
             Route::post('/', 'ResourceController@store');
             Route::post('/{id}', 'ResourceController@update');
             Route::delete('/{id}', 'ResourceController@destroy');
-
         });
 
         Route::prefix('languages')->group(function() {
-
             Route::get('/', 'LanguageController@index');
             Route::post('/', 'LanguageController@store');
-
         });
-
     });
-
-
-
-});
-
-
-Route::group(['prefix' => 'admin'], function() {
-
 });
