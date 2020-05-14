@@ -1,4 +1,5 @@
 @extends('.layouts.master')
+
 @section('content')
 
 <section class="container mx-auto px-2 sm:px-4">

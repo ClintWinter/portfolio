@@ -1,7 +1,5 @@
 <?php
 
-use App\Resource;
-
 Route::get('/', function() {
     return view('index');
 });

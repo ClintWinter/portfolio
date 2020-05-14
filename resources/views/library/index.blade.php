@@ -2,6 +2,8 @@
 
 @section('title', 'Library | Clint G Winter')
 
+@section('metadescription', 'Clint Winter has a library that he keeps up-to-date with relevant resources, courses, and reference material that he actively uses or has used in the past. Quickly filter through the resources, you may find something truly helpful.')
+
 @section('content')
 
 <div class="container mx-auto flex flex-col px-2 md:px-4">

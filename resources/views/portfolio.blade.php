@@ -1,4 +1,9 @@
 @extends('layouts.master')
+
+@section('title', 'Projects | Clint Winter')
+
+@section('metadescription', 'Projects built by Clint Winter. Take a look, you may find some of them useful.')
+
 @section('content')
 
 <div class="container mx-auto px-2">

@@ -2,6 +2,8 @@
 
 @section('title', $blogPost->title)
 
+@section('metadescription', Str::limit($blogPost->body, 150))
+
 @section('content')
 
 <div class="px-2 md:px-4 w-full xl:w-2/3 container mx-auto">
