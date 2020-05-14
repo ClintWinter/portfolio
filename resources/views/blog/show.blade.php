@@ -2,7 +2,7 @@
 
 @section('title', $blogPost->title)
 
-@section('metadescription', Str::limit($blogPost->body, 150))
+@section('metadescription', \Illuminate\Support\Str::limit($blogPost->body, 150))
 
 @section('content')
 
