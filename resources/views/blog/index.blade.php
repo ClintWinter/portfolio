@@ -15,11 +15,15 @@
 
     @foreach ($blog as $post)
         <div class="mb-12">
-            <h2 class="text-xl leading-tight"><a href="{{ route('blog.show', $post->slug) }}" class="text-yellow hover:underline"><strong>{{ $post->title }}</strong></a></h2>
+            <h2 class="text-xl leading-tight">
+                <a href="{{ route('blog.show', $post->slug) }}" class="text-yellow hover:underline">
+                    <strong>{{ $post->title }}</strong>
+                </a>
+            </h2>
 
             <div class="h-2"></div>
 
-            <div class="font-normal text-dark text-sm"><em>{{ \Carbon\Carbon::parse($post->published_at)->format('l, F jS, Y') }}</em></div>
+            <div class="font-normal text-dark text-sm"><em>{{ $post->published_at->format('l, F jS, Y') }}</em></div>
         </div>
     @endforeach
 </div>

@@ -12,6 +12,10 @@ class BlogPost extends Model
 
     protected $visible = ['title', 'body', 'reads', 'slug', 'cover_img_url', 'published', 'published_at'];
 
+    protected $casts = [
+        'published_at' => 'date'
+    ];
+
     public static function boot()
     {
         parent::boot();

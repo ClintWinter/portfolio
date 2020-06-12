@@ -17,6 +17,7 @@ module.exports = {
         'full': '100%',
       },
       colors: {
+        'black': '#000000',
         'darkbg': '#1C1E26',
         'dark': '#4A5568',
         'regular': '#BBBBBB',
@@ -27,11 +28,15 @@ module.exports = {
         'red': '#E95678',
       },
       extend: {
+        maxHeight: {
+          '128': '32rem',
+        },
         height: {
           '128': '32rem',
           '256': '64rem',
         },
         maxWidth: {
+          '128': '32rem',
           '1/2': '50%',
           '1/3': '33.333333%',
           '1/4': '25%',

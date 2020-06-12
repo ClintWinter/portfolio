@@ -9,18 +9,15 @@
 <div class="container mx-auto px-2">
     <div class="mx-auto flex flex-col items-start">
         <div class="projects flex flex-col items-stretch w-full">
-            <div class="flex flex-col sm:flex-row p-3 w-full mb-8">
-                <div class="flex-none hidden md:inline-block w-1/3 mb-4 sm:mb-0 mr-2 md:mr-5">
-                    <div class="w-full flex md:hidden flex-auto md:flex-none justify-center items-center">
-                        <i class="fab fa-reddit leading-none fa-5x rounded-full" style="color: #FF4500;border: 2px solid #FF4500;"></i>
-                    </div>
+            <div class="flex flex-col items-center p-3 w-full">
+                <img
+                    class="w-full max-h-128 max-w-128 shadow-lg rounded"
+                    src="{{ Storage::url('public/images/resavma1.png') }}"
+                >
 
-                    <div class="w-full hidden md:flex flex-auto md:flex-none justify-center items-center">
-                        <i class="fab fa-reddit leading-none fa-9x rounded-full" style="color: #FF4500;border: 2px solid #FF4500;"></i>
-                    </div>
-                </div>
+                <div class="h-12"></div>
 
-                <div class="flex flex-col justify-between self-stretch px-3">
+                <div class="w-full md:w-2/3 flex flex-col justify-between px-3">
                     <div class="mb-8">
                         <h5 class="leading-none text-xl font-display text-purple"><strong>Resavma</strong></h5>
 
@@ -39,12 +36,18 @@
                 </div>
             </div>
 
-            <div class="flex flex-col sm:flex-row p-3 w-full mb-8">
-                <div class="flex-none hidden md:inline-block w-1/4 md:w-1/3 mr-2 md:mr-5 mb-4 sm:mb-0 h-40 flex-auto md:flex-none flex items-center">
-                    <img src="{{ Storage::url('public/images/devcelerate.png') }}" alt="">
-                </div>
+            <div class="h-16"></div>
 
-                <div class="flex flex-col justify-between self-stretch px-3">
+            <div class="flex flex-col items-center p-3 w-full">
+                <img
+                    class="w-full max-h-128 max-w-128 shadow-lg rounded"
+                    src="{{ Storage::url('public/images/devcelerate.png') }}"
+                    alt="Devcelerate"
+                >
+
+                <div class="h-12"></div>
+
+                <div class="w-full md:w-2/3 flex flex-col justify-between px-3">
                     <div class="mb-8">
                         <h5 class="leading-none text-lg font-display text-purple"><strong>DEVcelerate</strong></h5>
 
