@@ -81,11 +81,11 @@
 
                     <a class="text-sm hover:underline" href="{{ route('projects') }}">Projects</a>
 
-                    <div class="h-2"></div>
+                    <div class="h-6"></div>
 
                     <a class="text-sm hover:underline" href="{{ route('blog') }}">Blog</a>
 
-                    <div class="h-2"></div>
+                    <div class="h-6"></div>
 
                     <a class="text-sm hover:underline" href="{{ route('library') }}">Library</a>
                 </div>
@@ -99,6 +99,10 @@
                 </div>
 
                 <div class="flex flex-col">
+                    <p class="uppercase text-purple"><strong>Links</strong></p>
+
+                    <div class="h-4"></div>
+
                     <a
                         aria-label="Github in new tab"
                         href="https://github.com/clintwinter"
@@ -118,10 +122,34 @@
                     <a
                         aria-label="View PDF resume in new tab"
                         href="{{ Storage::url('ClintWinterResume.pdf') }}"
-                        class="flex items-center hover:text-yellow"
+                        class="mb-6 flex items-center hover:text-yellow"
                         target="_blank"
                         rel="noopener noreferrer"
                     ><i class="text-2xl fas fa-user-tie mr-2"></i><span class="text-sm">Resume</span></a>
+
+                    <a
+                        aria-label="Clint Winter's DEV profile"
+                        href="https://dev.to/clintwinter"
+                        class="mb-6 flex items-center hover:text-yellow"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    ><i class="text-2xl fab fa-dev mr-2"></i><span class="text-sm">More Blogging</span></a>
+
+                    <a
+                        aria-label="View PDF resume in new tab"
+                        href="https://twitter.com/ClintGWinter"
+                        class="mb-6 flex items-center hover:text-yellow"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    ><i class="text-2xl fab fa-twitter mr-2"></i><span class="text-sm">Twitter</span></a>
+
+                    <a
+                        aria-label="View PDF resume in new tab"
+                        href="https://www.codementor.io/@clintwinter?refer=badge"
+                        class="flex items-center hover:text-yellow"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    ><img src="https://www.codementor.io/m-badges/clintwinter/im-a-cm-g.svg"></a>
                 </div>
             </div>
 
