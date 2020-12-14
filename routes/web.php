@@ -1,5 +1,13 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\BlogPostController;
+use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\ResourceController;
+
 Route::get('/', function() {
     return view('index');
 });
@@ -8,8 +16,8 @@ Route::get('/projects', function() {
     return view('portfolio');
 })->name('projects');
 
-Route::get('/blog', 'BlogController@index')->name('blog');
-Route::get('/blog/{slug}', 'BlogController@show')->name('blog.show');
+Route::get('/blog', [BlogController::class, 'index'])->name('blog');
+Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
 
 Route::get('/text-helper', function() {
     return view('helper');
@@ -23,40 +31,33 @@ Route::get('/library', function() {
     return view('library.index');
 })->name('library');
 
-Route::get('/resources', 'ResourceController@index');
-Route::get('/languages', 'LanguageController@index');
+Route::get('/resources', [ResourceController::class, 'index']);
+Route::get('/languages', [LanguageController::class, 'index']);
 
-// Admin Panel
-Route::prefix('admin')->group(function() {
-
-    // Admin Auth
+Route::prefix('admin')->group(function () {
     Auth::routes(['register' => false, 'reset' => false, 'password.request' => false]);
 
-    // Authenticated Admin Panel
-    Route::middleware('is_admin')->group(function() {
-        Route::get('/', 'AdminController@index');
+    Route::middleware('is_admin')->group(function () {
+        Route::get('/', [AdminController::class, 'index']);
 
-        // blog posts
-        Route::prefix('blogposts')->group(function() {
-            // Route::post('/new', 'BlogPostController@create');
-            Route::get('/', 'BlogPostController@index');
-            Route::post('/', 'BlogPostController@store');
+        Route::prefix('blogposts')->group(function () {
+            Route::get('/', [BlogPostController::class, 'index']);
+            Route::post('/', [BlogPostController::class, 'store']);
 
-            Route::post('/{slug}/publish', 'BlogPostController@publish');
-            Route::get('/{slug}', 'BlogPostController@show');
-            Route::post('/{slug}', 'BlogPostController@update');
-
+            Route::post('/{slug}/publish', [BlogPostController::class, 'publish']);
+            Route::get('/{slug}', [BlogPostController::class, 'show']);
+            Route::post('/{slug}', [BlogPostController::class, 'update']);
         });
 
         Route::prefix('resources')->group(function() {
-            Route::post('/', 'ResourceController@store');
-            Route::post('/{id}', 'ResourceController@update');
-            Route::delete('/{id}', 'ResourceController@destroy');
+            Route::post('/', [ResourceController::class, 'store']);
+            Route::post('/{id}', [ResourceController::class, 'update']);
+            Route::delete('/{id}', [ResourceController::class, 'destroy']);
         });
 
         Route::prefix('languages')->group(function() {
-            Route::get('/', 'LanguageController@index');
-            Route::post('/', 'LanguageController@store');
+            Route::get('/', [LanguageController::class, 'index']);
+            Route::post('/', [LanguageController::class, 'store']);
         });
     });
 });

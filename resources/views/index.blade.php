@@ -2,9 +2,9 @@
 
 @section('content')
 
-<section class="container mx-auto px-2 sm:px-4">
+<section class="w-full md:w-2/3 xl:w-1/2 mx-auto px-2 sm:px-4">
 
-    <div class="font-display text-sm md:text-lg leading-loose">
+    <div class="font-display text-sm md:text-lg md:leading-loose">
         <p>&nbsp;<span class="text-dark">1</span> <span class="text-purple"><em>const</em></span> <span class="text-red"><strong>clint_winter</strong></span> = {</p>
         <p>&nbsp;<span class="text-dark">2</span>&nbsp;&nbsp;&nbsp;<span class="text-red">name</span>: <span class="text-yellow">'Clint Winter'</span>,</p>
         <p>&nbsp;<span class="text-dark">3</span>&nbsp;&nbsp;&nbsp;<span class="text-red">age</span>: <span class="text-orange">{{ \Carbon\Carbon::parse('1993-04-02 08:30:00')->diffInYears(\Carbon\Carbon::now('America/New_York')) }}</span>,</p>
@@ -25,7 +25,7 @@
 
     <div class="h-20"></div>
 
-    <div class="mx-auto w-full md:w-3/4 lg:w-2/3 xl:w-1/2 flex justify-between">
+    <div class="mx-auto container flex justify-between">
         <div>
             <h4 class="text-xl text-purple"><strong>Front-end</strong></h4>
 

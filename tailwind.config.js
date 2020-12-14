@@ -1,7 +1,12 @@
 module.exports = {
+    purge: [
+        './resources/**/*.blade.php',
+        './resources/**/*.js',
+        './resources/**/*.vue',
+    ],
     theme: {
       fontFamily: {
-        display: ['JetBrainsMono', 'Segoe UI', 'Helvetica Neue', 'Arial', 'sans-serif'],
+        display: ['JetBrains Mono', 'Segoe UI', 'Helvetica Neue', 'Arial', 'sans-serif'],
         body: ['Inter', 'Segoe UI', 'Helvetica Neue', 'Arial', 'sans-serif'],
       },
       minWidth: {
@@ -30,6 +35,7 @@ module.exports = {
       extend: {
         maxHeight: {
           '128': '32rem',
+          '60vh': '60vh',
         },
         height: {
           '128': '32rem',

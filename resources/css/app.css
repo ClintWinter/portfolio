@@ -1,0 +1,10 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import './custom-base.css';
+
+@import './components/modal.css';
+@import './components/blogpost.css';
+
+@import './custom-utilities.css';

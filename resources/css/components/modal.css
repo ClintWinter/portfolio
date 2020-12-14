@@ -1,0 +1,22 @@
+@layer components {
+
+    #modal-container {
+        @apply fixed inset-0 z-40;
+
+        &:target {
+            @apply flex;
+        }
+
+        #mask {
+            @apply absolute inset-0 bg-darkbg opacity-50;
+        }
+
+        #modal {
+            @apply z-50;
+
+            .modal-body {
+                @apply overflow-y-auto max-h-60vh;
+            }
+        }
+    }
+}
