@@ -1,4 +1,4 @@
-.blogpost {
+.article {
 
     > * {
         @apply mb-6;
@@ -33,9 +33,8 @@
     }
 
     > p > code {
-        // bg-gray-200
-        // text-red-700
-        @apply font-display rounded px-1 inline text-red;
+        @apply font-display rounded p-1 inline-block text-red;
+        background-color: #121319;
     }
 
     em {
@@ -63,12 +62,11 @@
     }
 
     pre {
-        // background-color: #282a36;
-        // color: #f7f7f0;
-        @apply leading-relaxed p-2 font-display overflow-x-auto text-xs border-2 border-teal rounded;
+        background-color: #121319;
+        @apply leading-loose p-2 font-display overflow-x-auto text-xs border-2 border-teal rounded;
 
         @screen md {
-            @apply text-sm;
+            @apply leading-loose text-sm;
         }
     }
 

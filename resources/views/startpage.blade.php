@@ -1,5 +1,4 @@
-@extends('layouts.master')
-@section('content')
+<x-master>
 
 <div class="start-page row nospacing d-flex flex-column align-items-center">
 
@@ -15,4 +14,4 @@
     </section>
 </div>
 
-@endsection
+</x-master>

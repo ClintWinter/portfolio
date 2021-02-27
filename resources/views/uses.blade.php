@@ -1,11 +1,4 @@
-@extends('layouts.master')
-
-@section('title', 'Uses | Clint Winter')
-
-@section('metadescription', 'Clint Winter uses a lot of different apps, products, and services to improve his development experience. He hopes this page can help guide you on your decisions as well.')
-
-@section('content')
-
+<x-master title="Uses | Clint Winter" metadescription="Clint Winter uses a lot of different apps, products, and services to improve his development experience. He hopes this page can help guide you on your decisions as well.">
 <section class="container mx-auto px-2 md:px-4">
     <h1 class="text-4xl text-purple"><strong>/Uses</strong></h1>
 
@@ -216,5 +209,4 @@
     </div>
 
 </section>
-
-@endsection
+</x-master>

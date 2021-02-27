@@ -8,8 +8,8 @@ Route::get('/projects', function() {
     return view('portfolio');
 })->name('projects');
 
-Route::get('/blog', 'BlogController@index')->name('blog');
-Route::get('/blog/{slug}', 'BlogController@show')->name('blog.show');
+Route::get('/articles', 'ArticleController@index')->name('articles');
+Route::get('/articles/{slug}', 'ArticleController@show')->name('article.show');
 
 Route::get('/text-helper', function() {
     return view('helper');

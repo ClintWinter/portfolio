@@ -1,6 +1,4 @@
-@extends('layouts.master')
-
-@section('content')
+<x-master>
 
 <div class="mx-auto container px-4 md:px-2 py-8">
     <h1 class="uppercase text-xl text-purple"><strong>Text Helper</strong></h1>
@@ -46,4 +44,4 @@
     </div>
 </div>
 
-@endsection
+</x-master>

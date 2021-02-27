@@ -1,10 +1,4 @@
-@extends('layouts.master')
-
-@section('title', 'Blog Posts | Clint Winter')
-
-@section('metadescription', 'Blog posts written by Clint Winter. Clint enjoys writing content surrounding the Laravel ecosystem including guides, project updates, reading review, and more.')
-
-@section('content')
+<x-master title="Blog Posts | Clint Winter" metadescription="Blog posts written by Clint Winter. Clint enjoys writing content surrounding the Laravel ecosystem including guides, project updates, reading review, and more.">
 
 <div class="w-full md:w-2/3 xl:w-1/2 mx-auto flex flex-col px-2 md:px-4">
     <div>
@@ -28,4 +22,4 @@
     @endforeach
 </div>
 
-@endsection
+</x-master>

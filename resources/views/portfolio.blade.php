@@ -1,10 +1,4 @@
-@extends('layouts.master')
-
-@section('title', 'Projects | Clint Winter')
-
-@section('metadescription', 'Projects built by Clint Winter. Take a look, you may find some of them useful.')
-
-@section('content')
+<x-master title="Projects | Clint Winter" metadescription="Projects built by Clint Winter. Take a look, you may find some of them useful.">
 
 <div class="container mx-auto px-2">
     <div class="mx-auto flex flex-col items-start">
@@ -39,4 +33,4 @@
     </div>
 </div>
 
-@endsection
+</x-master>

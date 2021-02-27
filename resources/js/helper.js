@@ -1,24 +1,24 @@
-import Vue from 'vue';
+// import Vue from 'vue';
 
-const app = new Vue({
-    el: '#app',
+// const app = new Vue({
+//     el: '#app',
 
-    data: {
-        text: '',
-        result: ''
-    },
+//     data: {
+//         text: '',
+//         result: ''
+//     },
 
-    methods: {
-        toUpper() {
-            this.result = this.text.toUpperCase();
-        },
+//     methods: {
+//         toUpper() {
+//             this.result = this.text.toUpperCase();
+//         },
 
-        toLower() {
-            this.result = this.text.toLowerCase();
-        },
+//         toLower() {
+//             this.result = this.text.toLowerCase();
+//         },
 
-        toInvert() {
-            this.result = this.text.replace(/./g, c => c === c.toUpperCase() ? c.toLowerCase() : c.toUpperCase())
-        }
-    }
-});
+//         toInvert() {
+//             this.result = this.text.replace(/./g, c => c === c.toUpperCase() ? c.toLowerCase() : c.toUpperCase())
+//         }
+//     }
+// });
