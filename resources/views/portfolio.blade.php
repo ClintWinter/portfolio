@@ -12,7 +12,7 @@
             <div class="flex flex-col items-center p-3 w-full">
                 <img
                     class="w-full max-h-128 max-w-128 shadow-lg rounded"
-                    src="{{ Storage::url('public/images/resavma1.png') }}"
+                    src="{{ asset('storage/images/resavma1.png') }}"
                 >
 
                 <div class="h-12"></div>

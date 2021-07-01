@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="Description" content="@yield('metadescription', 'Clint Winter\'s hub for projects, blog posts, resources and more. Clint is a web/software developer in New Jersey currently working at DirectLync. He works with PHP, Laravel, Javascript, VueJS, Tailwind CSS, AlpineJS, Laravel Livewire, MySQL, etc.')">
+
+    <meta property="og:title" content="@yield('title', 'Clint Winter | Software Developer')">
+    <meta property="og:description" content="@yield('metadescription', 'Clint Winter\'s hub for projects, blog posts, resources and more. Clint is a web/software developer in New Jersey currently working at DirectLync. He works with PHP, Laravel, Javascript, VueJS, Tailwind CSS, AlpineJS, Laravel Livewire, MySQL, etc.')">
+    <meta property="og:image" content="{{ asset('storage/images/meta_image.png') }}">
+    <meta property="og:url" content="{{ url()->full() }}">
+    <meta name="twitter:card" content="summary_large_image">
+
     <title>@yield('title', 'Clint Winter | Software Developer')</title>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
