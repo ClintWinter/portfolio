@@ -9,6 +9,8 @@
     <meta property="og:title" content="@yield('title', 'Clint Winter | Software Developer')">
     <meta property="og:description" content="@yield('metadescription', 'Clint Winter\'s hub for projects, blog posts, resources and more. Clint is a web/software developer in New Jersey currently working at DirectLync. He works with PHP, Laravel, Javascript, VueJS, Tailwind CSS, AlpineJS, Laravel Livewire, MySQL, etc.')">
     <meta property="og:image" content="{{ asset('storage/images/meta_image.png') }}">
+    <meta property="og:image:width" content="1100">
+    <meta property="og:image:height" content="568">
     <meta property="og:url" content="{{ url()->full() }}">
     <meta name="twitter:card" content="summary_large_image">
 
