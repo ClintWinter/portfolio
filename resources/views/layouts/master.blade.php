@@ -14,93 +14,50 @@
 </head>
 <body class="font-body bg-darkbg text-regular">
 
-        <header>
-            <div class="container mx-auto flex justify-between items-center sm:items-end px-2 sm:px-4 py-6">
-                <div>
-                    <h1 class="text-4xl font-black md:text-5xl text-red leading-none uppercase">
-                        <a href="/">$Clint_Winter</a>
-                    </h1>
-                </div>
-            </div>
+        <header class="container mx-auto flex justify-between items-center sm:items-end px-2 sm:px-4 py-6">
+            <h1 class="text-4xl font-black md:text-5xl text-red leading-none uppercase">
+                <a href="/">$Clint_Winter</a>
+            </h1>
         </header>
 
-        <nav class="text-orange font-display">
-            <div class="container mx-auto flex px-0 sm:px-4">
-                <div class="pr-10">
-                    <a
-                        class="
-                            block py-4 px-2 text-base sm:text-xl font-bold uppercase hover:underline
-                            {{ \Request::is('projects') ? 'underline' : '' }}
-                        "
-                        href="{{ route('projects') }}"
-                    >$Projects</a>
-                </div>
+        <nav class="container mx-auto px-0 sm:px-4 mb-20 text-orange font-display">
+            <ul class="flex gap-x-10">
+                <li><a class="block py-4 px-2 text-base sm:text-xl font-bold uppercase hover:underline {{ \Request::is('projects') ? 'underline' : '' }}" href="{{ route('projects') }}">
+                    $Projects
+                </a></li>
 
-                <div class="pr-10">
-                    <a
-                        class="
-                            block py-4 px-2 text-base sm:text-xl font-bold uppercase hover:underline
-                            {{ \Request::is('blog*') ? 'underline' : '' }}
-                        "
-                        href="{{ route('blog') }}"
-                    >$Blog</a>
-                </div>
+                <li><a class="block py-4 px-2 text-base sm:text-xl font-bold uppercase hover:underline {{ \Request::is('blog*') ? 'underline' : '' }}" href="{{ route('blog') }}">
+                    $Blog
+                </a></li>
 
-                <div class="pr-10">
-                    <a
-                        class="
-                            block py-4 px-2 text-base sm:text-xl font-bold uppercase hover:underline
-                            {{ \Request::is('library*') ? 'underline' : '' }}
-                        "
-                        href="{{ route('library') }}"
-                    >$Library</a>
-                </div>
-            </div>
+                <li><a class="block py-4 px-2 text-base sm:text-xl font-bold uppercase hover:underline {{ \Request::is('library*') ? 'underline' : '' }}" href="{{ route('library') }}">
+                    $Library
+                </a></li>
+            </ul>
         </nav>
 
-        <div class="h-20"></div>
-
-        <div id="app">
+        <div id="app" class="mb-20">
             @yield('content')
         </div>
 
-        <div class="h-20"></div>
-
-        <hr class="container mx-auto border-b border-dark">
-
-        <div class="h-4"></div>
+        <hr class="container mx-auto mb-4 border-b border-dark">
 
         <footer class="bg-gray-900 px-2 md:px-16 py-12">
-            <div class="flex justify-center container mx-auto font-display">
+            <div class="flex justify-center container mx-auto mb-12 font-display">
                 <div class="flex flex-col pr-12 md:pr-32">
-                    <p class="uppercase text-purple"><strong>Resources</strong></p>
-
-                    <div class="h-4"></div>
-
-                    <a class="text-sm hover:underline" href="{{ route('projects') }}">Projects</a>
-
-                    <div class="h-6"></div>
-
-                    <a class="text-sm hover:underline" href="{{ route('blog') }}">Blog</a>
-
-                    <div class="h-6"></div>
-
+                    <p class="mb-4 uppercase text-purple"><strong>Resources</strong></p>
+                    <a class="mb-6 text-sm hover:underline" href="{{ route('projects') }}">Projects</a>
+                    <a class="mb-6 text-sm hover:underline" href="{{ route('blog') }}">Blog</a>
                     <a class="text-sm hover:underline" href="{{ route('library') }}">Library</a>
                 </div>
 
                 <div class="flex flex-col pr-12 md:pr-32">
-                    <p class="uppercase text-purple"><strong>Contact</strong></p>
-
-                    <div class="h-4"></div>
-
+                    <p class="mb-4 uppercase text-purple"><strong>Contact</strong></p>
                     <a class="text-sm hover:underline" href="mailto:cwinter.web@gmail.com">Email</a>
                 </div>
 
                 <div class="flex flex-col">
-                    <p class="uppercase text-purple"><strong>Links</strong></p>
-
-                    <div class="h-4"></div>
-
+                    <p class="mb-4 uppercase text-purple"><strong>Links</strong></p>
                     <a
                         aria-label="Github in new tab"
                         href="https://github.com/clintwinter"
@@ -108,15 +65,13 @@
                         target="_blank"
                         rel="noopener noreferrer"
                     ><i class="text-2xl fab fa-github mr-2"></i><span class="text-sm">Github</span></a>
-
                     <a
                         aria-label="LinkedIn in new tab"
                         href="https://linkedin.com/in/clint-winter"
-                         class="mb-6 flex items-center hover:text-yellow"
-                         target="_blank"
-                         rel="noopener noreferrer"
-                        ><i class="text-2xl fab fa-linkedin-in mr-2"></i><span class="text-sm">LinkedIn</span></a>
-
+                        class="mb-6 flex items-center hover:text-yellow"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    ><i class="text-2xl fab fa-linkedin-in mr-2"></i><span class="text-sm">LinkedIn</span></a>
                     <a
                         aria-label="View PDF resume in new tab"
                         href="{{ Storage::url('ClintWinterResume.pdf') }}"
@@ -124,7 +79,6 @@
                         target="_blank"
                         rel="noopener noreferrer"
                     ><i class="text-2xl fas fa-user-tie mr-2"></i><span class="text-sm">Resume</span></a>
-
                     <a
                         aria-label="Clint Winter's DEV profile"
                         href="https://dev.to/clintwinter"
@@ -132,7 +86,6 @@
                         target="_blank"
                         rel="noopener noreferrer"
                     ><i class="text-2xl fab fa-dev mr-2"></i><span class="text-sm">More Blogging</span></a>
-
                     <a
                         aria-label="View PDF resume in new tab"
                         href="https://twitter.com/ClintGWinter"
@@ -140,7 +93,6 @@
                         target="_blank"
                         rel="noopener noreferrer"
                     ><i class="text-2xl fab fa-twitter mr-2"></i><span class="text-sm">Twitter</span></a>
-
                     <a
                         aria-label="View PDF resume in new tab"
                         href="https://www.codementor.io/@clintwinter?refer=badge"
@@ -150,8 +102,6 @@
                     ><img src="https://www.codementor.io/m-badges/clintwinter/im-a-cm-g.svg"></a>
                 </div>
             </div>
-
-            <div class="h-12"></div>
 
             <div class="text-center">
                 <p class="text-xs"> This website is actively maintained by Clint Winter &nbsp;&bullet;&nbsp; Website stats that don't track your personal data by <a class="font-bold underline" href="https://usefathom.com/ref/Y84A28">Fathom Analytics</a> &nbsp;&bullet;&nbsp; Proudly hosted with <a class="font-bold underline" href="https://m.do.co/c/1bd7d55ee985">Digital Ocean</a></p>
