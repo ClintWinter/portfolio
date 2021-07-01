@@ -23,7 +23,7 @@
 
             <div class="h-2"></div>
 
-            <div class="font-normal text-dark text-sm"><em>{{ $post->published_at->format('l, F jS, Y') }}</em></div>
+            <div class="font-normal text-dark text-sm"><em>{{ $post->published_at->diffForHumans() }}</em></div>
         </div>
     @endforeach
 </div>

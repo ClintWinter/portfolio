@@ -6,5 +6,6 @@
 
 @import './components/modal.css';
 @import './components/blogpost.css';
+@import './components/codeblock.css';
 
 @import './custom-utilities.css';

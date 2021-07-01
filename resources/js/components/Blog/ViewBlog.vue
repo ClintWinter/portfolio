@@ -18,7 +18,6 @@
 import moment from 'moment';
 import hljs from 'highlight.js';
 import MarkdownIt from 'markdown-it';
-import 'highlight.js/styles/dracula.css';
 
 const md = MarkdownIt({
   highlight: function (str, lang) {

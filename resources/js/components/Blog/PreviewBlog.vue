@@ -23,7 +23,6 @@
 <script>
 import hljs from 'highlight.js';
 import MarkdownIt from 'markdown-it';
-import 'highlight.js/styles/dracula.css';
 
 export default {
     props: ['preview'],

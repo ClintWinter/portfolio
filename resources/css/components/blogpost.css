@@ -62,16 +62,9 @@
         }
     }
 
-    pre {
-        @apply leading-relaxed p-2 font-display overflow-x-auto text-xs border-2 border-teal rounded;
-
-        @screen md {
-            @apply text-sm;
-        }
-    }
-
     img {
         @apply my-0 mx-auto;
     }
 }
+
 }

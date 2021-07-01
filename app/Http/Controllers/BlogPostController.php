@@ -59,9 +59,9 @@ class BlogPostController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($slug)
-    {   
+    {
         $blogPost = BlogPost::where('slug', $slug)->first();
-        
+
         return $blogPost->toJson();
     }
 
@@ -111,10 +111,10 @@ class BlogPostController extends Controller
             'published' => 'required|boolean'
         ]);
 
-        $blogPost = BlogPost::where('slug', $slug)->first();
+        $blogPost = BlogPost::firstWhere('slug', $slug);
 
         $blogPost->published = $validData['published'];
-        $blogPost->published_at = $validData['published'] ? Carbon::now() : null;
+        $blogPost->published_at = $validData['published'] ? now() : null;
 
         $blogPost->save();
 
