@@ -27,11 +27,11 @@
     }
 
     ul {
-        @apply ml-10 list-disc;
+        @apply pl-10 list-disc;
     }
 
     ol {
-        @apply ml-10 list-decimal;
+        @apply pl-10 list-decimal;
     }
 
     blockquote {
