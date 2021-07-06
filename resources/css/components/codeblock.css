@@ -1,6 +1,6 @@
 .hljs,
 pre {
-    @apply leading-loose p-2 font-display overflow-x-auto text-xs border-2 border-teal shadow;
+    @apply w-full lg:w-2/3 leading-loose p-2 font-display overflow-x-auto text-xs border-2 border-teal shadow;
 
     @screen md {
         @apply text-sm leading-loose;

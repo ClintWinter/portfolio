@@ -1,16 +1,14 @@
 <template>
     <div class="flex flex-col items-center">
 
-        <div class="w-full">
+        <div class="mb-16 w-full max-w-prose">
             <div class="">
                 <h1 class="mb-2 leading-tight text-2xl md:text-3xl text-purple"><strong>{{ post.title }}</strong></h1>
                 <p class="text-dark text-sm"><em>{{ publishedDate }}</em></p>
             </div>
         </div>
 
-        <div class="h-16"></div>
-
-        <div class="blogpost text-base leading-relaxed w-full" v-html="body"></div>
+        <div class="blogpost w-full text-base leading-relaxed" v-html="body"></div>
     </div>
 </template>
 

@@ -3,7 +3,11 @@
 .blogpost {
 
     > * {
-        @apply mb-6;
+        @apply mb-6 mx-auto w-full max-w-prose;
+    }
+
+    > pre {
+        @apply w-full md:w-2/3 max-w-none;
     }
 
     h1 {
