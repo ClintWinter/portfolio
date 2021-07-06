@@ -24,8 +24,8 @@ module.exports = {
       colors: {
         'black': '#000000',
         'darkbg': '#1C1E26',
-        'dark': '#4A5568',
-        'regular': '#BBBBBB',
+        'dark': '#8490A5',
+        'regular': '#CCCCCC',
         'purple': '#B877DB',
         'teal': '#25B0BC',
         'yellow': '#FAB795',

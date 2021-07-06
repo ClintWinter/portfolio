@@ -103,12 +103,12 @@
                         rel="noopener noreferrer"
                     ><i class="text-2xl fab fa-twitter mr-2"></i><span class="text-sm">Twitter</span></a>
                     <a
-                        aria-label="View PDF resume in new tab"
+                        aria-label="My codementor profile"
                         href="https://www.codementor.io/@clintwinter?refer=badge"
                         class="flex items-center hover:text-yellow"
                         target="_blank"
                         rel="noopener noreferrer"
-                    ><img src="https://www.codementor.io/m-badges/clintwinter/im-a-cm-g.svg"></a>
+                    ><img src="https://www.codementor.io/m-badges/clintwinter/im-a-cm-g.svg" alt="I'm a codementor!"></a>
                 </div>
             </div>
 

@@ -13,6 +13,7 @@
                 <img
                     class="w-full max-h-128 max-w-128 shadow-lg rounded"
                     src="{{ asset('storage/images/resavma1.png') }}"
+                    alt="Resavma screenshot"
                 >
 
                 <div class="h-12"></div>
