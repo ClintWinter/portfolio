@@ -16,11 +16,10 @@ class PostFactory extends Factory
         $published = $this->faker->boolean(50);
 
         return [
-            'title' => $this->faker->sentence,
+            'title' => $this->faker->sentence(),
             'body' => $this->faker->paragraphs(8, true),
-            'cover_img_url' => $this->faker->url,
-            'published' => $published,
-            'published_at' => $published ? now() : null
+            'cover_img_url' => $this->faker->url(),
+            'published_at' => $this->faker->boolean(75) ? now() : null
         ];
     }
 }

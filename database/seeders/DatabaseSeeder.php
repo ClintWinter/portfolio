@@ -1,9 +1,12 @@
 <?php
 
+namespace Database\Seeders;
+
+use App\Models\Post;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
-class UsersTableSeeder extends Seeder
+class DatabaseSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,6 +15,8 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(User::class)->create();
+        User::factory()->create();
+
+        Post::factory()->count(20)->create();
     }
 }
