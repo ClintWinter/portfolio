@@ -1,8 +1,8 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
-use App\Language;
+use App\Models\Language;
 use Illuminate\Database\Eloquent\Model;
 
 class Resource extends Model

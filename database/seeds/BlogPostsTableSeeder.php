@@ -1,6 +1,6 @@
 <?php
 
-use App\BlogPost;
+use App\Models\BlogPost;
 use Illuminate\Database\Seeder;
 
 class BlogPostsTableSeeder extends Seeder

@@ -1,8 +1,8 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
-use App\Resource;
+use App\Models\Resource;
 use Illuminate\Database\Eloquent\Model;
 
 class Language extends Model
@@ -11,6 +11,6 @@ class Language extends Model
 
     public function resources()
     {
-        return $this->belongsToMany('App\Resource');
+        return $this->belongsToMany('App\Models\Resource');
     }
 }

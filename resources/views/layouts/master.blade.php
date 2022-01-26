@@ -37,7 +37,7 @@
                     $Projects
                 </a></li>
 
-                <li><a class="block py-4 px-2 text-base sm:text-xl font-bold uppercase hover:underline {{ \Request::is('blog*') ? 'underline' : '' }}" href="{{ route('blog') }}">
+                <li><a class="block py-4 px-2 text-base sm:text-xl font-bold uppercase hover:underline {{ \Request::is('posts*') ? 'underline' : '' }}" href="{{ route('posts.index') }}">
                     $Blog
                 </a></li>
 
@@ -58,7 +58,7 @@
                 <div class="flex flex-col pr-12 md:pr-32">
                     <p class="mb-4 uppercase text-purple"><strong>Resources</strong></p>
                     <a class="mb-6 text-sm hover:underline" href="{{ route('projects') }}">Projects</a>
-                    <a class="mb-6 text-sm hover:underline" href="{{ route('blog') }}">Blog</a>
+                    <a class="mb-6 text-sm hover:underline" href="{{ route('posts.index') }}">Blog</a>
                     <a class="text-sm hover:underline" href="{{ route('library') }}">Library</a>
                 </div>
 
@@ -121,7 +121,7 @@
 
     @if (\Request::is('portfolio'))
         <script src="/js/app.js"></script>
-    @elseif (\Request::is('blog*'))
+    @elseif (\Request::is('posts*'))
         <script src="/js/blog.js"></script>
     @elseif (\Request::is('*helper'))
         <script src="/js/helper.js"></script>

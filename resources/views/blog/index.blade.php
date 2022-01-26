@@ -13,10 +13,10 @@
 
     <div class="h-12"></div>
 
-    @foreach ($blog as $post)
+    @foreach ($posts as $post)
         <div class="mb-12">
             <h2 class="text-xl leading-tight">
-                <a href="{{ route('blog.show', $post->slug) }}" class="text-yellow hover:underline">
+                <a href="{{ route('posts.show', $post->slug) }}" class="text-yellow hover:underline">
                     <strong>{{ $post->title }}</strong>
                 </a>
             </h2>

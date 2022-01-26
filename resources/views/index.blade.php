@@ -19,7 +19,7 @@
             <p><span class="text-dark">11</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-yellow">'<a rel="noopener noreferer" class="underline" target="_blank" href="https://github.com/alpinejs/alpine/">AlpineJS</a>'</span>, <span class="text-dark"></span></p>
             <p><span class="text-dark">12</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="text-yellow">'<a rel="noopener noreferer" class="underline" target="_blank" href="https://laravel-livewire.com/">Laravel Livewire</a>'</span>,</p>
             <p><span class="text-dark">13</span>&nbsp;&nbsp;&nbsp;],</p>
-            <p><span class="text-dark">14</span>&nbsp;&nbsp;&nbsp;<span class="text-red">activities</span>: [<span class="text-yellow">'<a href="{{ route('blog') }}" class="underline">Blogging</a>'</span>],</p>
+            <p><span class="text-dark">14</span>&nbsp;&nbsp;&nbsp;<span class="text-red">activities</span>: [<span class="text-yellow">'<a href="{{ route('posts.index') }}" class="underline">Blogging</a>'</span>],</p>
             <p><span class="text-dark">15</span>&nbsp;&nbsp;&nbsp;<span class="text-red">uses</span>: <span class="text-yellow">'<a href="{{ route('uses') }}" class="underline">/uses</a>'</span>,</p>
             <p><span class="text-dark">16</span>&nbsp;};</p>
         </section>
@@ -30,7 +30,7 @@
             @foreach ($latestPosts as $post)
                 <div class="mb-12">
                     <h2 class="mb-2 text-xl leading-snug">
-                        <a href="{{ route('blog.show', $post->slug) }}" class="text-yellow hover:underline">
+                        <a href="{{ route('posts.show', $post->slug) }}" class="text-yellow hover:underline">
                             <strong>{{ $post->title }}</strong>
                         </a>
                     </h2>
