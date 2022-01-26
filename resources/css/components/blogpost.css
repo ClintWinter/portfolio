@@ -7,7 +7,7 @@
     }
 
     > pre {
-        @apply w-full md:w-2/3 max-w-none;
+        @apply w-full p-4 font-display leading-relaxed text-xs md:text-sm overflow-x-auto border-2 border-teal shadow;
     }
 
     h1 {
@@ -58,13 +58,13 @@
         }
     }
 
-    code {
+    /* code {
         @apply font-display text-xs;
 
         @screen md {
             @apply text-sm;
         }
-    }
+    } */
 
     img {
         @apply my-0 mx-auto;

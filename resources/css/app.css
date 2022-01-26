@@ -1,11 +1,8 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import 'tailwindcss/base';
+@import 'base.css';
 
-@import './custom-base.css';
+@import 'tailwindcss/components';
+@import 'components.css';
 
-@import './components/modal.css';
-@import './components/blogpost.css';
-@import './components/codeblock.css';
-
-@import './custom-utilities.css';
+@import 'tailwindcss/utilities';
+@import 'utilities.css';

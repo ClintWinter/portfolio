@@ -1,8 +1,3 @@
 {
-    "/js/admin.js": "/js/admin.js?id=a07f5f8f94d1a1bfa27e",
-    "/js/app.js": "/js/app.js?id=efb0c3251b15813745a6",
-    "/css/app.css": "/css/app.css?id=72f7d21576a113781140",
-    "/js/blog.js": "/js/blog.js?id=4848ed869ac4338ed8ca",
-    "/js/helper.js": "/js/helper.js?id=814cc0d653f34b63df23",
-    "/js/library.js": "/js/library.js?id=e1d7d2f0447f92118d74"
+    "/css/app.css": "/css/app.css"
 }
