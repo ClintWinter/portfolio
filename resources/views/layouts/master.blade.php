@@ -119,7 +119,7 @@
             </div>
         </footer>
 
-    @if (\Request::is('portfolio'))
+    {{-- @if (\Request::is('portfolio'))
         <script src="/js/app.js"></script>
     @elseif (\Request::is('posts*'))
         <script src="/js/blog.js"></script>
@@ -127,7 +127,7 @@
         <script src="/js/helper.js"></script>
     @elseif (\Request::is('library*'))
         <script src="/js/library.js"></script>
-    @endif
+    @endif --}}
 
 </body>
 </html>

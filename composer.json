@@ -11,7 +11,8 @@
         "laravel/framework": "^8.0",
         "laravel/legacy-factories": "^1.1",
         "laravel/tinker": "^2.0",
-        "laravel/ui": "^3.0"
+        "laravel/ui": "^3.0",
+        "spatie/laravel-markdown": "^2.2"
     },
     "require-dev": {
         "facade/ignition": "^2.5",

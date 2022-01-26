@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use App\Services\Github;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
