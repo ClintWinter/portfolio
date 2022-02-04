@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\PostController as AdminPostController;
 use App\Http\Controllers\Web\LanguageController;
+use App\Http\Controllers\Web\LibraryController;
 use App\Http\Controllers\Web\PostController;
 use App\Http\Controllers\Web\ResourceController;
 use App\Models\Post;
@@ -18,7 +19,7 @@ Route::get('/', function () {
     $latestPosts = Post::latest('published_at')->take(5)->whereNotNull('published_at')->get();
 
     return view('index', compact('latestPosts'));
-});
+})->name('home');
 
 /*
 | -----------------------
@@ -34,7 +35,7 @@ Route::get('/projects', function () {
 | POSTS
 | -----------------------
 */
-Route::resource('posts', 'Web\PostController')->only('index', 'show');
+Route::resource('posts', PostController::class)->only('index', 'show');
 
 /*
 | -----------------------
@@ -50,9 +51,7 @@ Route::get('/uses', function () {
 | RESOURCES
 | -----------------------
 */
-Route::get('/library', function () {
-    return view('library.index');
-})->name('library');
+Route::get('/library', LibraryController::class)->name('library');
 
 /*
 | -----------------------

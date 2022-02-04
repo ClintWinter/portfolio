@@ -1,0 +1,74 @@
+@layer components {
+
+    .post {
+        display: grid;
+        grid-template-columns: 1fr min(65ch, 100%) 1fr;
+    }
+
+    .post > * {
+        grid-column: 2;
+        @apply mb-6;
+    }
+
+    .post > .full-bleed {
+        width: 100%;
+        grid-column: 1 / 4;
+    }
+
+    .post > pre {
+        @apply w-full p-4 font-display leading-relaxed text-xs md:text-sm overflow-x-auto border-2 border-teal shadow;
+    }
+
+    .post > h1 {
+        @apply text-2xl font-bold text-orange pt-4;
+    }
+
+    .post > h2 {
+        @apply text-xl font-bold text-orange pt-3;
+    }
+
+    .post > h3 {
+        @apply text-lg font-bold text-orange pt-2;
+    }
+
+    .post > h4 {
+        @apply text-lg font-bold text-orange pt-1;
+    }
+
+    .post > ul {
+        @apply pl-10 list-disc;
+    }
+
+    .post > ol {
+        @apply pl-10 list-decimal;
+    }
+
+    .post > blockquote {
+        @apply px-6 py-4 border-l-4 border-teal;
+    }
+
+    .post > p > code {
+        @apply font-display rounded px-1 inline text-red bg-red bg-opacity-5 text-sm whitespace;
+    }
+
+    .post > em {
+        @apply font-body italic;
+    }
+
+    .post > strong {
+        @apply font-body font-bold;
+    }
+
+    .post > a {
+        @apply text-yellow;
+    }
+
+    .post > a:hover {
+        @apply underline;
+    }
+
+    .post > img {
+        @apply my-0 mx-auto;
+    }
+
+}
