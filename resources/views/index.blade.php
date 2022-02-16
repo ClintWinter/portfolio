@@ -1,4 +1,4 @@
-<x-layout>
+<x-layouts.master>
 <main class="container mx-auto px-2 sm:px-4 pt-12">
 
     <div class="flex flex-col lg:flex-row justify-between gap-x-8 mb-20">

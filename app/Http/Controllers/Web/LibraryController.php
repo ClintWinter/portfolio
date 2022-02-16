@@ -17,7 +17,7 @@ class LibraryController extends Controller
     public function __invoke(Request $request)
     {
         $groupedResources = Resource::with('languages')->get()
-                                    ->groupBy('resource_type')
+                                    ->groupBy('type')
                                     ->sortKeys();
 
         return view('library.index', [

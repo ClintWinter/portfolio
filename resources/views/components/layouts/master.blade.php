@@ -24,10 +24,10 @@
     <script src="https://minnow.clintwinter.me/script.js" data-site="POEWOFVX" defer></script>
 </head>
 <body class="font-body bg-darkbg text-regular">
-    <x-header />
+    <x-layouts.header />
 
     <div class="mb-20">{{ $slot }}</div>
 
-    <x-footer />
+    <x-layouts.footer />
 </body>
 </html>

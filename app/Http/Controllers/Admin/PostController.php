@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Post;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
@@ -10,95 +11,89 @@ use App\Http\Controllers\Controller;
 class PostController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of posts.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View
      */
     public function index()
     {
-        return Post::latest()->get();
+        return view('admin.posts.index', [
+            'posts' => Post::latest()->get()
+        ]);
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Create a new post.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\View
+     */
+    public function create()
+    {
+        return view('admin.posts.new');
+    }
+
+    /**
+     * Store a new post.
+     *
+     * @param  Illuminate\Http\Request  $request
+     * @return Illuminate\Http\Response
      */
     public function store(Request $request)
     {
-        $validData = $request->validate([
+        $request->validate([
             'title' => [
                 'required',
                 'max:255',
                 Rule::unique('posts')
             ],
             'body' => 'required',
+            'slug' => 'nullable|max:255',
             'cover_img_url' => 'max:255'
         ]);
 
-        $post = Post::create($validData);
+        $post = Post::create([
+            'title' => $request->title,
+            'body' => $request->body,
+            'slug' => $request->input('slug', Str::slug($request->title)),
+            'cover_img_url' => $request->cover_img_url,
+        ]);
 
-        return $post->toJson();
+        return redirect()->route('admin.posts.edit', $post);
     }
 
     /**
-     * Display the specified resource.
+     * Edit the given post.
      *
-     * @param  \App\Models\Post  $post
-     * @return \Illuminate\Http\Response
+     * @param  Request $request
+     * @param  App\Models\Post  $post
+     * @return \Illuminate\Contracts\View\View
      */
-    public function show($slug)
+    public function edit(Request $request, Post $post)
     {
-        $post = Post::where('slug', $slug)->first();
-
-        return $post->toJson();
+        return view('admin.posts.edit', ['post' => $post]);
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update the given post.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Post  $post
-     * @return \Illuminate\Http\Response
+     * @param  Illuminate\Http\Request  $request
+     * @param  App\Models\Post  $post
+     * @return Illuminate\Http\Response
      */
-    public function update(Request $request, $slug)
+    public function update(Request $request, Post $post)
     {
-        $post = Post::where('slug', $slug)->first();
-
         $validData = $request->validate([
             'title' => [
                 'required',
                 'max:255',
                 Rule::unique('posts')->ignore($post)
             ],
-            'slug' => 'required',
             'body' => 'required',
             'cover_img_url' => 'max:255'
         ]);
 
-        $post->fill($validData);
+        $post->fill($validData)->save();
 
-        $post->save();
-
-        return $post->toJson();
-    }
-
-    public function publish(Request $request, $slug)
-    {
-        $validData = $request->validate([
-            'published' => 'required|boolean'
-        ]);
-
-        $post = Post::firstWhere('slug', $slug);
-
-        $post->published = $validData['published'];
-        $post->published_at = $validData['published'] ? now() : null;
-
-        $post->save();
-
-        $post = $post->fresh();
-
-        return $post->toJson();
+        return back()->with('status', 'Post updated.');
     }
 }

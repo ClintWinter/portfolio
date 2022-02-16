@@ -1,14 +1,15 @@
 <?php
 
-use App\Http\Controllers\Admin\AdminController;
-use App\Http\Controllers\Admin\PostController as AdminPostController;
-use App\Http\Controllers\Web\LanguageController;
-use App\Http\Controllers\Web\LibraryController;
-use App\Http\Controllers\Web\PostController;
-use App\Http\Controllers\Web\ResourceController;
 use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Web\PostController;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Web\LibraryController;
+use App\Http\Controllers\Web\LanguageController;
+use App\Http\Controllers\Admin\PublishedPostController;
+use App\Http\Controllers\Admin\PostController as AdminPostController;
+use App\Http\Controllers\Admin\ResourceController;
 
 /*
 | -----------------------
@@ -69,43 +70,47 @@ Route::get('/text-helper', function () {
 */
 Route::prefix('admin')->group(function () {
     Auth::routes(['register' => false, 'reset' => false, 'password.request' => false]);
+});
+
+Route::prefix('admin')->as('admin.')->group(function () {
 
     Route::middleware('is_admin')->group(function () {
-        Route::get('/', [AdminController::class, 'index']);
+        Route::get('/', [AdminController::class, 'index'])->name('index');
 
         /*
         | -----------------------
         | POSTS
         | -----------------------
         */
-        Route::prefix('posts')->group(function () {
-            Route::get('/', [AdminPostController::class, 'index']);
-            Route::post('/', [AdminPostController::class, 'store']);
+        Route::resource('posts', AdminPostController::class)
+            ->except('show', 'destroy');
 
-            Route::post('/{slug}/publish', [AdminPostController::class, 'publish']);
-            Route::get('/{slug}', [AdminPostController::class, 'show']);
-            Route::post('/{slug}', [AdminPostController::class, 'update']);
-        });
+        Route::post('published-posts/{post}', [PublishedPostController::class, 'store'])
+            ->name('published-posts.store');
+        Route::delete('published-posts/{post}', [PublishedPostController::class, 'destroy'])
+            ->name('published-posts.destroy');
+
+        // Route::prefix('posts')->group(function () {
+        //     Route::get('/', [AdminPostController::class, 'index']);
+        //     Route::post('/', [AdminPostController::class, 'store']);
+
+        //     Route::post('/{slug}/publish', [AdminPostController::class, 'publish']);
+        //     Route::get('/{slug}', [AdminPostController::class, 'show']);
+        //     Route::post('/{slug}', [AdminPostController::class, 'update']);
+        // });
 
         /*
         | -----------------------
         | RESOURCES
         | -----------------------
         */
-        Route::prefix('resources')->group(function () {
-            Route::post('/', [ResourceController::class, 'store']);
-            Route::post('/{id}', [ResourceController::class, 'update']);
-            Route::delete('/{id}', [ResourceController::class, 'destroy']);
-        });
+        Route::resource('resources', ResourceController::class)->except('create', 'show');
 
         /*
         | -----------------------
         | LANGUAGES
         | -----------------------
         */
-        Route::prefix('languages')->group(function () {
-            Route::get('/', [LanguageController::class, 'index']);
-            Route::post('/', [LanguageController::class, 'store']);
-        });
+        Route::resource('languages', LanguageController::class)->only('index', 'store');
     });
 });

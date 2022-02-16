@@ -3,7 +3,7 @@
 
     <header class="z-10 border-b border-dark">
         <ul class="flex justify-between items-center p-6">
-            <li class="text-xl text-red"><strong>$clintgwinterCMS</strong></li>
+            <li class="text-xl text-red"><strong>clintwinter.me</strong></li>
             <li >
                 <a
                     class="bg-orange text-darkbg px-2 py-1"
@@ -19,24 +19,12 @@
     </header>
 
     <div class="flex flex-col md:flex-row items-stretch">
-
         <nav class="min-w-64 border-r border-dark">
             <div class="py-8">
                 <ul class="flex flex-col sm:flex-row md:flex-col text-lg">
-                    <li
-                        :class="{ 'text-darkbg bg-orange': activeTab == 'blog' }"
-                        class="py-3 px-8 cursor-pointer hover:bg-yellow hover:text-darkbg"
-                        @click="setActiveTab('blog')"
-                    ><strong>$Blog_Posts</strong></li>
-                    <li
-                        :class="{ 'text-darkbg bg-orange': activeTab == 'library' }"
-                        class="py-3 px-8 cursor-pointer hover:bg-yellow hover:text-darkbg"
-                        @click="setActiveTab('library')"
-                    ><strong>$Library</strong></li>
-                    <li
-                        :class="{ 'text-darkbg bg-orange': activeTab == 'project' }"
-                        class="py-3 px-8 cursor-pointer hover:bg-yellow hover:text-darkbg"
-                    ><strong>$Projects</strong></li>
+                    <li :class="{ 'text-darkbg bg-orange': activeTab == 'blog' }" class="py-3 px-8 font-bold cursor-pointer hover:bg-yellow hover:text-darkbg" @click="setActiveTab('blog')">$Blog_Posts</li>
+                    <li :class="{ 'text-darkbg bg-orange': activeTab == 'library' }" class="py-3 px-8 font-bold cursor-pointer hover:bg-yellow hover:text-darkbg" @click="setActiveTab('library')">$Library</li>
+                    <li :class="{ 'text-darkbg bg-orange': activeTab == 'project' }" class="py-3 px-8 font-bold cursor-pointer hover:bg-yellow hover:text-darkbg">$Projects</li>
                 </ul>
             </div>
         </nav>

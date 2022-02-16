@@ -1,4 +1,4 @@
-<x-layout title="Projects | Clint Winter" metadescription="Projects built by Clint Winter. Take a look, you may find some of them useful.">
+<x-layouts.master title="Projects | Clint Winter" metadescription="Projects built by Clint Winter. Take a look, you may find some of them useful.">
 <div class="container mx-auto px-2 pt-12">
     <div class="mx-auto flex flex-col items-start">
         <div class="projects flex flex-col items-stretch w-full">

@@ -48,7 +48,7 @@
     }
 
     .post > p > code {
-        @apply font-display rounded px-1 inline text-red bg-red bg-opacity-5 text-sm whitespace;
+        @apply font-display rounded px-1 inline text-red bg-red bg-opacity-5 text-sm;
     }
 
     .post > em {
