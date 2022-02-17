@@ -47,7 +47,12 @@
                 {{ $post->title }}
             </h1>
 
-            <x-markdown class="post">{!! old('body', $post->body) !!}</x-markdown>
+            <div class="post">
+                @markdown(old('body', $post->body))
+                {{-- @markdown
+                    {{ old('body', $post->body) }}
+                @endmarkdown --}}
+            </div>
         </div>
     </div>
 </x-layouts.admin>

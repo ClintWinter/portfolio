@@ -10,6 +10,8 @@
         </p>
     </div>
 
-    <x-markdown class="post">{!! $post->body !!}</x-markdown>
+    <article class="post">
+        @markdown($post->body)
+    </article>
 </main>
 </x-layout>
