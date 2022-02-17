@@ -6,21 +6,20 @@
     "type": "project",
     "require": {
         "php": "^8.1",
+        "fruitcake/laravel-cors": "^2.0.5",
         "doctrine/dbal": "^3.3",
-        "fideloper/proxy": "^4.0",
-        "guzzlehttp/guzzle": "^7.0.1",
-        "laravel/framework": "^8.0",
-        "laravel/legacy-factories": "^1.1",
-        "laravel/tinker": "^2.0",
+        "guzzlehttp/guzzle": "^7.2",
+        "laravel/framework": "^9.0",
+        "laravel/tinker": "^2.7",
         "laravel/ui": "^3.0",
         "spatie/laravel-markdown": "^2.2"
     },
     "require-dev": {
-        "facade/ignition": "^2.5",
         "fakerphp/faker": "^1.9.1",
-        "mockery/mockery": "^1.0",
-        "nunomaduro/collision": "^5.0",
-        "phpunit/phpunit": "^9.0"
+        "mockery/mockery": "^1.4.4",
+        "nunomaduro/collision": "^6.1",
+        "phpunit/phpunit": "^9.0",
+        "spatie/laravel-ignition": "^1.0"
     },
     "autoload": {
         "classmap": [
