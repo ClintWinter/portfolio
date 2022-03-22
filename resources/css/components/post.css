@@ -59,12 +59,8 @@
         @apply font-body font-bold;
     }
 
-    .post > a {
-        @apply text-yellow;
-    }
-
-    .post > a:hover {
-        @apply underline;
+    .post a {
+        @apply text-yellow underline;
     }
 
     .post > img {
