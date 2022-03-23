@@ -27,6 +27,10 @@
         @apply mr-4;
     }
 
+    .post > pre > code .line {
+        @apply py-1;
+    }
+
     .post > h1 {
         @apply text-2xl font-bold text-orange pt-4;
     }
