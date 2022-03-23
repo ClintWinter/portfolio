@@ -16,7 +16,15 @@
     }
 
     .post > pre {
-        @apply w-full p-4 font-display leading-relaxed text-xs md:text-sm overflow-x-auto border-2 border-teal shadow;
+        @apply w-full font-display leading-relaxed text-xs md:text-sm overflow-x-auto border-2 border-teal shadow;
+    }
+
+    .post > pre > code {
+        @apply block min-h-full p-2 min-w-max;
+    }
+
+    .post > pre > code .line-number {
+        @apply mr-4;
     }
 
     .post > h1 {
