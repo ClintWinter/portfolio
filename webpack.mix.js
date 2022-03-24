@@ -6,7 +6,9 @@ mix.postCss('resources/css/app.css', 'public/css', [
         require('tailwindcss'),
    ]);
 
-mix.version();
+if (mix.inProduction()) {
+    mix.version();
+}
 
 const webpackConfig = {
     stats: {
