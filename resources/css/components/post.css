@@ -20,7 +20,7 @@
     }
 
     .post > pre > code {
-        @apply block min-h-full p-2 min-w-max;
+        @apply block min-h-full min-w-max;
     }
 
     .post > pre > code .line-number {
@@ -28,7 +28,24 @@
     }
 
     .post > pre > code .line {
-        @apply py-1;
+        @apply py-1 px-2;
+    }
+
+    .post > pre > code .line:first-child {
+        @apply pt-3;
+    }
+
+    .post > pre > code .line:last-child {
+        @apply pb-3;
+    }
+
+    .post > pre > code.has-focus-lines .line:not(.line-focus) {
+        @apply opacity-30 transition-all duration-300;
+        filter: blur(1.5px);
+    }
+
+    .post > pre:hover > code.has-focus-lines .line:not(.line-focus) {
+        @apply blur-none opacity-100;
     }
 
     .post img {
@@ -63,7 +80,9 @@
         @apply px-6 py-4 border-l-4 border-teal;
     }
 
-    .post > p > code {
+    .post > p > code,
+    .post > :not(pre):not(p) code,
+    .post > p > :not(a):not(pre) code {
         @apply font-display rounded px-1 inline text-red bg-red bg-opacity-5 text-sm;
     }
 
