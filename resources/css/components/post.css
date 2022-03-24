@@ -31,6 +31,10 @@
         @apply py-1;
     }
 
+    .post img {
+        @apply mx-auto;
+    }
+
     .post > h1 {
         @apply text-2xl font-bold text-orange pt-4;
     }
@@ -75,8 +79,11 @@
         @apply text-yellow underline;
     }
 
+    .post a code {
+        @apply font-display rounded inline text-red text-sm;
+    }
+
     .post > img {
         @apply my-0 mx-auto;
     }
-
 }

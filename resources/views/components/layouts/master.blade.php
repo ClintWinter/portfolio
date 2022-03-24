@@ -14,7 +14,7 @@
     <meta property="og:url" content="{{ url()->full() }}">
     <meta name="twitter:card" content="summary_large_image">
 
-    <title>{{ $title ?? 'Clint Winter | Software Developer' }}</title>
+    <title>{!! $title ?? 'Clint Winter | Software Developer' !!}</title>
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=JetBrains+Mono:ital,wght@0,400;0,700;0,800;1,400;1,700&display=swap" rel="stylesheet">

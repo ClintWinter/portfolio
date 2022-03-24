@@ -54,7 +54,7 @@ class PostController extends Controller
         $post = Post::create([
             'title' => $request->title,
             'body' => $request->body,
-            'slug' => $request->input('slug', Str::slug($request->title)),
+            'slug' => $request->slug ?? Str::slug($request->title),
             'cover_img_url' => $request->cover_img_url,
         ]);
 
